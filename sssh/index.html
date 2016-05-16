@@ -4,13 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>台北市立松山高級中學</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -20,12 +17,53 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style type="text/css">
+			.inline li {
+				display: inline;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					<!-- No1 -->
+					# 台北市立松山高級中學
+					#### June, 2016
+				</section>
+				<section data-markdown data-background="img/map.png">
+					<!-- No2 -->
+				</section>
+				<section data-markdown>
+					<!-- No3 -->
+					## 這所學校哪裡特別了？
+					## What's special?
+				</section>
+				<section data-markdown>
+					<!-- No4 -->
+					* 北市**前五**志願
+					* HBL 前八強 ***綠色神盾***
+					* 男女合校混班
+				</section>
+				<section data-markdown class="inline">
+					<!-- No5 -->
+					# 校訓
+					* 倫理
+					* 民主
+					* 科學
+					* 榮譽
+					* 責任
+					* 服務
+					
+					![](./img/sssh.gif)
+				</section><section>
+					<!-- No6 -->
+					<h1>學校特色</h1>
+					<p class="fragment">校山巡禮</p>
+					<p class="fragment">包粽傳奇</p>
+					<p class="fragment">綠色神盾</p>
+				</section>
+				
 			</div>
 		</div>
 
@@ -41,8 +79,7 @@
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 		</script>
