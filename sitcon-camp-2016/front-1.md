@@ -1,15 +1,12 @@
-<!-- Page 1 -->
 
 # SITCON Summer Camp
 # 前端分流課程 #1
 <br>
 2016-08-03 By BobbyHo
 
-<!-- // Page 1 -->
 
 ---
 
-<!-- Page 2 -->
 # Who Am I ?
 * 何雨忻 BobbyHo
 * 106 會考生 QAQ
@@ -17,68 +14,51 @@
 * http://about.bobbyrealms.info
 * angela.bobby@gmail.com
 
-<!-- // Page 2 -->
 
 ---
 
-<!-- Page 3-1 -->
 # 風起雲湧的前端世界
-<!-- // Page 3-1 -->
 
 ^^^
 
-<!-- Page 3-2 -->
 ## 純 HTML 時代
 寫出來的網頁什麼樣式都沒有，相當簡陋
-<!-- // Page 3-2 -->
 
 ^^^
 
-<!-- Page 3-3 -->
 ## CSS & JS
 * CSS 的概念在 1994 年被提出
 * JavaScript 在 1995 年面世
 
-<!-- // Page 3-3 -->
 
 ^^^
 
-<!-- Page 3-4 -->
 ## HTML + CSS + JS   
 前端的三巨頭到齊，可以召喚神龍了(X
 ![神龍](./assets/神龍.gif)
-<!-- // Page 3-4 -->
 
 ^^^
 
-<!-- Page 3-5 -->
 ## 收個信還要一直 F5 很煩欸 (#`Д´)ﾉ
-<!-- // Page 3-5 -->
 
 ^^^
 
-<!-- Page 3-6 -->
 ## AJAX is here!
 #### 應用情境
 * Gmail
-* 填表單
+* 送出表單
 * ~~全自動掛機打掉別人的網站~~
 
-<!-- // Page 3-6 -->
 
 ^^^
 
-<!-- Page 3-7 -->
 ## JavaScript UI 框架
 <img src="assets/JS_library_timeline.png" width="90%">
-<!-- // Page 3-7 -->
 
 ^^^
 
-<!-- Page 3-8 -->
 ## CSS 框架
 <img src="assets/css_library_timeline.jpg" width="90%">
-<!-- // Page 3-8 -->
 
 ^^^
 
@@ -86,19 +66,14 @@
 
 ---
 
-<!-- Page 4 -->
 # 進階 CSS
-<!-- // Page 4 -->
 
 ---
 
-<!-- Page 5 -->
 ## CSS 選擇器
-<!-- // Page 5 -->
 
 ^^^
 
-<!-- Page 5-1 -->
 ```
 .class
 #id
@@ -110,11 +85,9 @@ div p   //所有在 div 底下的 p 元素（不論是否直屬 div）
 div + p   //與 div 相鄰的所有 p 元素
 ```
 
-<!-- // Page 5-1 -->
 
 ^^^
 
-<!-- Page 5-2 -->
 
 ## Example 1
 選擇器： `.intro, p`
@@ -131,11 +104,9 @@ div + p   //與 div 相鄰的所有 p 元素
 
 ```
 
-<!-- Page 5-2 -->
 
 ^^^
 
-<!-- Page 5-3 -->
 
 ## Example 2
 選擇器： `.intro > p`
@@ -152,11 +123,9 @@ div + p   //與 div 相鄰的所有 p 元素
 
 ```
 
-<!-- Page 5-3 -->
 
 ^^^
 
-<!-- Page 5-4 -->
 
 ## Example 3
 選擇器： `.intro p`
@@ -173,11 +142,9 @@ div + p   //與 div 相鄰的所有 p 元素
 
 ```
 
-<!-- Page 5-4 -->
 
 ^^^
 
-<!-- Page 5-5 -->
 
 ## Example 4
 選擇器： `.intro + p`
@@ -194,20 +161,16 @@ div + p   //與 div 相鄰的所有 p 元素
 
 ```
 
-<!-- Page 5-5 -->
 
 ^^^
 
-<!-- Page 5-6 -->
 
 ## CSS 優先級
 > 規則越具體，優先度越高
 
-<!-- Page 5-6 -->
 
 ^^^
 
-<!-- Page 5-7 -->
 
 ```
 <div class="intro">
@@ -240,5 +203,47 @@ div + p   //與 div 相鄰的所有 p 元素
 	<p style="color: red;">I'm p element 2</p>
 </div>
 
+---
 
-<!-- Page 5-7 -->
+## CSS 數值與單位
+
+^^^
+
+### 長度單位
+* px (≒ 1/96 inch), pt (≒ 1/72 inch)
+* %
+* em, rem
+	* 1em 為「1倍的母元素字體大小」
+	* 1rem 為「1倍的 html 元素字體大小(預設16px)」
+* vw, vh
+	* 代表螢幕可視範圍的百分比
+
+^^^
+
+### 時間單位
+* ms -- 毫秒
+* s -- 秒
+
+^^^
+
+### 顏色
+* rgb(r, g, b), rgba(r, g, b, alpha)
+	* 白色為 rgb(255,255,255)
+* Hex (16進位)
+	* 白色為 #FFFFFF 也可寫為 #FFF
+* Transparent(透明), currentColor (引用 color 屬性的值), 關鍵字
+
+實用工具：w3school color picker http://www.w3schools.com/colors/colors_picker.asp
+
+---
+
+## CSS 屬性
+
+^^^
+
+## 元素尺寸
+* width -- 元素寬度
+* height -- 元素高度
+* max-width/max-height -- 限制元素最高寬/高度
+* min-width/min-height -- 限制元素最小寬/高度
+
