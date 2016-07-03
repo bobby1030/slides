@@ -156,9 +156,9 @@ div + p   //與 div 相鄰的所有 p 元素
 
 ^^^
 
-<!-- Page 5-3 -->
+<!-- Page 5-4 -->
 
-## Example 2
+## Example 3
 選擇器： `.intro p`
 
 ```
@@ -173,4 +173,72 @@ div + p   //與 div 相鄰的所有 p 元素
 
 ```
 
-<!-- Page 5-3 -->
+<!-- Page 5-4 -->
+
+^^^
+
+<!-- Page 5-5 -->
+
+## Example 4
+選擇器： `.intro + p`
+
+```
+<div class="intro"> <!-- 我"沒"被選到QAQ -->
+	<h1>I'm h1</h1>
+	<div>
+		<p>I'm p element</p> <!-- 我"沒"被選到QAQ -->
+	</div>
+	<p>I'm p element 2</p> <!-- 我"沒"被選到QAQ -->
+</div>
+<p>I'm p element 3</p> <!-- 選到了 -->
+
+```
+
+<!-- Page 5-5 -->
+
+^^^
+
+<!-- Page 5-6 -->
+
+## CSS 優先級
+> 規則越具體，優先度越高
+
+<!-- Page 5-6 -->
+
+^^^
+
+<!-- Page 5-7 -->
+
+```
+<div class="intro">
+	<div>
+		<p>I'm p element 1</p>
+	</div>
+	<p>I'm p element 2</p>
+</div>
+```
+```
+.intro {
+	background-color: white;
+	color: black
+}
+
+.intro p {
+	color: red
+}
+
+.intro div > p {
+	color: blue
+}
+
+```
+結果：
+<div style="background: white;">
+	<div>
+		<p style="color: blue;">I'm p element 1</p>
+	</div>
+	<p style="color: red;">I'm p element 2</p>
+</div>
+
+
+<!-- Page 5-7 -->
