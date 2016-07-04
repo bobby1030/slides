@@ -268,7 +268,7 @@ div + p   //與 div 相鄰的所有 p 元素
 
 ## CSS 屬性
 
-^^^
+---
 
 ## 元素尺寸
 * width -- 元素寬度
@@ -276,3 +276,41 @@ div + p   //與 div 相鄰的所有 p 元素
 * max-width/max-height -- 限制元素最高寬/高度
 * min-width/min-height -- 限制元素最小寬/高度
 
+^^^
+
+## What's Different 
+```
+<div class="width-250">
+	<p>我是 width: 500px</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dicta sapiente, dolorum nisi aliquam amet impedit earum laborum consectetur sunt. Culpa aperiam 	ducimus itaque officiis iste dolores. Fugit, aperiam, labore.</p>
+</div> 
+<br>
+<div class="max-width-250">
+	<p>我是 max-width: 500px</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dicta sapiente, dolorum nisi aliquam amet impedit earum laborum consectetur sunt. Culpa aperiam ducimus itaque officiis iste dolores. Fugit, aperiam, labore.</p>
+</div> 
+```
+```
+.width-250 {
+  width: 500px;
+}
+
+.max-width-250 {
+  max-width: 500px;
+}
+```
+
+JSFiddle：https://goo.gl/PGYXKA
+
+^^^
+
+在螢幕尺寸大於 500px 時，兩者沒有不同
+![](./assets/css/width-min-width/01.png)
+
+^^^
+
+在螢幕尺寸小於 500px 時：   
+![](./assets/css/width-min-width/02.png)   
+`width: 500px` 堅守寬度為 500px！   
+`max-width: 500px` 退縮了，寬度隨著螢幕變化   
+（別忘了還有 min-width 可以讓它不要變太小 >_<）
