@@ -66,6 +66,34 @@
 
 ---
 
+# 開發者的四次元口袋
+![Doraemon Pocket](./assets/doraemon_pocket.jpg)
+
+^^^
+
+## JSFiddle
+https://jsfiddle.net/
+* 前端遊樂場
+* 內建各種 JS Library
+* 匯入外部資源
+* 公開協作
+
+^^^
+
+## Gist (By GitHub)
+https://gist.github.com/
+![Gist](./assets/gist.png)
+片段程式碼共享、支援版本控制
+
+^^^
+
+## moqups
+https://moqups.com/
+![moqups](./assets/moqups.png)   
+建構網站雛形、記錄佈局靈感
+
+---
+
 # 進階 CSS
 
 ---
