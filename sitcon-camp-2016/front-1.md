@@ -112,7 +112,8 @@ div   //所有 div 元素
 div, p   //所有 div 及所有 p 元素
 div > p   //直屬 div 的 p 元素（ p 為 div 的直屬子元素）
 div p   //所有在 div 底下的 p 元素（不論是否直屬 div）
-div + p   //與 div 相鄰的所有 p 元素
+div + p   //所有與 div 相鄰 p 元素
+div ~ p   //所有在 div 後，與 div 同級的 p 元素
 ```
 
 
@@ -188,19 +189,56 @@ div + p   //與 div 相鄰的所有 p 元素
 	<p>I'm p element 2</p> <!-- 我"沒"被選到QAQ -->
 </div>
 <p>I'm p element 3</p> <!-- 選到了 -->
+<p>I'm p element 4</p> <!-- 我"沒"被選到QAQ -->
 
 ```
 
+^^^
+
+## Example 5
+選擇器： `.intro ~ p`
+
+```
+<div class="intro"> <!-- 我"沒"被選到QAQ -->
+	<h1>I'm h1</h1>
+	<div>
+		<p>I'm p element</p> <!-- 我"沒"被選到QAQ -->
+	</div>
+	<p>I'm p element 2</p> <!-- 我"沒"被選到QAQ -->
+</div>
+<p>I'm p element 3</p> <!-- 選到了 -->
+<p>I'm p element 4</p> <!-- 選到了 -->
+<p>I'm p element 5</p> <!-- 選到了 -->
+
+```
 
 ^^^
 
+## CSS Pseudo Classes
+CSS 偽元素 - CSS 世界的奇技淫巧
+
+^^^
+
+```
+div p:nth-child(2)  // 1.div 中的第二個子元素 2.必須為 p 元素
+div p:nth-of-type(2) //div 中的第二個 p 元素
+div p:first-of-type //div 中的第一個 p 元素
+div :first-of-type //div 中任何種類元素的第一個
+
+div:hover //滑鼠懸浮在 div 上時
+a:link  //a 元素中，沒訪問過的連結
+a:active  //a 元素中，按下滑鼠到釋放滑鼠的期間
+a:visited  //a 元素中，訪問過的連結
+
+input:focus //當輸入焦點在 input 元素上時
+```
+
+^^^
 
 ## CSS 優先級
 > 規則越具體，優先度越高
 
-
 ^^^
-
 
 ```
 <div class="intro">
@@ -261,7 +299,7 @@ div + p   //與 div 相鄰的所有 p 元素
 	* 白色為 rgb(255,255,255)
 * Hex (16進位)
 	* 白色為 #FFFFFF 也可寫為 #FFF
-* Transparent(透明), currentColor (引用 color 屬性的值), 關鍵字
+* Transparent(透明), currentColor (引用 color 屬性的值), 關鍵字（black, yellow, etc.）
 
 實用工具：w3school color picker http://www.w3schools.com/colors/colors_picker.asp
 
