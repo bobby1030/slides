@@ -107,13 +107,13 @@ https://moqups.com/
 ```css
 .class
 #id
-*   //所有元素
-div   //所有 div 元素
-div, p   //所有 div 及所有 p 元素
-div > p   //直屬 div 的 p 元素（ p 為 div 的直屬子元素）
-div p   //所有在 div 底下的 p 元素（不論是否直屬 div）
-div + p   //所有與 div 相鄰 p 元素
-div ~ p   //所有在 div 後，與 div 同級的 p 元素
+*   /* 所有元素 */
+div   /* 所有 div 元素 */
+div, p   /* 所有 div 及所有 p 元素 */
+div > p   /* 直屬 div 的 p 元素（ p 為 div 的直屬子元素） */
+div p   /* 所有在 div 底下的 p 元素（不論是否直屬 div） */
+div + p   /* 所有與 div 相鄰 p 元素 */
+div ~ p   /* 所有在 div 後，與 div 同級的 p 元素 */
 ```
 
 
@@ -218,17 +218,17 @@ CSS 偽元素 - CSS 世界的奇技淫巧
 ^^^
 
 ```css
-div p:nth-child(2)  // 是 div 中的第二個子元素 且 必須為 p 元素
-div p:nth-of-type(2) // div 中的第二個 p 元素
-div p:first-of-type // div 中的第一個 p 元素
-div :first-of-type // div 中任何種類元素的第一個
+div p:nth-child(2)  /* 是 div 中的第二個子元素 且 必須為 p 元素 */
+div p:nth-of-type(2) /* div 中的第二個 p 元素 */
+div p:first-of-type /* div 中的第一個 p 元素 */
+div :first-of-type /* div 中任何種類元素的第一個 */
 
-div:hover // 滑鼠懸浮在 div 上時
-a:link  // a 元素中，沒訪問過的連結
-a:active  // a 元素中，按下滑鼠到釋放滑鼠的期間
-a:visited  // a 元素中，訪問過的連結
+div:hover /* 滑鼠懸浮在 div 上時 */
+a:link  /* a 元素中，沒訪問過的連結 */
+a:active  /* a 元素中，按下滑鼠到釋放滑鼠的期間 */
+a:visited  /* a 元素中，訪問過的連結 */
 
-input:focus // 當輸入焦點在 input 元素上時
+input:focus /* 當輸入焦點在 input 元素上時 */
 ```
 
 ^^^
@@ -282,13 +282,14 @@ http://flukeout.github.io/
 ^^^
 
 ### 長度單位
-* px (≒ 1/96 inch), pt (≒ 1/72 inch)
-* %
-* em, rem
-	* 1em 為「1倍的母元素字體大小」
-	* 1rem 為「1倍的 html 元素字體大小(預設16px)」
-* vw, vh
-	* 代表螢幕可視範圍的百分比
+```css
+px /* ≒ 1/96 inch */
+pt /* ≒ 1/72 inch */
+% /* 佔母元素的百分比 */
+em /* 1em 為「1倍的母元素字體大小」*/
+rem /* 1rem 為「1倍的 html 元素字體大小(預設16px)」 */
+vw, vh /* 代表螢幕可視範圍的百分比 */
+```
 
 ^^^
 
@@ -299,11 +300,15 @@ http://flukeout.github.io/
 ^^^
 
 ### 顏色
-* rgb(r, g, b), rgba(r, g, b, alpha)
-	* 白色為 rgb(255,255,255)
-* Hex (16進位)
-	* 白色為 #FFFFFF 也可寫為 #FFF
-* Transparent(透明), currentColor (引用 color 屬性的值), 關鍵字（black, yellow, etc.）
+```css
+rgb(r, g, b), rgba(r, g, b, alpha)
+	/* 白色為 rgb(255,255,255) */
+Hex
+	/* 16進位 白色為 #FFFFFF 也可寫為 #FFF */
+Transparent /* 透明 */
+currentColor /* 引用 color 屬性的值 */
+Keyword /* black, yellow, etc. */
+```
 
 實用工具：w3school color picker http://www.w3schools.com/colors/colors_picker.asp
 
@@ -315,11 +320,12 @@ http://flukeout.github.io/
 
 ## 元素尺寸
 ```css
-width // 元素寬度
-height // 元素高度
-max-width / max-height // 限制元素最高寬/高度
-min-width / min-height // 限制元素最小寬/高度
+width /* 元素寬度 */
+height /* 元素高度 */
+max-width / max-height /* 限制元素最高寬/高度 */
+min-width / min-height /* 限制元素最小寬/高度 */
 ```
+
 ^^^
 
 ## What's Different 
@@ -363,14 +369,14 @@ JSFiddle：https://goo.gl/PGYXKA
 
 ## 顏色、透明度、背景
 ```css
-color // 文字顏色
-opacity // 不透明度，0完全透明 1完全不透明
+color /* 文字顏色 */
+opacity /* 不透明度，0完全透明 1完全不透明 */
 
-background-color // 背景顏色（常搭配 div 做色塊）
-background-image: url("位置") // 背景圖片 位置可以是相對或絕對
-background-size // 背景圖片尺寸
-	// 絕對寬、高
-	// 母元素百分比
-	// contain 按比例放大，但仍保持全圖可見
-	// cover 按比例放大，圖片滿足寬或高需求，可能會切圖
+background-color /* 背景顏色（常搭配 div 做色塊） */
+background-image: url("位置") /* 背景圖片 位置可以是相對或絕對 */
+background-size /* 背景圖片尺寸 */
+	/* 絕對寬、高 */
+	/* 母元素百分比 */
+	/* contain 按比例放大，但仍保持全圖可見 */
+	/* cover 按比例放大，圖片滿足寬或高需求，可能會切圖 */
 ```
