@@ -271,6 +271,12 @@ input:focus //當輸入焦點在 input 元素上時
 	<p style="color: red;">I'm p element 2</p>
 </div>
 
+^^^
+
+## Practice Makes Perfect
+CSS 選擇器小遊戲：CSS Diner
+http://flukeout.github.io/
+
 ---
 
 ## CSS 數值與單位
