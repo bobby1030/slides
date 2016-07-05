@@ -104,7 +104,7 @@ https://moqups.com/
 
 ^^^
 
-```
+```css
 .class
 #id
 *   //所有元素
@@ -123,7 +123,7 @@ div ~ p   //所有在 div 後，與 div 同級的 p 元素
 ## Example 1
 選擇器： `.intro, p`
 
-```
+```html
 <div class="intro"> <!-- 選到了 -->
 	<h1>I'm h1</h1>
 	<div>
@@ -142,7 +142,7 @@ div ~ p   //所有在 div 後，與 div 同級的 p 元素
 ## Example 2
 選擇器： `.intro > p`
 
-```
+```html
 <div class="intro"> <!-- 我"沒"被選到QAQ -->
 	<h1>I'm h1</h1>
 	<div>
@@ -161,7 +161,7 @@ div ~ p   //所有在 div 後，與 div 同級的 p 元素
 ## Example 3
 選擇器： `.intro p`
 
-```
+```html
 <div class="intro"> <!-- 我"沒"被選到QAQ -->
 	<h1>I'm h1</h1>
 	<div>
@@ -173,14 +173,12 @@ div ~ p   //所有在 div 後，與 div 同級的 p 元素
 
 ```
 
-
 ^^^
-
 
 ## Example 4
 選擇器： `.intro + p`
 
-```
+```html
 <div class="intro"> <!-- 我"沒"被選到QAQ -->
 	<h1>I'm h1</h1>
 	<div>
@@ -198,7 +196,7 @@ div ~ p   //所有在 div 後，與 div 同級的 p 元素
 ## Example 5
 選擇器： `.intro ~ p`
 
-```
+```html
 <div class="intro"> <!-- 我"沒"被選到QAQ -->
 	<h1>I'm h1</h1>
 	<div>
@@ -219,18 +217,18 @@ CSS 偽元素 - CSS 世界的奇技淫巧
 
 ^^^
 
-```
-div p:nth-child(2)  // 1.div 中的第二個子元素 2.必須為 p 元素
-div p:nth-of-type(2) //div 中的第二個 p 元素
-div p:first-of-type //div 中的第一個 p 元素
-div :first-of-type //div 中任何種類元素的第一個
+```css
+div p:nth-child(2)  // 是 div 中的第二個子元素 且 必須為 p 元素
+div p:nth-of-type(2) // div 中的第二個 p 元素
+div p:first-of-type // div 中的第一個 p 元素
+div :first-of-type // div 中任何種類元素的第一個
 
-div:hover //滑鼠懸浮在 div 上時
-a:link  //a 元素中，沒訪問過的連結
-a:active  //a 元素中，按下滑鼠到釋放滑鼠的期間
-a:visited  //a 元素中，訪問過的連結
+div:hover // 滑鼠懸浮在 div 上時
+a:link  // a 元素中，沒訪問過的連結
+a:active  // a 元素中，按下滑鼠到釋放滑鼠的期間
+a:visited  // a 元素中，訪問過的連結
 
-input:focus //當輸入焦點在 input 元素上時
+input:focus // 當輸入焦點在 input 元素上時
 ```
 
 ^^^
@@ -240,7 +238,7 @@ input:focus //當輸入焦點在 input 元素上時
 
 ^^^
 
-```
+```html
 <div class="intro">
 	<div>
 		<p>I'm p element 1</p>
@@ -248,7 +246,7 @@ input:focus //當輸入焦點在 input 元素上時
 	<p>I'm p element 2</p>
 </div>
 ```
-```
+```css
 .intro {
 	background-color: white;
 	color: black
@@ -316,7 +314,7 @@ http://flukeout.github.io/
 ---
 
 ## 元素尺寸
-```
+```css
 width // 元素寬度
 height // 元素高度
 max-width / max-height // 限制元素最高寬/高度
@@ -325,23 +323,23 @@ min-width / min-height // 限制元素最小寬/高度
 ^^^
 
 ## What's Different 
-```
-<div class="width-250">
+```html
+<div class="width">
 	<p>我是 width: 500px</p> 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dicta sapiente, dolorum nisi aliquam amet impedit earum laborum consectetur sunt. Culpa aperiam 	ducimus itaque officiis iste dolores. Fugit, aperiam, labore.</p>
 </div> 
 <br>
-<div class="max-width-250">
+<div class="max-width">
 	<p>我是 max-width: 500px</p>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dicta sapiente, dolorum nisi aliquam amet impedit earum laborum consectetur sunt. Culpa aperiam ducimus itaque officiis iste dolores. Fugit, aperiam, labore.</p>
 </div> 
 ```
-```
-.width-250 {
+```css
+.width {
   width: 500px;
 }
 
-.max-width-250 {
+.max-width {
   max-width: 500px;
 }
 ```
@@ -364,7 +362,7 @@ JSFiddle：https://goo.gl/PGYXKA
 ---
 
 ## 顏色、透明度、背景
-```
+```css
 color // 文字顏色
 opacity // 不透明度，0完全透明 1完全不透明
 
@@ -374,5 +372,5 @@ background-size // 背景圖片尺寸
 	// 絕對寬、高
 	// 母元素百分比
 	// contain 按比例放大，但仍保持全圖可見
-	// cover 按比例放大，圖片滿足寬or高需求，可能會切圖
+	// cover 按比例放大，圖片滿足寬或高需求，可能會切圖
 ```
