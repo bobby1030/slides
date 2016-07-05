@@ -380,3 +380,17 @@ background-size /* 背景圖片尺寸 */
 	/* contain 按比例放大，但仍保持全圖可見 */
 	/* cover 按比例放大，圖片滿足寬或高需求，可能會切圖 */
 ```
+
+---
+
+## 邊框
+```css
+border: <width> <style> <color>;
+/*
+width -> 寬度
+style -> dotted, dashed, solid, double, etc.
+color -> 顏色
+*/
+border-radius: /* 半徑 */
+/* 圓角效果 */  
+```
