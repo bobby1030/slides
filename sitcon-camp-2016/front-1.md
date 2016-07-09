@@ -383,9 +383,39 @@ background-size /* 背景圖片尺寸 */
 
 ---
 
+## Box Model
+
+![Box Model](./assets/css/box-model/box-model.gif)
+
+^^^
+
+## Box Model 如何計算元素寬度？
+```css
+div {
+	width: 200px;
+	margin: 10px;
+	padding: 20px;
+	box-sizing: content-box; <!-- 我是預設值 -->
+}
+```
+元素寬度 = 200 + 20 + 10 = 230 px
+
+```css
+div {
+	width: 200px;
+	margin: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+```
+元素寬度 = 200px   
+內容物寬度 = 200 - 10 - 20 = 170 px
+
+---
+
 ## 邊框
 ```css
-border: <width> <style> <color>;
+border: width, style, color;
 /*
 width -> 寬度
 style -> dotted, dashed, solid, double, etc.
@@ -393,4 +423,18 @@ color -> 顏色
 */
 border-radius: /* 半徑 */
 /* 圓角效果 */  
+```
+
+---
+
+## Margin & Padding
+```css
+margin: 上, 右, 下, 左
+margin: 上, 左右, 下
+margin: 上下, 左右
+margin: 四周
+padding-top: 上
+padding-right: 右
+padding-bottom: 下
+padding-left: 左
 ```
