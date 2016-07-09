@@ -318,7 +318,7 @@ Keyword /* black, yellow, etc. */
 
 ---
 
-## 元素尺寸
+## Size
 ```css
 width /* 元素寬度 */
 height /* 元素高度 */
