@@ -324,6 +324,8 @@ div {
 	width: /* 元素寬度 */;
 	height: /* 元素高度 */;
 	max-width: /* 限制元素最大寬度 */;
+	min-width: /* 限制元素最小寬度 */;
+	max-height: /* 限制元素最大高度 */;
 	min-height: /* 限制元素最小高度 */;
 }
 ```
