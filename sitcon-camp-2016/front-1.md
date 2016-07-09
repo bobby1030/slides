@@ -496,7 +496,14 @@ div {
 
 ---
 
-## Fonts & Text-Decoration
+## Fonts & Text Decoration
 ```css
-font-size: 2em
+div {
+	font-size: <!-- 字體大小 -->;
+	font-weight: <!-- 字重 -->;
+	font-family: 'Noto Sans CJK TC', sans-serif <!-- 字型 -->;
+	line-height: <!-- 行高 -->;
+	text-decoration: underline | line-through | none
+		<!-- none 可以拿來消除預設樣式（連結的底線） -->
+}
 ```
