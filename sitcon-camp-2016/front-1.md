@@ -420,7 +420,7 @@ div {
 ## Border
 ```css
 div {
-	border: width, style, color;
+	border: width style color;
 	/*
 	width -> 寬度
 	style -> dotted, dashed, solid, double, etc.
@@ -436,9 +436,9 @@ div {
 ## Margin & Padding
 ```css
 div {
-	margin: 上, 右, 下, 左;
-	margin: 上, 左右, 下;
-	margin: 上下, 左右;
+	margin: 上 右 下 左;
+	margin: 上 左右 下;
+	margin: 上下 左右;
 	margin: 四周;
 	padding-top: 上;
 	padding-right: 右;
@@ -507,3 +507,99 @@ div {
 		<!-- none 可以拿來消除預設樣式（連結的底線） -->
 }
 ```
+
+---
+
+## Shadow
+給網頁設計師的《格雷的五十道陰影》   
+![](./assets/fifty-shades-of-grey.jpg)
+
+^^^
+
+## Shadow
+```css
+div {
+	box-shadow: x軸位移 Y軸位移 [模糊半徑] 顏色;
+	text-shadow: x軸位移 Y軸位移 [模糊半徑] 顏色;
+}
+```
+
+^^^
+
+不管多麼單調的東西，加上陰影就變漂亮了呢！   
+｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡
+
+---
+
+# 基礎 CSS 技能點完了！
+## 是時候開始打副本了~
+
+---
+
+## CSS Advanced - transform
+
+^^^
+
+* 在 CSS Level 3 被提出
+* 仍然在實驗中，尚未成為標準
+	* 使用時務必參考相容性表格
+	* 記得加上供應商前綴
+		* -webkit-
+		* -moz-
+		* -ms-
+* 用純 CSS 來解決平移、旋轉、縮放、傾斜的需求
+	* No More Photoshop & Images!
+
+^^^
+
+### translate() & rotate()
+```html
+<p>Transformed element</p>
+```
+```css
+p {
+	transform: translate(100px, 100px) rotate(10deg);
+			<!-- XY軸位移100px --> <!-- 順時鐘旋轉20度 -->
+	
+	transform-origin: 0 -250px;
+			<!-- 旋轉軸心 -->
+}
+```
+<p style="border: solid red; transform:translate(100px, 100px) rotate(10deg);color: black;background-color: white;">Transformed element</p>
+
+^^^
+
+### skew()
+```html
+<p class="transformed">bar</p>
+```
+```css
+.transformed {
+	transform: skew(10deg);
+	/* 跟 skewX(10deg); 有一樣的效果 */
+}
+```
+<p style="background-color: white;color: black;transform: skew(10deg);width: 60px;height: 60px;margin: 0 auto;">bar</p>
+
+^^^
+
+### scale()
+
+![scale()](./assets/css/scale/scale.png)
+
+^^^
+
+### scale()
+```html
+<p>我沒被放大</p>
+<p class="scale">我被放大了</p>
+```
+```css
+.scale {
+	transform: scale(1, 2)
+	<!-- X	放大1倍，Y放大3倍 -->
+}
+```
+<p style="background-color: white;color: black;">我沒被放大</p>
+<br>
+<p style="background-color: white;color: black;transform: scale(1, 3);">我被放大了</p>
