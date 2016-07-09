@@ -438,3 +438,50 @@ padding-right: 右
 padding-bottom: 下
 padding-left: 左
 ```
+
+---
+
+## Position
+```css
+div {
+  position: static; <!-- 我是預設值 -->
+}
+```
+↑ static 下，如何排版交由瀏覽器決定
+
+```css
+div {
+	position: relative;
+}
+```
+↑ relative 一般來說表現會跟 static 一樣，   
+但你可以加入一些屬性 ↓
+```css
+div {
+	position: relative;
+	top: 50px;
+	left: -100px;
+}
+```
+↑ 以預設位置為基礎，往下 50px，往左 100px
+
+^^^
+
+```css
+div {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+}
+```
+↑ fixed 以瀏覽器的視圖(viewport)來定位   
+常用在頑固煩人的廣告、回頁首按鈕等等
+```css
+.parent > div {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+```
+↑ absolute 以母元素左上角為基準的相對位置   
+此例：距左上方向右30px，並向下 30px
