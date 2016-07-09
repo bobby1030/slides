@@ -513,7 +513,7 @@ div {
 ---
 
 ## Shadow
-給網頁設計師的《格雷的五十道陰影》   
+《格雷的五十道陰影》   
 ![](./assets/fifty-shades-of-grey.jpg)
 
 ^^^
