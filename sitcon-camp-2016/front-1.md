@@ -367,7 +367,7 @@ JSFiddle：https://goo.gl/PGYXKA
 
 ---
 
-## 顏色、透明度、背景
+## Color & Background
 ```css
 color /* 文字顏色 */
 opacity /* 不透明度，0完全透明 1完全不透明 */
@@ -413,7 +413,7 @@ div {
 
 ---
 
-## 邊框
+## Border
 ```css
 border: width, style, color;
 /*
@@ -485,3 +485,6 @@ div {
 ```
 ↑ absolute 以母元素左上角為基準的相對位置   
 此例：距左上方向右30px，並向下 30px
+
+---
+
