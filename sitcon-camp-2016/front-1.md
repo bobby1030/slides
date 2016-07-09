@@ -320,10 +320,12 @@ Keyword /* black, yellow, etc. */
 
 ## Size
 ```css
-width /* 元素寬度 */
-height /* 元素高度 */
-max-width / max-height /* 限制元素最高寬/高度 */
-min-width / min-height /* 限制元素最小寬/高度 */
+div {
+	width: /* 元素寬度 */;
+	height: /* 元素高度 */;
+	max-width: /* 限制元素最大寬度 */;
+	min-height: /* 限制元素最小高度 */;
+}
 ```
 
 ^^^
@@ -369,16 +371,18 @@ JSFiddle：https://goo.gl/PGYXKA
 
 ## Color & Background
 ```css
-color /* 文字顏色 */
-opacity /* 不透明度，0完全透明 1完全不透明 */
-
-background-color /* 背景顏色（常搭配 div 做色塊） */
-background-image: url("位置") /* 背景圖片 位置可以是相對或絕對 */
-background-size /* 背景圖片尺寸 */
-	/* 絕對寬、高 */
-	/* 母元素百分比 */
-	/* contain 按比例放大，但仍保持全圖可見 */
-	/* cover 按比例放大，圖片滿足寬或高需求，可能會切圖 */
+div {
+	color: /* 文字顏色 */;
+	opacity: /* 不透明度，0完全透明 1完全不透明 */;
+	
+	background-color: /* 背景顏色（常搭配 div 做色塊） */;
+	background-image: url("位置") /* 背景圖片 位置可以是相對或絕對 */;
+	background-size: /* 背景圖片尺寸 */;
+		/* 絕對寬、高 */
+		/* 母元素百分比 */
+		/* contain 按比例放大，但仍保持全圖可見 */
+		/* cover 按比例放大，圖片滿足寬或高需求，可能會切圖 */
+}
 ```
 
 ---
@@ -415,28 +419,32 @@ div {
 
 ## Border
 ```css
-border: width, style, color;
-/*
-width -> 寬度
-style -> dotted, dashed, solid, double, etc.
-color -> 顏色
-*/
-border-radius: /* 半徑 */
-/* 圓角效果 */  
+div {
+	border: width, style, color;
+	/*
+	width -> 寬度
+	style -> dotted, dashed, solid, double, etc.
+	color -> 顏色
+	*/
+	border-radius: /* 半徑 */
+	/* 圓角效果 */  
+}
 ```
 
 ---
 
 ## Margin & Padding
 ```css
-margin: 上, 右, 下, 左
-margin: 上, 左右, 下
-margin: 上下, 左右
-margin: 四周
-padding-top: 上
-padding-right: 右
-padding-bottom: 下
-padding-left: 左
+div {
+	margin: 上, 右, 下, 左;
+	margin: 上, 左右, 下;
+	margin: 上下, 左右;
+	margin: 四周;
+	padding-top: 上;
+	padding-right: 右;
+	padding-bottom: 下;
+	padding-left: 左;
+}
 ```
 
 ---
@@ -488,3 +496,7 @@ div {
 
 ---
 
+## Fonts & Text-Decoration
+```css
+font-size: 2em
+```
