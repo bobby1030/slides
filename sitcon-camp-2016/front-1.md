@@ -13,7 +13,7 @@
 * 魯宅國中生
 * ReactJS 廚
 * http://about.bobbyrealms.info
-* angela.bobby@gmail.com
+* https://github.com/bobby1030
 
 
 ---
