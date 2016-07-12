@@ -41,6 +41,7 @@
 ^^^
 
 ## 收個信還要一直 F5 很煩欸 (#`Д´)ﾉ
+![F5](./assets/f5-crack.jpg)
 
 ^^^
 
@@ -599,7 +600,7 @@ p {
 ```css
 .scale {
 	transform: scale(1, 2)
-	<!-- X	放大1倍，Y放大3倍 -->
+	<!-- X放大1倍，Y放大3倍 -->
 }
 ```
 <p style="background-color: white;color: black;">我沒被放大</p>
