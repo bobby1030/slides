@@ -597,6 +597,7 @@ p {
 <p>我沒被放大</p>
 <p class="scale">我被放大了</p>
 ```
+
 ```css
 .scale {
 	transform: scale(1, 2)
@@ -606,3 +607,51 @@ p {
 <p style="background-color: white;color: black;">我沒被放大</p>
 <br>
 <p style="background-color: white;color: black;transform: scale(1, 3);">我被放大了</p>
+
+---
+
+## CSS Advanced - Animation
+
+^^^
+
+### CSS 中的過渡效果
+透明度   
+![opacity](./assets/css/transition/opacity.gif)
+
+^^^
+
+### It's Simple
+```html
+<div class="transition"></div>
+```
+
+```css
+div.transition {
+	width: 100px;
+	height: 100px;
+	background: black;
+	opacity: 0.1;
+	transition: opacity 1s;
+}
+div.transition:hover {
+	opacity: 1
+}
+```
+<video src="./assets/css/transition/result.ogv" autoplay loop></video>   
+https://jsfiddle.net/bobby1030/bsb71d1L/1/
+
+^^^
+
+width, height 等等屬性也都可以套用 transition 喔！
+https://mdn.io/transition
+
+^^^
+
+/* TODO: RWD */
+
+^^^
+
+## CONGRATULATIONS
+恭喜各位鄉民探索完 CSS 的世界   
+讓我們繼續往 JavaScript 的小宇宙前進吧   
+｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡
