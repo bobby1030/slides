@@ -519,7 +519,6 @@ div {
 
 ^^^
 
-## Shadow
 ```css
 div {
 	box-shadow: x軸位移 Y軸位移 [模糊半徑] 顏色;
@@ -533,6 +532,23 @@ div {
 ｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡
 
 ---
+
+## Display
+
+^^^
+
+```css
+div {
+	display: none // 把元素藏起來，完全不要顯示，也不要保留空位;
+	visibility: hidden // 把元素藏起來，但保留空位（可以想像成變透明）;
+}
+```
+
+^^^
+block, inline, inline-block
+![Display block, inline, inline-block](./assets/css/display/block.png)
+
+^^^
 
 # 基礎 CSS 技能點完了！
 ## 是時候開始打副本了~
@@ -645,11 +661,74 @@ https://jsfiddle.net/bobby1030/bsb71d1L/1/
 width, height 等等屬性也都可以套用 transition 喔！
 https://mdn.io/transition
 
+---
+
+## CSS Advanced - RWD
+![RWD Intro](./assets/css/rwd/intro.jpg)
+
 ^^^
 
-/* TODO: RWD */
+![RWD Meaning](./assets/css/rwd/detailed.jpg)
 
 ^^^
+
+```css
+@media not/only (裝置類型) and (media feature) and (media feature) and ... {
+  /* 當符合查詢時套用的 CSS 規則 */
+  div {
+  	width: 100px;
+  }
+}
+```
+
+https://mdn.io/media_queries
+
+^^^
+
+### 常用 media feature
+
+```css
+min-width // 超過查詢中指定寬度
+max-width // 未超過查詢中指定寬度
+min-height // 超過查詢中指定高度
+max-height // 未超過查詢中指定高度
+orientation=portrait // 高度大於或等於寬度(例：手機直立)
+orientation=landscape // 寬度大於高度(例：手機橫放)
+```
+
+^^^
+
+### Example
+
+```css
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+```
+
+^^^
+
+我在電腦上可以成功，但怎麽拿到手機上就爛掉了   
+(#`Д´)ﾉ
+
+^^^
+
+### Viewport
+
+```html
+<head>
+	<meta name="viewport" content="width=device-width">
+</head>
+```
+
+瀏覽器渲染畫面時會以「裝置寬度」為根據   
+「如果網頁沒有 RWD 就不需要也不建議加」
+
+更多 Viewport 屬性：https://goo.gl/ZlklPW
+
+---
 
 ## CONGRATULATIONS
 恭喜各位鄉民探索完 CSS 的世界   
