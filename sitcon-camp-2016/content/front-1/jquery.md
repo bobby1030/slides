@@ -195,3 +195,11 @@ $('.element').trigger('事件')
 |向上滑出 | slideUp()    |
 |向下滑入 | slideDown()  |
 |滑入切換 | slideToggle()|
+
+^^^
+
+## Q&A
+
+^^^
+
+## Thanks For Listening
