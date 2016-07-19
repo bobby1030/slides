@@ -64,3 +64,46 @@ $('#myDiv').on('click', function() {
   $(this).fadeOut()
 })
 ```
+
+---
+
+## Cons of jQuery
+http://youmightnotneedjquery.com/
+
+^^^
+
+## 速度很慢，效能很差
+
+^^^
+
+### DOM 選擇器效能
+<img src="./assets/jquery/performance/dom-selecting.png" width="70%">
+
+^^^
+
+你可以這樣寫原生
+```js
+var element = document.querySelectorAll('#myDiv')
+```
+
+^^^
+
+### 迴圈
+![looping](./assets/jquery/performance/loop.png)
+
+^^^
+
+你可以這樣寫原生
+```js
+[2, 5, 9, 7, 10].forEach(function(element){
+	// code
+})
+```
+
+^^^
+
+### 動畫
+* jQuery 使用 JavaScript 控制 CSS 屬性
+	* 效能很差，但支援很舊的瀏覽器 (F**k IE!)
+* CSS3 原生動畫（transition, keyframe)
+	* 效能好，但要新一點的瀏覽器才支援
