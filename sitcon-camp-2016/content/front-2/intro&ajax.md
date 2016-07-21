@@ -86,10 +86,14 @@
 ### 表單的 Submit 行為 #1
 ```html
 <form action="submit.php" method="get">
-	<!-- Code -->
+	<input type="text" name="name" value="">
+	<input type="radio" name="vegetarian" value="true">Vegetarian</input>
+	<input type="radio" name="vegetarian" value="false" checked>Non Vegetarian</input>
 </form>
 ```
 `method`：submit 後的行為，可為 `get` 或 `post`
+
+Result: `submit.php?name=ㄗㄑ&vegetarian=false`
 
 ^^^
 
@@ -137,3 +141,68 @@ $('#form').on('submit', function(){
 
 ### AJAX 網頁的資訊交換
 ![](./assets/ajax/progress/ajax progress.png)
+
+---
+
+## 使用 jQuery 送出 AJAX 請求
+
+^^^
+
+### `$.ajax` 基本結構
+
+```js
+$.ajax({
+	url: "http://example.com/api/v2/login",
+	data: $('form').serialize(),
+	type:"POST"
+})
+```
+* `url`: 要請求的網址
+* `data`: 要送出的資料
+	* `type` 如果是 `"GET"` 就會自動附加到網址後
+* `type`: HTTP請求類型 (ex. `GET`, `POST`, `PUT`)
+
+^^^
+
+### Response Handler
+
+```js
+$.ajax({
+	// 省略
+})
+	.done(function(data) {
+			// AJAX Success
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) {
+			// AJAX Fail
+	})
+```
+* `.done`: 請求成功的 callback
+	* `data`: 伺服器回應
+* `.fail`: 請求失敗的 callback
+	* `textStatus`: 簡易版的錯誤訊息
+	* `errorThrown`: HTTP 錯誤訊息
+
+^^^
+
+### Make It Easier
+```js
+$.get(url [,data][,success])
+$.post(url, [,data][,success])
+```
+
+^^^
+
+### `.serialize()`
+
+```html
+<form action="submit.php" method="get">
+	<input type="text" name="name" value="ㄗㄑ"></input>
+	<input type="radio" name="vegetarian" value="true">Vegetarian</input>
+	<input type="radio" name="vegetarian" value="false" checked>Non Vegetarian</input>
+</form>
+```
+```js
+$('form').serialize()
+// name=%E3%84%97%E3%84%91&vegetarian=false
+```
