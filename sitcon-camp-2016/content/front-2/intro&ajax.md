@@ -114,7 +114,7 @@ $('#form').on('submit', function(){
 ---
 
 ## AJAX
-### 異步 JavaScript 與 XML
+### 非同步 JavaScript 與 XML
 ![AJAX](./assets/ajax/logo.jpg)
 
 ^^^
