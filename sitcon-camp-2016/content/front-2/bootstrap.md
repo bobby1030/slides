@@ -69,6 +69,64 @@ Bootstrap 把網頁寬度切割成12等份
 		<div class="col-xs-12"></div>
 		<div class="col-xs-12"></div>
 		<div class="col-xs-12"></div>
-	</div>  
+	</div>
+	<div class="row">
+		<div class="col-sm-8"></div>
+		<div class="col-sm-4"></div>
+	</div>
 </div>
 ```
+
+^^^
+
+### Responsive utilities
+`.hidden`
+骯髒但是好用
+
+```html
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-sm-12 hidden-xs">Non Essential</div>
+		<div class="col-md-6 col-sm-12">I'm Essential</div>
+	</div>
+</div>
+```
+
+^^^
+
+### Text Alignment Classes
+
+![](./assets/css_framework/bootstrap_textalignment.png)
+
+```html
+<p class="text-left">Left aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-right">Right aligned text.</p>
+<p class="text-justify">Justified text.</p>
+<p class="text-nowrap">No wrap text.</p>
+```
+
+^^^
+
+### Components
+
+|           |              |
+|:---------:|:------------:|
+| Dropdowns | 下拉選單       |
+| Buttons   | 按鈕          |
+| Navbar    | 導航選單       |
+| Label     | 標籤          |
+| Badges    |   未讀計數     |
+| Jumbotron | HUUUGE入口界面 |
+| Thumbnail |    圖片卡片    |
+| Alert     |    警告訊息    |
+|ProgressBar|    進度條     |
+| Panels    |     區段      |
+
+---
+
+## Q&A
+
+^^^
+
+## Thanks For Listening
