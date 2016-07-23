@@ -1,10 +1,3 @@
-# SITCON Summer Camp
-# 前端分流課程 #2
-<br>
-2016-08-04 By BobbyHo
-
----
-
 ## HTML 中的使用者互動
 使用者與頁面互動的常用元件
 

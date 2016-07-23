@@ -1,3 +1,10 @@
+# SITCON Summer Camp
+# 前端分流課程 #2
+<br>
+2016-08-04 By BobbyHo
+
+---
+
 write less, do more.   
 ![jq logo](./assets/jquery/logo.png)
 
@@ -10,14 +17,17 @@ write less, do more.
 ### CSS 選擇器
 
 Before
+
 ```js
 var id = document.getElementById('elementID');
-var class = document.getElementsByClassName('elementClass');
+var selectClass = document.getElementsByClassName('elementClass');
 ```
+
 After
+
 ```js
 var id = $('#elementID');
-var class = $('.elementClass');
+var selectClass = $('.elementClass');
 ```
 
 選擇器的寫法就跟 CSS 沒兩樣 d(`･∀･)b
@@ -27,12 +37,15 @@ var class = $('.elementClass');
 ### 鏈式函數 chaining functions
 
 Before
+
 ```js
 var element = document.getElementById('myDiv');
 element.innerHTML = foobar;
 element.classList.add('tangoClass');
 ```
+
 After
+
 ```js
 $("#myDiv").html('foobar').addClass('tangoClass');
 ```
@@ -42,13 +55,16 @@ $("#myDiv").html('foobar').addClass('tangoClass');
 ### 更簡單的事件監聽器
 
 Before
+
 ```js
 var element = document.getElementById('myDiv');
 element.addEventListener('click', function() {
   // code
 })
 ```
+
 After
+
 ```js
 $('#myDiv').on('click', function() {
   // code
@@ -82,6 +98,7 @@ http://youmightnotneedjquery.com/
 ^^^
 
 你可以這樣寫原生
+
 ```js
 var element = document.querySelectorAll('#myDiv')
 ```
@@ -94,6 +111,7 @@ var element = document.querySelectorAll('#myDiv')
 ^^^
 
 你可以這樣寫原生
+
 ```js
 [2, 5, 9, 7, 10].forEach(function(element){
 	// code
@@ -160,10 +178,13 @@ $('.element')
 
 ### jQuery 的事件監聽器
 監聽事件：
+
 ```js
 $('.element').on('事件', callback)
 ```
+
 觸發事件：
+
 ```js
 $('.element').trigger('事件')
 ```
@@ -195,11 +216,3 @@ $('.element').trigger('事件')
 |向上滑出 | slideUp()    |
 |向下滑入 | slideDown()  |
 |滑入切換 | slideToggle()|
-
----
-
-## Q&A
-
----
-
-## Thanks For Listening

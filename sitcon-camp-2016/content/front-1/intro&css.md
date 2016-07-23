@@ -85,13 +85,13 @@ https://jsfiddle.net/
 
 ## Gist (By GitHub)
 https://gist.github.com/
-![Gist](./assets/gist.png)
+![Gist](./assets/gist.png)   
 片段程式碼共享、支援版本控制
 
 ^^^
 
 ## moqups
-https://moqups.com/
+https://moqups.com/   
 ![moqups](./assets/moqups.png)   
 建構網站雛形、記錄佈局靈感
 
@@ -742,3 +742,11 @@ orientation=landscape // 寬度大於高度(例：手機橫放)
 恭喜各位鄉民探索完 CSS 的世界   
 讓我們繼續往 JavaScript 的小宇宙前進吧   
 ｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡
+
+---
+
+## Q&A
+
+---
+
+## Thanks For Listening
