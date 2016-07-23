@@ -15,7 +15,8 @@ Data Visualization
 ^^^
 
 [雲端物聯網深度學習開放大數據探勘創業黑客松](https://www.facebook.com/CloudIoTOpenBigDataMiningStartup/)   
-[雲端物聯網主義大數據勞動黨](https://www.facebook.com/CloudIoTBigDataParty/)
+[雲端物聯網主義大數據勞動黨](https://www.facebook.com/CloudIoTBigDataParty/)   
+![](./assets/dv/fb-political_view.png)
 
 ^^^
 
