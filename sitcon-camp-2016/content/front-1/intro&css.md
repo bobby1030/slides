@@ -288,9 +288,10 @@ input:focus /* 當輸入焦點在 input 元素上時 */
 
 ^^^
 
-## Practice Makes Perfect
-CSS 選擇器小遊戲：CSS Diner
-http://flukeout.github.io/
+## Practice #1
+> CSS 選擇器   
+> 吃點東西吧！   
+> http://flukeout.github.io/
 
 ---
 
@@ -299,6 +300,7 @@ http://flukeout.github.io/
 ^^^
 
 ### 長度單位
+
 ```css
 px /* ≒ 1/96 inch */
 pt /* ≒ 1/72 inch */
@@ -327,7 +329,8 @@ currentColor /* 引用 color 屬性的值 */
 Keyword /* black, yellow, etc. */
 ```
 
-實用工具：w3school color picker http://www.w3schools.com/colors/colors_picker.asp
+實用工具：[MDN Color Picker](https://mdn.io/color_picker)
+
 
 ---
 
