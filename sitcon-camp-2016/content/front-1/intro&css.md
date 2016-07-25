@@ -98,10 +98,18 @@ https://moqups.com/
 ^^^
 
 ## Mozilla Developer Network
-https://developer.mozilla.org
+https://developer.mozilla.org/
 ![mdn](./assets/mdn.jpg)   
 網頁開發者的百科全書   
 By developers, for developers.
+
+^^^
+
+## Google
+https://www.google.com/
+![Google](./assets/google.jpg)
+The MOST Important Thing. 沒有之一
+
 
 ---
 
