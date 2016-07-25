@@ -222,7 +222,7 @@ div ~ p   /* 所有在 div 後，與 div 同級的 p 元素 */
 ^^^
 
 ## CSS Pseudo Classes
-CSS 偽元素 - CSS 世界的奇技淫巧
+CSS 偽類別 - CSS 世界的奇技淫巧
 
 ^^^
 
