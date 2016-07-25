@@ -181,7 +181,7 @@ $.ajax({
 ### Make It Easier
 ```js
 $.get(url [,data][,success])
-$.post(url, [,data][,success])
+$.post(url [,data][,success])
 ```
 
 ^^^
