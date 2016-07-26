@@ -567,9 +567,9 @@ div {
 ### block, inline, inline-block
 ![Display block, inline, inline-block](./assets/css/display/block.png)
 
-^^^
+---
 
-# 基礎 CSS 技能點完了！
+# 基礎 CSS 技能點完囉！
 ## 是時候開始打副本了~
 
 ---
@@ -672,8 +672,9 @@ div.transition:hover {
 	opacity: 1
 }
 ```
+
 <video src="./assets/css/transition/result.ogv" autoplay loop></video>   
-https://jsfiddle.net/bobby1030/bsb71d1L/1/
+https://jsfiddle.net/bobby1030/bsb71d1L/
 
 ^^^
 
@@ -746,6 +747,21 @@ orientation=landscape // 寬度大於高度(例：手機橫放)
 「如果網頁沒有 RWD 就不需要也不建議加」
 
 更多 Viewport 屬性：https://goo.gl/ZlklPW
+
+---
+
+## Practice #2
+![](./assets/practice/practice-2.png)   
+
+^^^
+
+運用所學的 CSS 技巧，為自己或是別人(?)創作一張簡單的名片吧！
+
+* 讓卡片寬度自動適應螢幕大小
+	* `max-width` 屬性或許可以幫到你
+* 試著運用一種 Transform 屬性
+* 試著套用 Transition 效果，讓畫面更活潑一些
+* 簡陋的範例 https://jsfiddle.net/bobby1030/ongb3hsu/
 
 ---
 
