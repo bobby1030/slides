@@ -17,21 +17,23 @@ $backgroundColor: #222;
 $mainColor: #fff;
 $headingColor: #fff;
 
-$mainFontSize: 33px;
+$mainFontSize: 32px;
 $mainFont: 'Noto Sans CJK TC', Helvetica, sans-serif;
 $headingFont: 'Noto Sans CJK TC', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
+$headingTextTransform: none;
 $headingFontWeight: 450;
 $linkColor: #42affa;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
-$heading1Size: 2em;
-$heading2Size: 1.5em;
-$heading3Size: 1.3em;
-$heading4Size: 1.2em;
+$heading1Size: 2.5em;
+$heading2Size: 2.0em;
+$heading3Size: 1.5em;
+$heading4Size: 1.3em;
+
+$blockMargin: 15px;
 
 section.has-light-background {
 	&, h1, h2, h3, h4, h5, h6 {
@@ -39,6 +41,15 @@ section.has-light-background {
 	}
 }
 
+.reveal {
+	
+	code {
+	        border-radius: .2em;
+	        padding: .1em .2em;
+	        line-height: 1.2em;
+	        font-size: 1.2em;
+	}
+}
 
 // Theme template ------------------------------
 @import "../template/theme";
