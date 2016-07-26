@@ -214,5 +214,5 @@ $('form').serialize()
 	* 網站會自動把你的 request 用 JSON 格式包在 response 裡 
 * 把回傳的 JSON Object 印出來
 	* 不管是在頁面上或 console.log() 都可以
-	* 如果能稍加美化更好！
+* 如果能稍加美化頁面更好！
 * 簡陋的範例 https://jsfiddle.net/bobby1030/qyootvuw/
