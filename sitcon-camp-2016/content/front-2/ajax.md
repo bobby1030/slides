@@ -199,3 +199,20 @@ $.post(url [,data][,success])
 $('form').serialize()
 // name=%E3%84%97%E3%84%91&vegetarian=false
 ```
+
+---
+
+## Practice #3
+![](./assets/practice/practice-3.png)
+
+^^^
+
+運用所學的 jQuery 與 AJAX 知識，設計一個表單吧！
+
+* 表單內容沒有限制
+* 發送 GET 請求給 https://httpbin.org/get
+	* 網站會自動把你的 request 用 JSON 格式包在 response 裡 
+* 把回傳的 JSON Object 印出來
+	* 不管是在頁面上或 console.log() 都可以
+	* 如果能稍加美化更好！
+* 簡陋的範例 https://jsfiddle.net/bobby1030/qyootvuw/
