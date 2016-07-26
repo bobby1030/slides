@@ -564,7 +564,7 @@ div {
 ```
 
 ^^^
-block, inline, inline-block
+### block, inline, inline-block
 ![Display block, inline, inline-block](./assets/css/display/block.png)
 
 ^^^
