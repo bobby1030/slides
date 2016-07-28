@@ -160,14 +160,14 @@ div ~ p   /* 所有在 div 後，與 div 同級的 p 元素 */
 選擇器： `.intro > p`
 
 ```html
-<div class="intro"> <!-- 我"沒"被選到QAQ -->
+<div class="intro"> <!-- X -->
 	<h1>I'm h1</h1>
 	<div>
-		<p>I'm p element</p> <!-- 我"沒"被選到QAQ -->
+		<p>I'm p element</p> <!-- X -->
 	</div>
 	<p>I'm p element 2</p> <!-- 選到了 -->
 </div>
-<p>I'm p element 3</p> <!-- 我"沒"被選到QAQ -->
+<p>I'm p element 3</p> <!-- X -->
 
 ```
 
@@ -179,14 +179,14 @@ div ~ p   /* 所有在 div 後，與 div 同級的 p 元素 */
 選擇器： `.intro p`
 
 ```html
-<div class="intro"> <!-- 我"沒"被選到QAQ -->
+<div class="intro"> <!-- X -->
 	<h1>I'm h1</h1>
 	<div>
 		<p>I'm p element</p> <!-- 選到了 -->
 	</div>
 	<p>I'm p element 2</p> <!-- 選到了 -->
 </div>
-<p>I'm p element 3</p> <!-- 我"沒"被選到QAQ -->
+<p>I'm p element 3</p> <!-- X -->
 
 ```
 
@@ -196,15 +196,15 @@ div ~ p   /* 所有在 div 後，與 div 同級的 p 元素 */
 選擇器： `.intro + p`
 
 ```html
-<div class="intro"> <!-- 我"沒"被選到QAQ -->
+<div class="intro"> <!-- X -->
 	<h1>I'm h1</h1>
 	<div>
-		<p>I'm p element</p> <!-- 我"沒"被選到QAQ -->
+		<p>I'm p element</p> <!-- X -->
 	</div>
-	<p>I'm p element 2</p> <!-- 我"沒"被選到QAQ -->
+	<p>I'm p element 2</p> <!-- X -->
 </div>
 <p>I'm p element 3</p> <!-- 選到了 -->
-<p>I'm p element 4</p> <!-- 我"沒"被選到QAQ -->
+<p>I'm p element 4</p> <!-- X -->
 
 ```
 
@@ -214,12 +214,12 @@ div ~ p   /* 所有在 div 後，與 div 同級的 p 元素 */
 選擇器： `.intro ~ p`
 
 ```html
-<div class="intro"> <!-- 我"沒"被選到QAQ -->
+<div class="intro"> <!-- X -->
 	<h1>I'm h1</h1>
 	<div>
-		<p>I'm p element</p> <!-- 我"沒"被選到QAQ -->
+		<p>I'm p element</p> <!-- X -->
 	</div>
-	<p>I'm p element 2</p> <!-- 我"沒"被選到QAQ -->
+	<p>I'm p element 2</p> <!-- X -->
 </div>
 <p>I'm p element 3</p> <!-- 選到了 -->
 <p>I'm p element 4</p> <!-- 選到了 -->
