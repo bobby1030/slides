@@ -155,5 +155,7 @@ Not Windows Update
 
 ---
 
-## Practice
-試著用 HighCharts 搭配任何統計數字，畫出任何形式的圖表吧！
+## Practice #5
+
+* 試著用 HighCharts 搭配任何統計數字，畫出任何形式的圖表吧！
+* 或者你也可以選擇用自己的方式，將數據漂亮的呈現出來！
