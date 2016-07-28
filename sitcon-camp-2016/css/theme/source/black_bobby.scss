@@ -43,11 +43,20 @@ section.has-light-background {
 
 .reveal {
 	
-	code {
+	code.hljs {
 	        border-radius: .2em;
 	        padding: .1em .2em;
 	        line-height: 1.2em;
 	        font-size: 1.2em;
+	        
+	}
+
+	code:not(.hljs) {
+			border-radius: .2em;
+	        padding: .1em .2em;
+	        line-height: 1.2em;
+	        font-size: 0.8em;
+        	background-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
