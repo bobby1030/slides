@@ -212,7 +212,6 @@ $('form').serialize()
 * 表單內容沒有限制
 * 發送 GET 請求給 https://httpbin.org/get
 	* 網站會自動把你的 request 用 JSON 格式包在 response 裡 
-* 把回傳的 JSON Object 印出來
-	* 不管是在頁面上或 console.log() 都可以
-* 如果能稍加美化頁面更好！
+* 把回傳的 JSON Object 在頁面上稍加美化，並呈現出來
+* 在收到回傳後顯示提示訊息，告訴使用者資訊已經成功交換
 * 簡陋的範例 https://jsfiddle.net/bobby1030/qyootvuw/
