@@ -245,7 +245,7 @@ a:link  /* a 元素中，沒訪問過的連結 */
 a:active  /* a 元素中，按下滑鼠到釋放滑鼠的期間 */
 a:visited  /* a 元素中，訪問過的連結 */
 
-input:focus /* 當輸入焦點在 input 元素上時 */
+input:focus 當輸入焦點在 input 元素上時
 ```
 
 ^^^
@@ -301,33 +301,35 @@ input:focus /* 當輸入焦點在 input 元素上時 */
 
 ### 長度單位
 
-```css
-px /* ≒ 1/96 inch */
-pt /* ≒ 1/72 inch */
-% /* 佔母元素的百分比 */
-em /* 1em 為「1倍的母元素字體大小」*/
-rem /* 1rem 為「1倍的 html 元素字體大小(預設16px)」 */
-vw, vh /* 代表螢幕可視範圍的百分比 */
-```
+|       |                      |
+|:-----:|:--------------------:|
+| `px`  | ≒ 1/96 inch          |
+| `pt`  | ≒ 1/72 inch          |
+| `%`   | 佔母元素的百分比         |
+| `em`  | 母元素字體大小的倍率      |
+| `rem` | `html` 元素字體大小的倍率 |
+| `vw`  | 螢幕可視寬度的百分比      |
+| `vh`  | 螢幕可視高度的百分比      |
 
 ^^^
 
 ### 時間單位
-* ms -- 毫秒
-* s -- 秒
+
+* `ms` -- 毫秒 
+* `s` -- 秒  
 
 ^^^
 
 ### 顏色
-```css
-rgb(r, g, b), rgba(r, g, b, alpha)
-	/* 白色為 rgb(255,255,255) */
-Hex
-	/* 16進位 白色為 #FFFFFF 也可寫為 #FFF */
-Transparent /* 透明 */
-currentColor /* 引用 color 屬性的值 */
-Keyword /* black, yellow, etc. */
-```
+
+|               |                       |
+|:-------------:|:---------------------:|
+|`rgb(r,g,b)`   | 三原色表示法             |
+|`rgba(r,g,b,a)`| 透明度 `0`~`1`,`1`為不透明|
+| `Hex`         | 16進位 白色為 `#FFFFFF`  |
+| `Transparent` | 完全透明~~公開~~         |
+| `currentColor`| 繼承 `color` 屬性的值    |
+| `關鍵字`        |   black, yellow, etc. |
 
 實用工具：[MDN Color Picker](https://mdn.io/color_picker)
 
@@ -339,20 +341,20 @@ Keyword /* black, yellow, etc. */
 ---
 
 ## Size
-```css
-div {
-	width: /* 元素寬度 */;
-	height: /* 元素高度 */;
-	max-width: /* 限制元素最大寬度 */;
-	min-width: /* 限制元素最小寬度 */;
-	max-height: /* 限制元素最大高度 */;
-	min-height: /* 限制元素最小高度 */;
-}
-```
+
+|              |              |
+|:------------:|:------------:|
+| `width`      | 元素寬度       |
+| `height`     | 元素高度       |
+| `max-width`  | 限制元素最大寬度 |
+| `min-width`  | 限制元素最小寬度 |
+| `max-height` | 限制元素最大高度 |
+| `min-height` | 限制元素最小高度 |
 
 ^^^
 
 ## What's Different 
+`max-width` & `width`
 ```html
 <div class="width">
 	<p>我是 width: 500px</p> 
@@ -387,7 +389,7 @@ JSFiddle：https://goo.gl/PGYXKA
 ![](./assets/css/width-min-width/02.png)   
 `width: 500px` 堅守寬度為 500px！   
 `max-width: 500px` 退縮了，寬度隨著螢幕變化   
-（別忘了還有 min-width 可以讓它不要變太小 >_<）
+（別忘了還有 `min-width` 可以讓它不要變太小 >_<）
 
 ---
 
