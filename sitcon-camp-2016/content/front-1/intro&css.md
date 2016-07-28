@@ -394,20 +394,22 @@ JSFiddle：https://goo.gl/PGYXKA
 ---
 
 ## Color & Background
-```css
-div {
-	color: /* 文字顏色 */;
-	opacity: /* 不透明度，0完全透明 1完全不透明 */;
-	
-	background-color: /* 背景顏色（常搭配 div 做色塊） */;
-	background-image: url("位置") /* 背景圖片 位置可以是相對或絕對 */;
-	background-size: /* 背景圖片尺寸 */;
-		/* 絕對寬、高 */
-		/* 母元素百分比 */
-		/* contain 按比例放大，但仍保持全圖可見 */
-		/* cover 按比例放大，圖片滿足寬或高需求，可能會切圖 */
-}
-```
+
+|                                 |              |
+|:-------------------------------:|:------------:|
+| `color`                         | 文字顏色       |
+| `opacity`                       | 不透明度，0~1  |
+| `background-color`              | 背景顏色（常搭配 div 做色塊） |
+| `background-image: url("")`  | 背景圖片 位置可以是相對或絕對 |
+| `background-size`               | 背景圖片尺寸 |
+
+^^^
+
+|  background-size 選項   |     說明                |
+|:----------------------:|:---------------------: |
+| `x y`                  |`px`, `%`, etc.         |
+| `contain`              | 按比例放大，但仍保持全圖可見  |
+| `cover`                | 圖片滿足寬或高需求，可能會切圖|
 
 ---
 
@@ -479,14 +481,14 @@ div {
   position: static; <!-- 我是預設值 -->
 }
 ```
-↑ static 下，如何排版交由瀏覽器決定
+↑ `static` 下，如何排版交由瀏覽器決定
 
 ```css
 div {
 	position: relative;
 }
 ```
-↑ relative 一般來說表現會跟 static 一樣，   
+↑ `relative` 一般來說表現會跟 `static` 一樣，   
 但你可以加入一些屬性 ↓
 ```css
 div {
@@ -495,7 +497,7 @@ div {
 	left: -100px;
 }
 ```
-↑ 以預設位置為基礎，往下 50px，往左 100px
+↑ 以預設位置為基礎，往下 `50px`，往左 `100px`
 
 ^^^
 
@@ -506,7 +508,7 @@ div {
 	right: 30px;
 }
 ```
-↑ fixed 以瀏覽器的視圖(viewport)來定位   
+↑ `fixed` 以瀏覽器的視圖(viewport)來定位   
 常用在頑固煩人的廣告、回頁首按鈕等等
 ```css
 .parent > div {
@@ -515,8 +517,8 @@ div {
 	left: 30px;
 }
 ```
-↑ absolute 以母元素左上角為基準的相對位置   
-此例：距左上方向右30px，並向下 30px
+↑ `absolute` 以母元素左上角為基準的相對位置   
+此例：距左上方向右`30px`，並向下 `30px`
 
 ---
 
