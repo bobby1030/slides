@@ -600,7 +600,7 @@ p {
 			<!-- XY軸位移100px --> <!-- 順時鐘旋轉20度 -->
 	
 	transform-origin: 0 -250px;
-			<!-- 旋轉軸心 -->
+			<!-- 變形基準點（此處等於旋轉軸心） -->
 }
 ```
 <p style="border: solid red; transform:translate(100px, 100px) rotate(10deg);color: black;background-color: white;">Transformed element</p>
