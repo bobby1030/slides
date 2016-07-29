@@ -134,6 +134,13 @@ By developers, for developers.
 
 ^^^
 
+## Lorem Ipsum 假文產生器
+需要廢文填版面嗎？
+http://www.lipsum.com/feed/html
+![lorem](./assets/lorem.png)
+
+^^^
+
 ## Google
 https://www.google.com/
 ![Google](./assets/google.jpg)
