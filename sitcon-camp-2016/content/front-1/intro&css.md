@@ -18,19 +18,35 @@
 
 ---
 
-# 風起雲湧的前端世界
+## 風起雲湧的前端世界
+![Front-end](./assets/front-end.jpg)
 
 ^^^
 
 ## 純 HTML 時代
 寫出來的網頁什麼樣式都沒有，相當簡陋
 
+<div style="margin: 0 auto;width:50%;background: white;padding: 5px;color: black;">Hello World Lorem ipsum dolor sit amet, est laborum.</div>
+
 ^^^
 
-## CSS & JS
-* CSS 的概念在 1994 年被提出
-* JavaScript 在 1995 年面世
+## 可以稍微漂亮一點嗎？
 
+^^^
+
+## CSS 的誕生
+
+* CSS 的概念在 1994 年被提出
+* 早期設計師喜歡用 `table` 來做 Layout
+	* 很醜很髒很亂
+	* CSS 解決了大部分的排版問題
+
+^^^
+
+## ECMAScript
+* 可以理解為 JavaScript 的標準化根基
+* 1997 年被提出
+* 最新版本是 ECMAScript 6
 
 ^^^
 
@@ -40,26 +56,39 @@
 
 ^^^
 
-## 收個信還要一直 F5 很煩欸 (#`Д´)ﾉ
+## [瀏覽器大戰](https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%A7%E6%88%98)
+
+*IE vs. Netscape*
+
+* 這是 Web 出現最多新奇（詭異）功能的時期
+* 增加新功能的優先度遠大於修 Bug
+* 為了商業利益，使用專屬格式，不尊重公開標準
+* IE 的勝出導致多數人屏棄公開標準
+	* 創造許多噁心的標準
+	* VBScript
+	* ActiveX
+	* DHTML
+	* Silverlight
+
+^^^
+
+### 收個信、搶個票還要一直 F5 很煩欸 (#`Д´)ﾉ
 ![F5](./assets/f5-crack.jpg)
 
 ^^^
 
 ## AJAX is here!
-#### 應用情境
+### 由 M$ 跟 Google 最早採用此技術
 * Gmail
 * 送出表單
 * ~~全自動掛機打掉別人的網站~~
 
-
 ^^^
 
-## JavaScript UI 框架
 <img src="./assets/JS_library_timeline.png" width="90%">
 
 ^^^
 
-## CSS 框架
 <img src="./assets/css_library_timeline.jpg" width="90%">
 
 ^^^
