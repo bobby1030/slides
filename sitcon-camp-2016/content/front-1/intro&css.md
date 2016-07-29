@@ -380,14 +380,14 @@ JSFiddle：https://goo.gl/PGYXKA
 
 ^^^
 
-在螢幕尺寸大於 500px 時，兩者沒有不同
+在螢幕尺寸大於 `500px` 時，兩者沒有不同
 ![](./assets/css/width-min-width/01.png)
 
 ^^^
 
-在螢幕尺寸小於 500px 時：   
+在螢幕尺寸小於 `500px` 時：   
 ![](./assets/css/width-min-width/02.png)   
-`width: 500px` 堅守寬度為 500px！   
+`width: 500px` 堅守寬度為 `500px`！   
 `max-width: 500px` 退縮了，寬度隨著螢幕變化   
 （別忘了還有 `min-width` 可以讓它不要變太小 >_<）
 
@@ -423,12 +423,12 @@ JSFiddle：https://goo.gl/PGYXKA
 ```css
 div {
 	width: 200px;
-	margin: 10px;
 	padding: 20px;
+	margin: 10px;
 	box-sizing: content-box; <!-- 我是預設值 -->
 }
 ```
-元素寬度 = 200 + 20 + 10 = 230 px
+元素寬度 = 200 + 20 + 10 = `230px`
 
 ```css
 div {
@@ -438,8 +438,8 @@ div {
 	box-sizing: border-box;
 }
 ```
-元素寬度 = 200px   
-內容物寬度 = 200 - 10 - 20 = 170 px
+元素寬度 = `200px`   
+內容物寬度 = 200 - 10 - 20 = `170px`
 
 ---
 
@@ -447,15 +447,16 @@ div {
 ```css
 div {
 	border: width style color;
-	/*
-	width -> 寬度
-	style -> dotted, dashed, solid, double, etc.
-	color -> 顏色
-	*/
 	border-radius: /* 半徑 */
 	/* 圓角效果 */  
 }
 ```
+
+|  border 選項 |     說明                             |
+|:-----------:|:-----------------------------------:|
+| `width`     | 寬度                                 |
+| `style`     | dotted, dashed, solid, double, etc. |
+| `color`     | 顏色                                 |
 
 ---
 
@@ -518,7 +519,7 @@ div {
 }
 ```
 ↑ `absolute` 以母元素左上角為基準的相對位置   
-此例：距左上方向右`30px`，並向下 `30px`
+此例：由左上方向右`30px`，並向下 `30px`
 
 ---
 
@@ -542,12 +543,10 @@ div {
 
 ^^^
 
-```css
-div {
-	box-shadow: x軸位移 Y軸位移 [模糊半徑] 顏色;
-	text-shadow: x軸位移 Y軸位移 [模糊半徑] 顏色;
-}
-```
+|  shadow 陰影    |     說明                    |
+|:--------------:|:--------------------------:|
+| `box-shadow`   | x軸位移 Y軸位移 [模糊半徑] 顏色  |
+| `text-shadow`  | x軸位移 Y軸位移 [模糊半徑] 顏色  |
 
 ^^^
 
@@ -560,15 +559,21 @@ div {
 
 ^^^
 
-```css
-div {
-	display: none // 把元素藏起來，完全不要顯示，也不要保留空位;
-	visibility: hidden // 把元素藏起來，但保留空位（可以想像成變透明）;
-}
-```
+![假的！](./assets/css/display/jiade.png)
 
 ^^^
-### block, inline, inline-block
+
+### 把東西藏起來，阿彌陀佛
+
+|                        |                                  |
+|:----------------------:|:--------------------------------:|
+| `display: none`        | 不要顯示、也不要保留空位               |
+| `visibility: hidden`   | 不要顯示、但保留空位（可以想像成變透明）   |
+
+
+^^^
+
+### `display: block, inline, inline-block`
 ![Display block, inline, inline-block](./assets/css/display/block.png)
 
 ---
@@ -583,18 +588,19 @@ div {
 ^^^
 
 * 在 CSS Level 3 被提出
-* 仍然在實驗中，尚未成為標準
+* 仍然在實驗中，尚未正式成為標準
 	* 使用時務必參考相容性表格
 	* 記得加上供應商前綴
 		* -webkit-
 		* -moz-
 		* -ms-
-* 用純 CSS 來解決平移、旋轉、縮放、傾斜的需求
+		* https://leaverou.github.io/prefixfree/
+* 用純 CSS 來解決平移、旋轉、縮放、傾斜等等需求
 	* No More Photoshop & Images!
 
 ^^^
 
-### translate() & rotate()
+### `translate()` & `rotate()`
 ```html
 <p>Transformed element</p>
 ```
@@ -611,7 +617,7 @@ p {
 
 ^^^
 
-### skew()
+### `skew()`
 ```html
 <p class="transformed">bar</p>
 ```
@@ -625,7 +631,7 @@ p {
 
 ^^^
 
-### scale()
+### `scale()`
 
 ![scale()](./assets/css/scale/scale.png)
 
@@ -682,7 +688,7 @@ https://jsfiddle.net/bobby1030/bsb71d1L/
 
 ^^^
 
-width, height 等等屬性也都可以套用 transition 喔！
+width, height 等等 相當多的屬性也都可以套用 transition 喔！
 https://mdn.io/transition
 
 ---
@@ -711,14 +717,14 @@ https://mdn.io/media_queries
 
 ### 常用 media feature
 
-```css
-min-width // 超過查詢中指定寬度
-max-width // 未超過查詢中指定寬度
-min-height // 超過查詢中指定高度
-max-height // 未超過查詢中指定高度
-orientation=portrait // 高度大於或等於寬度(例：手機直立)
-orientation=landscape // 寬度大於高度(例：手機橫放)
-```
+|                         |                             |
+|:-----------------------:|:---------------------------:|
+| `min-width`             | 超過查詢中指定寬度              |
+| `max-width`             | 未超過查詢中指定寬度            |
+| `min-height`            | 超過查詢中指定高度              |
+| `max-height`            | 未超過查詢中指定高度            |
+| `orientation=portrait ` | 高度大於或等於寬度(例：手機直立)   |
+| `orientation=landscape` | 寬度大於高度(例：手機橫放)       |
 
 ^^^
 
