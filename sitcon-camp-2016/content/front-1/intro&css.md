@@ -719,12 +719,12 @@ https://mdn.io/media_queries
 
 |                         |                             |
 |:-----------------------:|:---------------------------:|
-| `min-width`             | 超過查詢中指定寬度              |
-| `max-width`             | 未超過查詢中指定寬度            |
-| `min-height`            | 超過查詢中指定高度              |
-| `max-height`            | 未超過查詢中指定高度            |
-| `orientation=portrait ` | 高度大於或等於寬度(例：手機直立)   |
-| `orientation=landscape` | 寬度大於高度(例：手機橫放)       |
+| `min-width`             | >指定寬度              |
+| `max-width`             | ≤指定寬度            |
+| `min-height`            | >指定高度              |
+| `max-height`            | ≤指定高度            |
+| `orientation=portrait ` | 高度≥寬度(例：手機直立)   |
+| `orientation=landscape` | 寬度>高度(例：手機橫放)       |
 
 ^^^
 

@@ -31,10 +31,10 @@ Container > Row > Column > 元素
 ```html
 <div class="container">
 	<div class="row">
-		...
+		<!-- columns -->
 	</div>
 	<div class="row">
-		...
+		<!-- columns -->
 	</div>  
 </div>
 ```
@@ -51,11 +51,11 @@ Container > Row > Column > 元素
 Bootstrap 把網頁寬度切割成12等份   
 利用 column 來定義元素要佔據多少等份
 
-|            | <768px | ≥768px | ≥992px | ≥1200px |
-|-----------:|:------:|:------:|:------:|:-------:|
-|Class prefix|.col-xs-|.col-sm-|.col-md-|.col-lg- |
-|# of columns|   12   |   12   |   12   |    12   |
-|  Nestable  |  Yes   |  Yes   |  Yes   |   Yes   |
+|    寬度     |  <768px  |  ≥768px  |  ≥992px  |  ≥1200px  |
+|-----------:|:--------:|:--------:|:--------:|:---------:|
+|Class prefix|`.col-xs-`|`.col-sm-`|`.col-md-`|`.col-lg-` |
+|# of columns|    12    |    12    |    12    |     12    |
+|  Nestable  |   Yes    |   Yes    |   Yes    |    Yes    |
 
 ^^^
 

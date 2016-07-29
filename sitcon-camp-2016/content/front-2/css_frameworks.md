@@ -69,6 +69,6 @@
 ## Pure.css
 ![PureCSS](./assets/css_framework/purecss_intro.jpg)
 
-* Yahoo 出品（被賣掉惹QQ）
+* Yahoo 出品（被賣掉惹QwQ）
 * 超級輕量化，壓縮過後只有 4KB 大小
-* 主要面向 Layout，元件設計反而不是很討喜
+* 主要功能是 Layout，元件設計反而不是很討喜

@@ -95,6 +95,9 @@ $('#column').highcharts({
 })
 ```
 
+注意！ ** `name` 屬性不等於 X 軸的項目！**   
+X 軸項目名稱可以在 `xAsis` 或 `data` 的第一個欄位指定
+
 ^^^
 
 ### Data Situation #1 (Most Common)
@@ -134,7 +137,8 @@ Highcharts.setOptions({
 ---
 
 ## Data Update
-Not Windows Update
+Not Windows Update   
+不用等到天荒地老   
 ![Windows Update](./assets/dv/update-meme.jpg)
 
 ^^^
@@ -142,7 +146,7 @@ Not Windows Update
 ### Method #1
 1. 更改資料集中的資料
 2. 取得圖表的 DOM
-3. 重繪圖表
+3. 強制重繪圖表
 	* （無比較資料新舊差別，故沒有動畫）
 
 ^^^
@@ -150,7 +154,7 @@ Not Windows Update
 ### Method #2
 1. 取得圖表的 DOM
 2. 取得圖表中的資料數值
-3. 用 `update` 方法更新數值
+3. 用 `update` 方法直接更新圖表 DOM 的數值
 	* （會比較新舊資料差別，有動畫）
 
 ---
