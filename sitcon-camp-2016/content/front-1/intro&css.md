@@ -46,7 +46,7 @@
 ## ECMAScript
 * 可以理解為 JavaScript 的標準化根基
 * 1997 年被提出
-* 最新版本是 ECMAScript 6
+* 最新正式版本是 ECMAScript 6 (2015)
 
 ^^^
 
