@@ -147,13 +147,15 @@ $('#form').on('submit', function(){
 $.ajax({
 	url: "http://example.com/api/v2/login",
 	data: $('form').serialize(),
-	type:"POST"
+	type:"POST",
+	dataType: "json"
 })
 ```
 * `url`: 要請求的網址
 * `data`: 要送出的資料
 	* `type` 如果是 `GET` 就會自動附加到網址後
-* `type`: HTTP請求類型 (ex. `GET`, `POST`, `PUT`)
+* `type`: HTTP 請求類型 (ex. `GET`, `POST`, `PUT`)
+* `dataType`: HTTP 回傳的資料格式，若不符合，即判斷為 error
 
 ^^^
 
