@@ -38,15 +38,15 @@
 ### 單選
 `name`屬性相同會被歸在同一類
 ```html
-<input type="radio" name="radiogroup" value="Radio1" checked>Radio1</input>
-<input type="radio" name="radiogroup" value="Radio2">Radio2</input>
-<input type="radio" name="radiogroup" value="Radio3">Radio3</input>
-<input type="radio" name="radiogroup2" value="Radio4" checked>Radio4</input>
+<input type="radio" name="radiogroup" value="Radio1" checked><label>Radio1</label>
+<input type="radio" name="radiogroup" value="Radio2"><label>Radio2</label>
+<input type="radio" name="radiogroup" value="Radio3"><label>Radio3</label>
+<input type="radio" name="radiogroup2" value="Radio4" checked><label>Radio4</label>
 ```
-<input type="radio" name="radiogroup" value="Radio1" checked>Radio1</input>
-<input type="radio" name="radiogroup" value="Radio2">Radio2</input>
-<input type="radio" name="radiogroup" value="Radio3">Radio3</input>
-<input type="radio" name="radiogroup2" value="Radio4" checked>Radio4</input>
+<input type="radio" name="radiogroup" value="Radio1" checked><label>Radio1</label>
+<input type="radio" name="radiogroup" value="Radio2"><label>Radio2</label>
+<input type="radio" name="radiogroup" value="Radio3"><label>Radio3</label>
+<input type="radio" name="radiogroup2" value="Radio4" checked><label>Radio4</label>
 
 ^^^
 
@@ -57,9 +57,9 @@
 	Name:</br>
 		<input type="text" name="firstname" value="Mickey"><br>
 	Gender:<br>
-		<input type="radio" name="gender" value="male" checked>Male</input>
-		<input type="radio" name="gender" value="female">Female</input>
-		<input type="radio" name="gender" value="others">Others</input>
+		<input type="radio" name="gender" value="male" checked><input>Male</input>
+		<input type="radio" name="gender" value="female"><input>Female</input>
+		<input type="radio" name="gender" value="others"><input>Others</input>
 	<input type="submit" value="Submit">
 </form>
 ```
@@ -68,9 +68,9 @@
 	Name:</br>
 		<input type="text" name="firstname" value="Mickey"><br>
 	Gender:<br>
-		<input type="radio" name="gender" value="male" checked>Male</input>
-		<input type="radio" name="gender" value="female">Female</input>
-		<input type="radio" name="gender" value="others">Others</input></br>
+		<input type="radio" name="gender" value="male" checked><label>Male</label>
+		<input type="radio" name="gender" value="female"><label>Female</label>
+		<input type="radio" name="gender" value="others"><label>Others</label></br>
 	<input type="submit" value="Submit">
 </form>
 
@@ -80,8 +80,8 @@
 ```html
 <form action="submit.php" method="get">
 	<input type="text" name="name" value="">
-	<input type="radio" name="vegetarian" value="true">Vegetarian</input>
-	<input type="radio" name="vegetarian" value="false" checked>Non Vegetarian</input>
+	<input type="radio" name="vegetarian" value="true"><label>Vegetarian</label>
+	<input type="radio" name="vegetarian" value="false" checked><label>Non Vegetarian</label>
 </form>
 ```
 `method`：submit 後的行為，可為 `get` 或 `post`
@@ -192,9 +192,9 @@ $.post(url [,data][,success])
 
 ```html
 <form action="submit.php" method="get">
-	<input type="text" name="name" value="ㄗㄑ"></input>
-	<input type="radio" name="vegetarian" value="true">Vegetarian</input>
-	<input type="radio" name="vegetarian" value="false" checked>Non Vegetarian</input>
+	<input type="text" name="name" value="ㄗㄑ">
+	<input type="radio" name="vegetarian" value="true"><label>Vegetarian</label>
+	<input type="radio" name="vegetarian" value="false" checked><label>Non Vegetarian</label>
 </form>
 ```
 ```js
