@@ -655,10 +655,10 @@ p {
 
 ### `skew()`
 ```html
-<p class="transformed">bar</p>
+<p class="skewed">bar</p>
 ```
 ```css
-.transformed {
+.skewed {
 	transform: skew(10deg);
 	/* 跟 skewX(10deg); 有一樣的效果 */
 }
