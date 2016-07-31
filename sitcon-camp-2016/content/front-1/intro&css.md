@@ -655,10 +655,10 @@ p {
 
 ### `skew()`
 ```html
-<p class="transformed">bar</p>
+<p class="skewed">bar</p>
 ```
 ```css
-.transformed {
+.skewed {
 	transform: skew(10deg);
 	/* 跟 skewX(10deg); 有一樣的效果 */
 }
@@ -676,11 +676,11 @@ p {
 ### scale()
 ```html
 <p>我沒被放大</p>
-<p class="scale">我被放大了</p>
+<p class="scaled">我被放大了</p>
 ```
 
 ```css
-.scale {
+.scaled {
 	transform: scale(1, 2)
 	<!-- X放大1倍，Y放大3倍 -->
 }
