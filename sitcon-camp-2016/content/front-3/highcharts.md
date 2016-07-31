@@ -162,4 +162,6 @@ Not Windows Update
 ## Practice #5
 
 * 試著用 HighCharts 搭配任何統計數字，畫出任何形式的圖表吧！
+    * 推薦資料來源：http://data.taipei/
+        * 捷運進出站 http://goo.gl/FoZyP4
 * 或者你也可以選擇用自己的方式，將數據漂亮的呈現出來！
