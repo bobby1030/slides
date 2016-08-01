@@ -40,6 +40,8 @@
 * 早期設計師喜歡用 `table` 來做 Layout
 	* 很醜很髒很亂
 	* CSS 解決了大部分的排版問題
+   
+![Table Layout](./assets/css/table-layout.gif)
 
 ^^^
 
@@ -70,6 +72,8 @@
 	* DHTML
 	* Silverlight
 
+Note: 郵局 -> ActiveX
+
 ^^^
 
 ### 收個信、搶個票還要一直 F5 很煩欸 (#`Д´)ﾉ
@@ -86,6 +90,7 @@
 ^^^
 
 <img src="./assets/JS_library_timeline.png" width="90%">
+Note: Angular 後 -> 資料自動綁定 React -> 有些人喜歡，有些人不喜歡，因為 React 有一種潮味
 
 ^^^
 
@@ -95,6 +100,8 @@
 
 ## 學前端真的很可憐
 ◢▆▅▄▃崩╰(〒皿〒)╯潰▃▄▅▇◣
+
+Note: 今年的書，明年可以當泡麵蓋
 
 ---
 
@@ -130,7 +137,8 @@ https://moqups.com/
 https://developer.mozilla.org/
 ![mdn](./assets/mdn.jpg)   
 網頁開發者的百科全書   
-By developers, for developers.
+By developers, for developers.   
+** Don't use w3school **
 
 ^^^
 
