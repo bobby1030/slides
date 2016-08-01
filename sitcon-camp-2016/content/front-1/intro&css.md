@@ -281,7 +281,7 @@ a:link  /* a 元素中，沒訪問過的連結 */
 a:active  /* a 元素中，按下滑鼠到釋放滑鼠的期間 */
 a:visited  /* a 元素中，訪問過的連結 */
 
-input:focus 當輸入焦點在 input 元素上時
+input:focus /* 當輸入焦點在 input 元素上時 */
 ```
 
 ^^^
