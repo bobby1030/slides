@@ -3,6 +3,10 @@
 <br>
 2016-08-03 By BobbyHo
 
+---
+
+# Live Chat
+http://webchat.freenode.net/?channels=sitcon-camp-2016-front
 
 ---
 

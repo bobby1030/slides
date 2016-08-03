@@ -5,6 +5,11 @@
 
 ---
 
+# Live Chat
+http://webchat.freenode.net/?channels=sitcon-camp-2016-front
+
+---
+
 ## Display
 
 ^^^

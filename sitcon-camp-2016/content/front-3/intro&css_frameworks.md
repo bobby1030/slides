@@ -5,6 +5,11 @@
 
 ---
 
+# Live Chat
+http://webchat.freenode.net/?channels=sitcon-camp-2016-front
+
+---
+
 ## CSS 框架
 設計的大小事，框架都幫我做好了呢！
 
