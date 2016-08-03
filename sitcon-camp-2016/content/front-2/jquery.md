@@ -1,9 +1,3 @@
-# SITCON Summer Camp
-# 前端分流課程 #2
-<br>
-2016-08-04 By BobbyHo
-
----
 
 write less, do more.   
 ![jq logo](./assets/jquery/logo.png)
