@@ -91,7 +91,7 @@ http://webchat.freenode.net/?channels=sitcon-camp-2016-front
 ### 表單的 Submit 行為 #1
 ```html
 <form action="submit.php" method="get">
-	<input type="text" name="name" value="">
+	<input type="text" name="name" value="ㄗㄑ">
 	<input type="radio" name="vegetarian" value="true"><label>Vegetarian</label>
 	<input type="radio" name="vegetarian" value="false" checked><label>Non Vegetarian</label>
 </form>
