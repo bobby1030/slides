@@ -1,3 +1,15 @@
+# SITCON Summer Camp
+# 前端分流課程 #3
+<br>
+2016-08-04 By BobbyHo
+
+---
+
+# Live Chat
+http://webchat.freenode.net/?channels=sitcon-camp-2016-front
+
+---
+
 ## HTML 中的使用者互動
 使用者與頁面互動的常用元件
 
