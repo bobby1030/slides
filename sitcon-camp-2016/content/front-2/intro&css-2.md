@@ -204,6 +204,48 @@ https://mdn.io/transition
 
 ---
 
+### `@keyframes`
+跟 Flash、動畫軟體的關鍵影格有 87% 像
+
+^^^
+
+```css
+@keyframes myAnimation {
+	from {
+		/* 初始影格 */
+	}
+	to {
+		/* 結束影格 */
+	}
+}
+```
+
+^^^
+
+```css
+div {
+	position:relative;
+}
+
+div:hover {
+	animation: myAnimation 5s;
+	animation-fill-mode: forwards; /* 播放後的行為 */
+}
+
+@keyframes myAnimation {
+	from {
+		top: 0px;		
+	}
+	to {
+		top: 200px;
+	}
+}
+```
+
+https://jsfiddle.net/bobby1030/ks3ny341/
+
+---
+
 ## CSS Advanced - RWD
 ![RWD Intro](./assets/css/rwd/intro.jpg)
 
@@ -214,7 +256,7 @@ https://mdn.io/transition
 ^^^
 
 ```css
-@media not/only (裝置類型) and (media feature) and (media feature) and ... {
+@media (media feature) and (media feature) and ... {
   /* 當符合查詢時套用的 CSS 規則 */
   div {
   	width: 100px;
