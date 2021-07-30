@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>芋仔還是芋仔番薯？戰後台灣的國語政策與族群通婚</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+    <script src="./vendor/remark-latest.min.js"></script>
+    <link rel="stylesheet" href="./vendor/katex.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./vendor/katex.min.js"></script>
+    <script defer src="./vendor/auto-render.min.js"></script>
+    <script type="text/javascript">
+        var options = {
+            sourceUrl: "./20210730-language-policy-intermarriage.md",
+        };
+        var renderMath = function() {
+            // renderMathInElement(document.body);
+            // or if you want to use $...$ for math,
+            renderMathInElement(document.body, {
+                delimiters: [ // mind the order of delimiters(!?)
+                    {
+                        left: "$$",
+                        right: "$$",
+                        display: true
+                    }, {
+                        left: "$",
+                        right: "$",
+                        display: false
+                    }, {
+                        left: "\\[",
+                        right: "\\]",
+                        display: true
+                    }, {
+                        left: "\\(",
+                        right: "\\)",
+                        display: false
+                    },
+                ]
+            });
+        }
+        var slideshow = remark.create(options, renderMath);
+    </script>
+</body>
+
+</html>
