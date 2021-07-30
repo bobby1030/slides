@@ -127,7 +127,7 @@ layout: true
 .right-col[
 資料：1990 人口普查（$\mathrm{intermarriage}$​​）、1980 人口普查（外省老師比例）
 
-![intermarriage.svg](../../_resources/32aa6e9666e1458d812b7bb6b3f33556.svg)
+![intermarriage.svg](_resources/32aa6e9666e1458d812b7bb6b3f33556.svg)
 
 疑似有 age effect，年輕時就結婚的人比較不通婚、傾向內婚
 ]
@@ -167,7 +167,7 @@ layout: true
 .right-col[
 資料：1992、2007 社會變遷調查（地區為十五歲前常住地區）
 
-![twnese_ability.svg](../../_resources/11cdfd1406fe4ca1b2251ff8db0d399a.svg)
+![twnese_ability.svg](_resources/11cdfd1406fe4ca1b2251ff8db0d399a.svg)
 ]
 
 ---
@@ -178,7 +178,7 @@ layout: true
 ]
 
 .right-col[
-![chinese_ability.svg](../../_resources/7a1738d79c6d43368f5272b5a9bf45ae.svg)
+![chinese_ability.svg](_resources/7a1738d79c6d43368f5272b5a9bf45ae.svg)
 
 台語被壓抑，但國語也沒比較好
 ]
