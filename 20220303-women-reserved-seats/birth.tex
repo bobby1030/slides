@@ -1,0 +1,26 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{縣市議員檔 2SLS}
+\begin{tabular}{l*{2}{c}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+                    &\multicolumn{1}{c}{thirdChild}&\multicolumn{1}{c}{3 sex}\\
+\midrule
+elected\_female\_ratio&     -0.0497\sym{***}&       0.116         \\
+                    &    (0.0124)         &    (0.0639)         \\
+2 sex               &     -0.0292\sym{***}&     -0.0634\sym{***}\\
+                    &   (0.00111)         &   (0.00669)         \\
+1 sex               &     -0.0234\sym{***}&     -0.0452\sym{***}\\
+                    &   (0.00104)         &   (0.00657)         \\
+Population Control  &         Yes         &         Yes         \\
+Year FE             &         Yes         &         Yes         \\
+County FE           &         Yes         &         Yes         \\
+\midrule
+Mean                &      0.0753         &       0.554         \\
+Observations        &      293618         &       22110         \\
+Adj. R-square       &      0.0280         &     0.00704         \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}
