@@ -1,27 +1,27 @@
 \begin{table}[htbp]\centering
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \caption{2SLS Birth Outcomes of City Council Elections}
-    \adjustbox{max width=0.9\textwidth}{
+    \adjustbox{max width=0.85\textwidth}{
         \begin{tabular}{l*{4}{c}}
             \toprule
-                                   & \multicolumn{1}{c}{(1)}        & \multicolumn{1}{c}{(2)}        & \multicolumn{1}{c}{(3)}   & \multicolumn{1}{c}{(4)}   \\
-                                   & \multicolumn{1}{c}{thirdChild} & \multicolumn{1}{c}{thirdChild} & \multicolumn{1}{c}{third\_child\_son} & \multicolumn{1}{c}{third\_child\_son} \\
+                                   & \multicolumn{1}{c}{(1)}              & \multicolumn{1}{c}{(2)}              & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
+                                   & \multicolumn{2}{c}{Having 3rd Child} & \multicolumn{2}{c}{3rd Child is Son}                                                     \\
             \midrule
-            elected\_female\_ratio & -0.295\sym{***}                & -0.0497\sym{***}               & 0.0394                    & 0.116                     \\
-                                   & (0.0232)                       & (0.0124)                       & (0.0600)                  & (0.0639)                  \\
-            second\_child\_son       & -0.0292\sym{***}               & -0.0292\sym{***}               & -0.0632\sym{***}          & -0.0634\sym{***}          \\
-                                   & (0.00113)                      & (0.00111)                      & (0.00670)                 & (0.00669)                 \\
-            first\_child\_son       & -0.0237\sym{***}               & -0.0234\sym{***}               & -0.0453\sym{***}          & -0.0452\sym{***}          \\
-                                   & (0.00105)                      & (0.00104)                      & (0.00657)                 & (0.00657)                 \\
-            Population Control     & Yes                            & Yes                            & Yes                       & Yes                       \\
-            Year FE                & No                             & Yes                            & No                        & Yes                       \\
-            County FE              & No                             & Yes                            & No                        & Yes                       \\
+            Elected Female \%      & -0.295\sym{***}                      & -0.0496\sym{***}                     & 0.0429                  & 0.116                   \\
+                                   & (0.0235)                             & (0.0124)                             & (0.0606)                & (0.0639)                \\
+            2nd Child is Son       & -0.0293\sym{***}                     & -0.0292\sym{***}                     & -0.0632\sym{***}        & -0.0634\sym{***}        \\
+                                   & (0.00113)                            & (0.00111)                            & (0.00670)               & (0.00669)               \\
+            1st Child is Son       & -0.0237\sym{***}                     & -0.0234\sym{***}                     & -0.0454\sym{***}        & -0.0452\sym{***}        \\
+                                   & (0.00105)                            & (0.00104)                            & (0.00657)               & (0.00657)               \\
+            Log-Population Control & Yes                                  & Yes                                  & Yes                     & Yes                     \\
+            Year FE                & No                                   & Yes                                  & No                      & Yes                     \\
+            County FE              & No                                   & Yes                                  & No                      & Yes                     \\
             \midrule
-            Mean                   & 0.0753                         & 0.0753                         & 0.554                     & 0.554                     \\
-            Observations           & 293618                         & 293618                         & 22110                     & 22110                     \\
-            Adj. R-square          & .                              & 0.0280                         & 0.00664                   & 0.00704                   \\
+            Mean                   & 0.0753                               & 0.0753                               & 0.554                   & 0.554                   \\
+            Observations           & 293618                               & 293618                               & 22110                   & 22110                   \\
+            Adj. R-square          & .                                    & 0.0280                               & 0.00664                 & 0.00704                 \\
             \bottomrule
-            \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}                                                                                 \\
-            \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}                                                 \\
+            \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}                                                                                         \\
+            \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}                                                         \\
         \end{tabular}}
 \end{table}

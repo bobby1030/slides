@@ -18,7 +18,7 @@ fontsize: 9pt
 urlcolor: red
 linkstyle: bold
 aspectratio: 43
-date: 20220303
+date: March 03, 2022
 section-titles: false
 toc: true
 ---
@@ -50,8 +50,9 @@ Outcomes: son preference, crime against women, educational attainment/investment
 ---
 
 - Local council elections in Taiwan reserved 1 woman seat per 4 elected member
-	- That is, guaranteeing 14% ~ 25% female representatives
-- The rule of reserving seats in Taiwan provides neat identification of policy effect than India
+  - Guaranteeing 14% ~ 25% female representatives for electoral districts having $\geq$ 4 members
+- If the number of female elected doesn’t meet the requirement, then the lowest voted male winner will be replaced by highest voted female candidate.
+- This provides neater identification of policy effect than India
 
 ---
 
@@ -64,27 +65,27 @@ Outcomes: son preference, crime against women, educational attainment/investment
 
 ## Treatment
 
-$\text{Elected Female Ratio } E_{tCT} = \frac{\text{Female Member Size 女性當選人數}}{\text{Member Size 應選人數}}$,
+$\text{Elected Female \% } E_{tde} = \frac{\text{Female Member Size 女性當選人數}}{\text{Member Size 應選人數}}$ in year $t$, period $e$, and electoral district $d$.
 
-gathered from City Council Elections:
+Data gathered from the City Council Elections:
 
 - from 1998 to 2018 (6 periods in total)
-- Electoral district level
+- electoral district level
 
-We use IV to deal with endogeneity of $E_{tCT}$, instrumented by the ratio of reserved seats for women $R_{tCT}$.
+We use IV to deal with endogeneity of $E_{tde}$, instrumented by the % of reserved seats for women $R_{tde}$.
 
-## Instrumenting $E_{tCT}$ by Reserved Seats Ratio $R_{tCT}$
+## Instrumenting $E_{tde}$ by Reserved Seats Proportion $R_{tde}$
 
-$\text{Reserved Seats Ratio } R_{tCT} = \frac{\text{Reserved Seats 保留名額數}}{\text{Member Size 應選人數}}$, in period $t$, county $C$, and township $T$
+$\text{Reserved Seats \% } R_{tde} = \frac{\text{Reserved Seats 保留名額數}}{\text{Member Size 應選人數}}$ in year $t$, period $e$, and electoral district $d$.
 
 \begin{figure}[htb]
 \centering
-\scalebox{0.5}{
+\scalebox{0.7}{
 \begin{tikzpicture}
 \begin{axis}
 [
     xlabel={Elected Members}, 
-    ylabel={Reserved Seats Ratio ($R_{tCT}$)}, 
+    ylabel={Reserved Seats Ratio ($R_{tde}$)}, 
     xmin=0, 
     xmax=20, 
     ymin=0, 
@@ -98,56 +99,53 @@ $\text{Reserved Seats Ratio } R_{tCT} = \frac{\text{Reserved Seats 保留名額�
 
 We capture this discontinuous “ticks” as instrument of treatment.
 
-#### Exclusion Restriction
-
-Since reserved seats could only be “displayed” if candidates were actually elected, i.e. $E_{tCT}$ is the only channel that $R_{tCT}$ might affect outcomes.
-
 ## Outcomes
 
-- **1st Stage**: Effects of women reserved seats $R_{tCT}$ on **female political representation** $E_{tCT}$
+### 1st Stage
 
-- **2nd Stage**: its corresponding effects on **female social status**, including:
-	1. Female Leadership in Labor Market
-	
-		(Family Income Expenditure Survey 家庭收支調查 between 1998 to 2018)
-	
-	2. Son Preference
-	
-		(Newborns Birth Data 出生人口檔 between 1998 to 2006)
+Effects of women reserved seats on **female political representativeness**
 
-# Estimations
+### 2nd Stage
+
+Treatment effects on couple’s **son preference**
+
+- Variables:
+  1. **Third Child**: Dummy of having 3rd child or not
+  2. **Third Child is Son**: Dummy of 3rd child being male
+- Data: Newborns Birth Data 出生人口檔 between 1998 to 2006
+- Observation: couple level
 
 ## 2SLS Specification
 
-- Treatment: county/township level
-- Outcome: individual level
+2nd Stage:
+$$
+Y_{itde} = \alpha + \beta_1 \hat{E_{tde}} + \gamma_1 \ln \operatorname{population}_{\text{county}} + \delta_t + \delta_{d} + \epsilon_i
+$$
 
+1st Stage:
 $$
-Y_{itCT} = \alpha + \beta_1 \hat{E_{tCT}} + (\delta_t + \delta_{C}) + (\gamma_1 \operatorname{population}_{C} + \gamma_2' \mathbf{X}_i) + \epsilon_i
+\hat{E_{itde}} = \alpha + \beta_1 R_{tde}  + \gamma_1 \ln \operatorname{population}_{\text{county}} + \delta_t + \delta_{d}
 $$
-$$
-\hat{E_{tCT}} = \alpha + \beta_1 R_{tCT}  + (\delta_t + \delta_{C}) + (\gamma_1 \operatorname{population}_{C} + \gamma_2' \mathbf{X}_i)
-$$
+
+Controlling $\ln \operatorname{population}$ to resolve omitted variable bias.
+
+# Estimations
 
 ## First Stage
 
+Elasticity of reserved seats on female elected and female candidates are high.
+
 \include{1ststage.tex}
 
-## Outcome: Female Leadership
-
-\include{iv_isSupervisor.tex}
-
-## Outcome: Third Child & Sex Ratio
+## Outcome: Son Preference
 
 \include{birth.tex}
 
-## Outcome: Third Child & Sex Ratio
+## Outcome: Subgroup Son Preference
 
-Interacted with subgroup: Whether first two child are both daughter.
+Treatment interacted with dummy “two child both daughter”
 
 \include{birth_sexgroup.tex}
-
----
 
 ## Discussion
 
@@ -155,7 +153,7 @@ Increased female seats might reduce people’s willingness to pay for sons.
 
 ### Model (1), (2)
 
-- Gave up fertilizing 3rd child for those who already had 2 daughters
+- For those who already had 2 daughters: gave up having 3rd child 
 - Son preference weaken
 
 ### Model (3), (4)
@@ -164,7 +162,7 @@ Increased female seats might reduce people’s willingness to pay for sons.
 	- *“insist to give a shot at third child”*
 - Sex selection existed, and higher female representation didn’t abolish it.
 
-# Future Development
+# Potential Issues
 
 ### Outcomes on Gender Attitudes
 
@@ -174,7 +172,7 @@ Increased female seats might reduce people’s willingness to pay for sons.
 
 - Elected or Candidacy?
 
-### Potential Mechanisms
+### Mechanisms
 
 - Role-model effect
 - Policy effect
