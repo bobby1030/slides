@@ -5,16 +5,16 @@ header-includes:
   - \usepackage{pgfplots}
   - \usepackage{adjustbox}
   - \usepackage{booktabs}
+  - \linespread{1.3}
 author: "Yu-Hsin Ho"
 institute: "Department of Economics, National Taiwan University"
-topic: "Pandoc how-to"
-theme: "Frankfurt"
-colortheme: "beaver"
-mainfont: "Charter"
-CJKmainfont: "GenRyuMin TW"
+theme: "metropolis"
+colortheme: "default"
+mainfont: "Fira Sans"
+CJKmainfont: "AR UDJingXiHeiPU30"
 CJKoptions:
   - ItalicFont=AR PL UKai TW
-fontsize: 10pt
+fontsize: 9pt
 urlcolor: red
 linkstyle: bold
 aspectratio: 43
@@ -27,7 +27,7 @@ toc: true
 
 ## A Progressive Gender Perspective of *ROC Consitution*
 
-> 中華民國憲法第 134 條
+> *中華民國憲法第 134 條*
 >
 > 各種選舉，應規定婦女當選名額，其辦法以法律定之。
 
@@ -37,49 +37,45 @@ toc: true
 
 ---
 
-- Past researches on effects of women political representation utilized **a similar natural experiment in India**
-	- 1993 Constitution Amendment in India: 
-		- 1/3 seats reserved for women in local council elections
-		- Higher female political representation due to this policy
-		- **Identification**: States adopting this policy was designated randomly, causing random treatment and time variation
-	- Outcomes: son preference, crime against women, educational attainment/investment, gender attitudes, etc.
+Past researches on effects of women political representation utilized a natural experiment in India
+
+### 1993 Constitution Amendment in India
+
+- 1/3 seats reserved for women in local council elections
+- Higher female political representation due to this policy
+- **Identification**: States adopting this policy was designated randomly, causing random treatment and time variation
+
+Outcomes: son preference, crime against women, educational attainment/investment, gender attitudes, etc.
 
 ---
 
-- In practice, most elections in Taiwan reserved 1 women seat per 4 elected member in the electoral district
-	- That is, guaranteeing 14% ~ 25% female members at least
-- The case in Taiwan provides neater identification than India
-	- Number of elected members determined by population size
+- Local council elections in Taiwan reserved 1 woman seat per 4 elected member
+	- That is, guaranteeing 14% ~ 25% female representatives
+- The rule of reserving seats in Taiwan provides neat identification of policy effect than India
 
 ---
 
-- Question we’re asking: 
-	- Effects of women reserved seats on **female political representation**
-	- And its corresponding effects on **female social status**
+## Main Question
+
+- Effects of women reserved seats on **female political representation**
+- And its corresponding effects on **female social status**
 
 # Data and Identification Strategy
 
 ## Treatment
 
-$\text{Elected Female Ratio } E_{tT} = \frac{\text{Female Member Size 女性當選人數}}{\text{Member Size 應選人數}}$, gathered from:
+$\text{Elected Female Ratio } E_{tCT} = \frac{\text{Female Member Size 女性當選人數}}{\text{Member Size 應選人數}}$,
 
-1. City Council Elections
+gathered from City Council Elections:
 
-	- from 1998 to 2018 (6 periods in total)
-	- Electoral district level
+- from 1998 to 2018 (6 periods in total)
+- Electoral district level
 
-2. Legislator Elections
+We use IV to deal with endogeneity of $E_{tCT}$, instrumented by the ratio of reserved seats for women $R_{tCT}$.
 
-	- from 1998 to 2004 (3 periods in total)
-	- Electoral district level
+## Instrumenting $E_{tCT}$ by Reserved Seats Ratio $R_{tCT}$
 
-Endogeneity: Higher female elected rate might be correlated with positive gender attitudes towards women.
-
-- We use 2SLS to estimate the treatment effect of female political representation, instrumented by the ratio of reserved seats for women.
-
-## Instrumenting $E_{tT}$ by Reserved Seats Ratio $R_{tT}$
-
-$\text{Reserved Seats Ratio } R_{tT} = \frac{\text{Reserved Seats 保留名額數}}{\text{Member Size 應選人數}}$
+$\text{Reserved Seats Ratio } R_{tCT} = \frac{\text{Reserved Seats 保留名額數}}{\text{Member Size 應選人數}}$, in period $t$, county $C$, and township $T$
 
 \begin{figure}[htb]
 \centering
@@ -88,7 +84,7 @@ $\text{Reserved Seats Ratio } R_{tT} = \frac{\text{Reserved Seats 保留名額�
 \begin{axis}
 [
     xlabel={Elected Members}, 
-    ylabel={Reserved Seats Ratio ($R_{tT}$)}, 
+    ylabel={Reserved Seats Ratio ($R_{tCT}$)}, 
     xmin=0, 
     xmax=20, 
     ymin=0, 
@@ -100,38 +96,87 @@ $\text{Reserved Seats Ratio } R_{tT} = \frac{\text{Reserved Seats 保留名額�
 }
 \end{figure}
 
-We capture this discontinuous shock as instrument of treatment.
+We capture this discontinuous “ticks” as instrument of treatment.
 
-Exclusion Restriction: Reserved seats could only be “displayed” if candidates were actually elected.
-- $E_{tT}$ is the only channel that $R_{tT}$ might affect outcomes.
+#### Exclusion Restriction
+
+Since reserved seats could only be “displayed” if candidates were actually elected, i.e. $E_{tCT}$ is the only channel that $R_{tCT}$ might affect outcomes.
 
 ## Outcomes
 
-1. Political Performance (1st Stage of 2SLS): Elected Female Ratio $E_{tT}$
+- **1st Stage**: Effects of women reserved seats $R_{tCT}$ on **female political representation** $E_{tCT}$
 
-2. Female Status: Son Preference
+- **2nd Stage**: its corresponding effects on **female social status**, including:
+	1. Female Leadership in Labor Market
 	
-	> Newborns Birth Data from MOI between 1998 to 2018
+		(Family Income Expenditure Survey 家庭收支調查 between 1998 to 2018)
 	
-	1. Third Child
-	2. Sex Ratio of the Third Child
+	2. Son Preference
+	
+		(Newborns Birth Data 出生人口檔 between 1998 to 2006)
 
 # Estimations
 
+## 2SLS Specification
+
+- Treatment: county/township level
+- Outcome: individual level
+
+$$
+Y_{itCT} = \alpha + \beta_1 \hat{E_{tCT}} + (\delta_t + \delta_{C}) + (\gamma_1 \operatorname{population}_{C} + \gamma_2' \mathbf{X}_i) + \epsilon_i
+$$
+$$
+\hat{E_{tCT}} = \alpha + \beta_1 R_{tCT}  + (\delta_t + \delta_{C}) + (\gamma_1 \operatorname{population}_{C} + \gamma_2' \mathbf{X}_i)
+$$
+
 ## First Stage
+
+\include{1ststage.tex}
+
+## Outcome: Female Leadership
+
+\include{iv_isSupervisor.tex}
 
 ## Outcome: Third Child & Sex Ratio
 
 \include{birth.tex}
 
----
+## Outcome: Third Child & Sex Ratio
+
+Interacted with subgroup: Whether first two child are both daughter.
 
 \include{birth_sexgroup.tex}
 
-## Conclusion
+---
 
-- Less willingness to  when higher female political representation
-	- Potential role-model effects
-- 
+## Discussion
 
-# Future
+Increased female seats might reduce people’s willingness to pay for sons.
+
+### Model (1), (2)
+
+- Gave up fertilizing 3rd child for those who already had 2 daughters
+- Son preference weaken
+
+### Model (3), (4)
+
+- Indicating behaviors of those who had conservative gender attitudes
+	- *“insist to give a shot at third child”*
+- Sex selection existed, and higher female representation didn’t abolish it.
+
+# Future Development
+
+### Outcomes on Gender Attitudes
+
+- Taiwan Social Change Survey 
+
+### Other Influencing Channels
+
+- Elected or Candidacy?
+
+### Potential Mechanisms
+
+- Role-model effect
+- Policy effect
+	- Labor market outcomes
+	- Pro-female policies

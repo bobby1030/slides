@@ -1,27 +1,28 @@
 \begin{table}[htbp]\centering
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{縣市議員檔 2SLS}
-\adjustbox{max width=\textwidth}{
-\begin{tabular}{l*{2}{c}}
-\toprule
-                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
-                    &\multicolumn{1}{c}{thirdChild}&\multicolumn{1}{c}{3 sex}\\
-\midrule
-elected\_female\_ratio&      0.0102\sym{**} &       0.132         \\
-                    &   (0.00356)         &    (0.0763)         \\
-Both female for 1st, 2nd child=1 ⨯ elected\_female\_ratio&      -0.383\sym{***}&     -0.0514         \\
-                    &    (0.0359)         &     (0.120)         \\
-Both female for 1st, 2nd child=1&       0.182\sym{***}&       0.102\sym{***}\\
-                    &   (0.00798)         &    (0.0245)         \\
-Population Control  &         Yes         &         Yes         \\
-Year FE             &         Yes         &         Yes         \\
-County FE           &         Yes         &         Yes         \\
-\midrule
-Mean                &      0.0176         &       0.554         \\
-Observations        &     1261020         &       22229         \\
-Adj. R-square       &      0.0373         &     0.00813         \\
-\bottomrule
-\multicolumn{3}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
-\end{tabular}}
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \caption{2SLS Subgroup Birth Outcomes of City Council Elections}
+    \adjustbox{max width=0.9\textwidth}{
+        \begin{tabular}{l*{4}{c}}
+            \toprule
+                                                           & \multicolumn{1}{c}{(1)}        & \multicolumn{1}{c}{(2)}        & \multicolumn{1}{c}{(3)}               & \multicolumn{1}{c}{(4)}               \\
+                                                           & \multicolumn{1}{c}{thirdChild} & \multicolumn{1}{c}{thirdChild} & \multicolumn{1}{c}{third\_child\_son} & \multicolumn{1}{c}{third\_child\_son} \\
+            \midrule
+            elected\_female\_ratio                         & -0.0697\sym{***}               & 0.0102\sym{**}                 & 0.0587                                & 0.132                                 \\
+                                                           & (0.00483)                      & (0.00356)                      & (0.0729)                              & (0.0763)                              \\
+            both\_daughter $\times$ elected\_female\_ratio & -0.369\sym{***}                & -0.383\sym{***}                & -0.0477                               & -0.0514                               \\
+                                                           & (0.0367)                       & (0.0359)                       & (0.120)                               & (0.120)                               \\
+            both\_daughter                                 & 0.182\sym{***}                 & 0.182\sym{***}                 & 0.101\sym{***}                        & 0.102\sym{***}                        \\
+                                                           & (0.00804)                      & (0.00798)                      & (0.0245)                              & (0.0245)                              \\
+            Population Control                             & Yes                            & Yes                            & Yes                                   & Yes                                   \\
+            Year FE                                        & No                             & Yes                            & No                                    & Yes                                   \\
+            County FE                                      & No                             & Yes                            & No                                    & Yes                                   \\
+            \midrule
+            Mean                                           & 0.0176                         & 0.0176                         & 0.554                                 & 0.554                                 \\
+            Observations                                   & 1261020                        & 1261020                        & 22229                                 & 22229                                 \\
+            Adj. R-square                                  & 0.0253                         & 0.0373                         & 0.00775                               & 0.00813                               \\
+            \bottomrule
+            \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}                                                                                                                                 \\
+            \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}                                                                                                 \\
+        \end{tabular}
+    }
 \end{table}

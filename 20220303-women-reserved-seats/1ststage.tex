@@ -1,0 +1,22 @@
+\begin{table}[htbp]\centering
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \caption{2SLS 1st Stage}
+    \adjustbox{max width=\textwidth}{
+        \begin{tabular}{l*{2}{c}}
+            \toprule
+                               & \multicolumn{1}{c}{(1)}                    & \multicolumn{1}{c}{(2)}                       \\
+                               & \multicolumn{1}{c}{elected\_female\_ratio} & \multicolumn{1}{c}{candidates\_female\_ratio} \\
+            \midrule
+            rsv\_seats\_ratio  & 0.917\sym{***}                             & 0.781\sym{***}                                \\
+                               & (0.0785)                                   & (0.0634)                                      \\
+            Population Control & Yes                                        & Yes                                           \\
+            Election Year FE   & Yes                                        & Yes                                           \\
+            County FE          & Yes                                        & Yes                                           \\
+            \midrule
+            Observations       & 966                                        & 966                                           \\
+            \bottomrule
+            \multicolumn{3}{l}{\footnotesize Standard errors in parentheses}                                                \\
+            \multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}                \\
+        \end{tabular}
+    }
+\end{table}
