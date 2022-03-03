@@ -11,9 +11,8 @@ SOURCE_FORMAT="markdown\
 +implicit_figures\
 +link_attributes\
 +smart\
-+fenced_divs"
-
-# +all_symbols_escapable\
++fenced_divs\
++all_symbols_escapable"
 
 
 DATA_DIR="pandoc"
