@@ -143,8 +143,6 @@ Elasticity of reserved seats on female elected and female candidates are high.
 
 ## Outcome: Subgroup Son Preference
 
-Treatment interacted with dummy “two child both daughter”
-
 \include{birth_sexgroup.tex}
 
 ## Discussion
