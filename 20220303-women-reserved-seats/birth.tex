@@ -1,29 +1,30 @@
 \begin{table}[htbp]\centering
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \caption{2SLS Birth Outcomes of City Council Elections}
-    \adjustbox{max width=0.85\textwidth}{
+    \adjustbox{max width=0.9\textwidth}{
         \begin{tabular}{l*{4}{c}}
             \toprule
-                                   & \multicolumn{1}{c}{(1)}              & \multicolumn{1}{c}{(2)}              & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
-                                   & \multicolumn{2}{c}{Having 3rd Child} & \multicolumn{2}{c}{3rd Child is Son}                                                     \\
+                                    & \multicolumn{1}{c}{(1)}              & \multicolumn{1}{c}{(2)}              & \multicolumn{1}{c}{(3)}              & \multicolumn{1}{c}{(4)}              \\
+                                    & \multicolumn{1}{c}{Having 3rd Child} & \multicolumn{1}{c}{Having 3rd Child} & \multicolumn{1}{c}{3rd Child is Son} & \multicolumn{1}{c}{3rd Child is Son} \\
             \midrule
-            Elected Female \%      & -0.273\sym{***}                      & -0.0473\sym{***}                     & -0.0000635              & 0.0802                  \\
-                                   & (0.0223)                             & (0.0119)                             & (0.0551)                & (0.0588)                \\
-            1 sex                  & -0.0256\sym{***}                     & -0.0253\sym{***}                     & -0.0478\sym{***}        & -0.0472\sym{***}        \\
-                                   & (0.00106)                            & (0.00105)                            & (0.00591)               & (0.00591)               \\
-            2 sex                  & -0.0288\sym{***}                     & -0.0288\sym{***}                     & -0.00698                & -0.00671                \\
-                                   & (0.00113)                            & (0.00112)                            & (0.00612)               & (0.00612)               \\
-            Parent Age Control     & Yes                                  & Yes                                  & Yes                     & Yes                     \\
-            Log-Population Control & Yes                                  & Yes                                  & Yes                     & Yes                     \\
-            Year FE                & No                                   & Yes                                  & No                      & Yes                     \\
-            County FE              & No                                   & Yes                                  & No                      & Yes                     \\
+            \% Elected Female       & -0.277\sym{***}                      & -0.0460\sym{***}                     & 0.00108                              & 0.0866                               \\
+                                    & (0.0237)                             & (0.0122)                             & (0.0576)                             & (0.0594)                             \\
+            1 sex                   & -0.0275\sym{***}                     & -0.0273\sym{***}                     & -0.0632\sym{***}                     & -0.0627\sym{***}                     \\
+                                    & (0.00111)                            & (0.00110)                            & (0.00595)                            & (0.00594)                            \\
+            2 sex                   & -0.0309\sym{***}                     & -0.0309\sym{***}                     & -0.0147\sym{*}                       & -0.0147\sym{*}                       \\
+                                    & (0.00117)                            & (0.00115)                            & (0.00622)                            & (0.00623)                            \\
+            Parent Age, Edu Control & Yes                                  & Yes                                  & Yes                                  & Yes                                  \\
+            Log-Population Control  & Yes                                  & Yes                                  & Yes                                  & Yes                                  \\
+            Year FE                 & No                                   & Yes                                  & No                                   & Yes                                  \\
+            County FE               & No                                   & Yes                                  & No                                   & Yes                                  \\
             \midrule
-            Mean                   & 0.0862                               & 0.0862                               & 0.548                   & 0.548                   \\
-            Observations           & 314827                               & 314827                               & 27132                   & 27132                   \\
-            Adj. R-square          & 0.00329                              & 0.0291                               & 0.00224                 & 0.00251                 \\
+            Mean                    & 0.0876                               & 0.0876                               & 0.551                                & 0.551                                \\
+            Observations            & 302972                               & 302972                               & 26532                                & 26532                                \\
+            Adj. R-square           & 0.00377                              & 0.0305                               & 0.00427                              & 0.00422                              \\
             \bottomrule
+            \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}                                                                                                                    \\
+            \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}                                                                                    \\
+        \end{tabular}
 
-            \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}                                                                                         \\
-            \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}                                                         \\
-        \end{tabular}}
+    }
 \end{table}

@@ -10,7 +10,7 @@ author: "Yu-Hsin Ho"
 institute: "Department of Economics, National Taiwan University"
 theme: "metropolis"
 colortheme: "default"
-mainfont: "Fira Sans"
+mainfont: "Myriad Pro"
 CJKmainfont: "AR UDJingXiHeiPU30"
 CJKoptions:
   - ItalicFont=AR PL UKai TW
@@ -18,7 +18,7 @@ fontsize: 9pt
 urlcolor: red
 linkstyle: bold
 aspectratio: 43
-date: March 03, 2022
+date: March 18, 2022
 section-titles: false
 toc: true
 ---
@@ -137,6 +137,10 @@ Elasticity of reserved seats on female elected and female candidates are high.
 
 \include{1ststage.tex}
 
+## Summary of Newborn Data
+
+\include{birth_summaryStats.tex}
+
 ## Outcome: Son Preference
 
 \include{birth.tex}
@@ -147,17 +151,19 @@ Elasticity of reserved seats on female elected and female candidates are high.
 
 ## Discussion
 
-Increased female seats might reduce people’s willingness to pay for sons.
+### Outcome: 3rd Child
 
-### Model (1), (2)
+1. Increase Female **Bargaining Power**
+	- Only couples with extreme sex composition consider to have 3rd child
+	- Decreased willingness to pay additional son/daughter
+	- No effects on college graduates (high bargaining power already)
+2. Weaken **Son Preference**
+	- Larger effect on couples without son
 
-- For those who already had 2 daughters: gave up having 3rd child 
-- Son preference weaken
-
-### Model (3), (4)
+### Outcome: Sex ratio of 3rd parity
 
 - Indicating behaviors of those who had conservative gender attitudes
-	- *“insist to give a shot at third child”*
+	- Higher willingness to pay for a son
 - Sex selection existed, and higher female representation didn’t abolish it.
 
 # Potential Issues
