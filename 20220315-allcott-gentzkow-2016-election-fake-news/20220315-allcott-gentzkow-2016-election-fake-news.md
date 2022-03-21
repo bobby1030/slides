@@ -2,8 +2,6 @@
 title: "Social Media and Fake News in the 2016 Election"
 subtitle: "Allcott, H., & Gentzkow, M. (2017). Journal of Economic Perspectives. doi:10.1257/jep.31.2.211"
 header-includes:
-  - \usepackage{tikz}
-  - \usepackage{pgfplots}
   - \usepackage{adjustbox}
   - \usepackage{booktabs}
   - \linespread{1.3}
@@ -20,12 +18,12 @@ fontsize: 10pt
 urlcolor: red
 linkstyle: bold
 aspectratio: 43
-date: March 15, 2022
+date: March 22, 2022
 section-titles: false
 toc: true
 ---
 
-# Overview
+# Motivation
 
 Why Social Media? Why Fake News?
 
@@ -42,7 +40,7 @@ Why Social Media? Why Fake News?
 
 ## Definition of Fake News
 
-News Articles that are **intentionally** and **verifiably false**, and could mislead readers.
+News articles that are **intentionally** and **verifiably false**, and could mislead readers.
 
 
 
@@ -111,8 +109,6 @@ Reasons why consumers would buy it:
 	- BuzzFeed: 21 articles
 - Facebook share data: BuzzSumo
 - Website traffic data: Alexa
-
-### 
 
 ---
 
