@@ -43,6 +43,7 @@ Women parliamentarians (from CEC, OECD database)
 ## Empirical Literatures in India
 
 -   1993 Constitutional Amendment
+-   1/3 villages chief councilor reserved, *picked randomly*
 -   Outcomes:
     -   Increased female political representation
     -   Female entrepreneurship \footnotesize (Ghani, Kerr, and O’Connell 2014) \normalsize
@@ -65,7 +66,7 @@ Women parliamentarians (from CEC, OECD database)
 
 ### Treatment 
 
-Council member elections, 1999 — 2006
+Council member elections, 1998 — 2006
 
 -   Endogenous treatment $X$: **Proportion of female council member**
 -   Instrument $Z$: **Proportion of reserved seats**
