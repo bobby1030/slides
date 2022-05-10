@@ -1,0 +1,26 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\scalebox{0.7}{
+    \begin{tabular}{lm{2.5cm}m{2.5cm}m{2.5cm}m{2.5cm}}
+        \toprule
+                                     & (1)                   & (2)                    & (3)                        & (4)                    \\
+                                     & 丈夫的責任就是賺錢,妻子的責任就是照顧家庭 & 如果母親外出工作,對還沒上小學的小孩比較不好 & 當妻子有份全天(職)的工作時,家庭生活總是會受到妨害 & 在經濟不景氣時,女性員工應比男性員工先被解僱 \\
+        \midrule
+        Reserved Seats \%            & 0.140                 & -0.0324                & 0.106                      & -0.180\sym{*}          \\
+                                     & (0.130)               & (0.139)                & (0.154)                    & (0.101)                \\
+        女 $\times$ Reserved Seats \% & 0.231                 & 0.0812                 & 0.219                      & 0.186                  \\
+                                     & (0.214)               & (0.200)                & (0.201)                    & (0.120)                \\
+        Age, Edu Control             & Yes                   & Yes                    & Yes                        & Yes                    \\
+        Log-Population Control       & Yes                   & Yes                    & Yes                        & Yes                    \\
+        Year FE                      & Yes                   & Yes                    & Yes                        & Yes                    \\
+        County FE                    & Yes                   & Yes                    & Yes                        & Yes                    \\
+        \midrule
+        Mean                         & 0.565                 & 0.448                  & 0.532                      & 0.866                  \\
+        Observations                 & 4057                  & 4024                   & 4031                       & 3970                   \\
+        Adj. R-square                & 0.226                 & 0.0187                 & 0.00833                    & 0.0472                 \\
+        \bottomrule
+        \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}                                                                    \\
+        \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}                                      \\
+    \end{tabular}
+}
+}

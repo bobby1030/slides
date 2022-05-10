@@ -1,0 +1,407 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+  10pt,
+  ignorenonframetext,
+  aspectratio=43,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+
+%%
+%%% Definition of colors
+%%% Source: https://latexcolor.com/
+\definecolor{blanchedalmond}{rgb}{1.0, 0.92, 0.8}
+\definecolor{blond}{rgb}{0.98, 0.94, 0.75}
+%%% End of definition of colors
+%%
+
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Myriad Pro}
+  \ifxetex
+    \usepackage{xeCJK}
+    \setCJKmainfont[ItalicFont=AR PL UKai TW]{AR UDJingXiHeiPU30}
+  \fi
+  \ifluatex
+    \usepackage[]{luatexja-fontspec}
+    \setmainjfont[ItalicFont=AR PL UKai TW]{AR UDJingXiHeiPU30}
+  \fi
+\fi
+\usetheme[]{metropolis}
+\usecolortheme{default}
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Reserving Female Status --- Women Reserved Seats and Gender Empowerment in Taiwan},
+  pdfauthor={Yu-Hsin Ho},
+  colorlinks=true,
+  linkcolor=Maroon,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=red,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
+\lstset{defaultdialect=sh}
+\lstset{framexleftmargin=0mm, frame=trBL,backgroundcolor=\color{blanchedalmond!5},numbers=left,numberstyle=\scriptsize,basicstyle=\small}
+\lstset{aboveskip=5mm,belowskip=5mm,xleftmargin=20pt,xrightmargin=5pt}
+% \lstset{prebreak={\raisebox{0ex}[0ex][0ex]}}
+% \lstset{postbreak={\raisebox{0ex}[0ex][0ex]\space}}
+\lstset{breaklines=true,breakatwhitespace=true}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+%
+% When using babel or polyglossia with biblatex, loading csquotes is recommended 
+% to ensure that quoted texts are typeset according to the rules of your main language.
+%
+\usepackage{csquotes}
+
+%
+% blockquote
+%
+\definecolor{blockquote-border}{RGB}{221,221,221}
+\definecolor{blockquote-text}{RGB}{89,89,89}
+\usepackage{mdframed}
+\newmdenv[rightline=false,bottomline=false,topline=false,linewidth=3pt,linecolor=blockquote-border,skipabove=\parskip]{customblockquote}
+\renewenvironment{quote}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}%
+\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
+
+%
+% Source Sans Pro as the de­fault font fam­ily
+% Source Code Pro for monospace text
+%
+% 'default' option sets the default 
+% font family to Source Sans Pro, not \sfdefault.
+%
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\linespread{1.3}
+\usepackage{array}
+
+\title{Reserving Female Status --- Women Reserved Seats and Gender
+Empowerment in Taiwan}
+\author{Yu-Hsin Ho}
+\date{May 12, 2022}
+\institute{Department of Economics, National Taiwan University}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+\begin{frame}{Highlights}
+\protect\hypertarget{highlights}{}
+\begin{enumerate}
+\tightlist
+\item
+  We utilized women reserved seats in council elections to estimate
+  casual effects of gender quotas on female status.
+\item
+  Increased gender quotas leads to lower son preference, which is
+  supported by newborns data and survey.
+\item
+  No significant effect on gender role attitudes.
+\end{enumerate}
+\end{frame}
+
+\hypertarget{background}{%
+\section{Background}\label{background}}
+
+\begin{frame}{A Progressive Gender Perspective of \emph{ROC
+Consitution}}
+\protect\hypertarget{a-progressive-gender-perspective-of-roc-consitution}{}
+\begin{quote}
+\emph{中華民國憲法第 134 條}
+
+各種選舉，應規定婦女當選名額，其辦法以法律定之。
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  Mandatory women reserved seats in \emph{any} election codified in
+  \emph{ROC Constitution} since 1946
+\item
+  Local council elections in Taiwan reserved 1 woman seat per 4 elected
+  member (or per 5 before 1999)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Guaranteeing 14\% \textasciitilde{} 25\% female representatives for
+    electoral districts having \(\geq\) 4 members
+  \end{itemize}
+\item
+  The lowest voted male winner will be replaced by highest voted female
+  candidate if the requirement doesn't meet.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+Past researches on effects of women political representation utilized a
+natural experiment in India
+
+\begin{block}{1993 Constitution Amendment in India}
+\protect\hypertarget{constitution-amendment-in-india}{}
+\begin{itemize}
+\tightlist
+\item
+  1/3 seats reserved for women in local council elections
+\item
+  Higher female political representation due to this policy
+\item
+  \textbf{Identification}: States adopting this policy was designated
+  randomly, causing random treatment and time variation
+\end{itemize}
+
+Outcomes: son preference, crime against women, educational
+attainment/investment, gender attitudes, etc.
+\end{block}
+\end{frame}
+
+\hypertarget{data-and-identification-strategy}{%
+\section{Data and Identification
+Strategy}\label{data-and-identification-strategy}}
+
+\begin{frame}{Data and Identification Strategy}
+\begin{block}{Outcomes: Son Preference}
+\protect\hypertarget{outcomes-son-preference}{}
+\begin{enumerate}
+\tightlist
+\item
+  Having 3rd child
+\item
+  Sex ratio of 3rd parity
+\end{enumerate}
+
+From MOI Newborns Data between 1998 and 2006
+
+\begin{itemize}
+\tightlist
+\item
+  Samples: Couples who already have 2 children, deciding whether to have
+  3rd one.
+\item
+  Transformed into balanced panel data by couple and year
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{graphs/sexratioByParity.png}
+\caption{Newborns Sex Ratio by Parity}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Survey Outcomes: Son Preference \& Gender Role}
+\protect\hypertarget{survey-outcomes-son-preference-gender-role}{}
+Taiwan Social Change Survey
+
+\begin{itemize}
+\tightlist
+\item
+  Sample: Period 2001, 2006
+
+  \begin{enumerate}
+  \tightlist
+  \item
+    「為傳宗接代，至少要生一兒子」
+  \item
+    「一個家庭幾個小孩最理想」
+  \end{enumerate}
+\item
+  Sample: Period 2011, 2016
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Gender role variables
+  \end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+Vote data from 1998, 2002, 2005 council elections.
+
+\begin{block}{Instrument: \% of reserved seats}
+\protect\hypertarget{instrument-of-reserved-seats}{}
+\begin{itemize}
+\tightlist
+\item
+  \(Z_{ed} = \frac{\text{Reserved Seats 保留名額數}}{\text{Member Size 應選人數}}\),
+  in election year \(e\), electoral district \(d\)
+\item
+  Determined by population size of electoral district.
+\end{itemize}
+\end{block}
+
+\begin{block}{Potential Treatments}
+\protect\hypertarget{potential-treatments}{}
+\begin{itemize}
+\tightlist
+\item
+  \% female elected
+\item
+  \% female candidates
+\end{itemize}
+
+Both could affect outcomes. Exclusion restriction not satistied. Thus
+I'll present 1st stage and reduced form.
+\end{block}
+\end{frame}
+
+\begin{frame}{1st Stage Estimations}
+\protect\hypertarget{st-stage-estimations}{}
+\includegraphics{graphs/firstStage.png}\\
+
+Control for population size to prevent OVB.
+\end{frame}
+
+\begin{frame}
+\begin{block}{1st Stage Estimations}
+\protect\hypertarget{st-stage-estimations-1}{}
+\[
+X_{td} = \alpha + \beta_1 \text{\% Reserved Seats}_{td}  + \gamma_1 \ln \operatorname{pop}_{tc} + \delta_t + \delta_{c}
+\]
+
+in election year \(t\), district \(d\), county \(c\)
+\end{block}
+\end{frame}
+
+\begin{frame}
+\include{tables/1ststage.tex}
+\end{frame}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\begin{frame}{Results}
+Reduced form specification: \[
+Y_{itcd} = \alpha + \rho_1 \text{\% Reserved Seats}_{td}  + \gamma_1 \ln \operatorname{pop}_{tc} + X_i' \eta + \delta_t + \delta_{c}
+\]
+
+for couple \(i\), year \(t\), county \(c\), electoral district \(d\)
+\end{frame}
+
+\begin{frame}{Birth Outcome: Having 3rd Child}
+\protect\hypertarget{birth-outcome-having-3rd-child}{}
+\include{tables/birth_child3_rf_panel.tex}
+\end{frame}
+
+\begin{frame}{Birth Outcome: 3rd Parity Sex Ratio}
+\protect\hypertarget{birth-outcome-3rd-parity-sex-ratio}{}
+\include{tables/birth_sex3_rf_panel.tex}
+\end{frame}
+
+\begin{frame}{Survey Outcome: Son Preference}
+\protect\hypertarget{survey-outcome-son-preference}{}
+From TSCS 2001, 2006.
+
+\include{tables/TSCS_rf_son.tex}
+\end{frame}
+
+\begin{frame}{Survey Outcome: Gender Role}
+\protect\hypertarget{survey-outcome-gender-role}{}
+From TSCS 2011, 2016; 1 = Pro-female
+
+\include{tables/TSCS_rf_role.tex}
+\end{frame}
+
+\hypertarget{remarks}{%
+\section{Remarks}\label{remarks}}
+
+\begin{frame}{Remarks}
+\begin{itemize}
+\tightlist
+\item
+  Weaken son preference: Higher satisfaction of current status for
+  couples without son.
+\item
+  Women with lower educational attainment was more susceptible to
+  exposure
+\item
+  Survey confirmed decreasing son preference.
+\item
+  No significant effect on gender role attitudes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Possible Mechanisms}
+\protect\hypertarget{possible-mechanisms}{}
+\begin{enumerate}
+\item
+  Role model effects:
+
+  Intimate interaction between female council member and female voters.
+\item
+  Policy effects:
+
+  Public good provision, pro-female \& childcare policies.
+\end{enumerate}
+\end{frame}
+
+\end{document}
