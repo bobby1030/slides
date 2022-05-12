@@ -161,7 +161,7 @@ From TSCS 2011, 2016; 1 = Pro-female
 
 1. Role model effects:
 
-   Intimate interaction between female council member and female voters.
+   Interaction between female council member and female voters.
 
 2. Policy effects:
 
