@@ -144,16 +144,14 @@ Exogenous Treatment: **Reservation**
 - Neonatal mortality of female \footnotesize (Kalsi 2017) \normalsize
 - Female educational attainment \footnotesize (Beaman et al. 2012) \normalsize
 
-### 
-
 # Linkage to My Proposal
 
-## Contributions
+### Potential Contributions
 
-- Taiwanese experience: Better IV consists of time and geographical variation
+- Provide unexplored casual story on Taiwanese council’s quota system.
 - Further evidence on affirmative actions, public exposure of powerful women
 
-## Current Findings
+### Current Findings
 
 - More female politician, less son preference.
   - Supported by both newborn data and survey data.
