@@ -23,19 +23,11 @@ section-titles: false
 toc: false
 ---
 
-# Highlights
-
-- This paper utilized random treatment of chief councilor reservation in India.
-- Electoral prospect for women improved.
-- Male’s evaluation on female chief’s effectiveness decreased in the short-run, but improved after 2 reservation.
-- Some stereotypes against women persisted.
-
 # Introduction
 
 General discussion around gender quota policy:
 
-1. **Empathy**: exposure improves understanding
-2. **Information Provision**: updating prior belief to reduce statistical discrimination
+1. **Empathy/Information Provision**: exposure improves understanding, updating prior belief to reduce statistical discrimination
 3. **Backlash**: “reverse discrimination”, threatened status for privileged group
 
 ## Identification: Female Quota in Indian Local Councils
@@ -46,19 +38,20 @@ General discussion around gender quota policy:
   - 1/3 councilor seats reserved for female
   - 1/3 GPs’ chief councilor (*Pradhan*) reserved for female, chosen randomly.
 
-### Related Subsequent Literatures
+### Sample
 
-- Female entrepreneurship \footnotesize (Ghani, Kerr, and O’Connell 2014) \normalsize
-- Report of crimes against women \footnotesize (Iyer et al. 2012) \normalsize
-- Neonatal mortality of female \footnotesize (Kalsi 2017) \normalsize
-- Female educational attainment \footnotesize (Beaman et al. 2012) \normalsize
-
-## Sample
-
-- Sample: Villages in West Bengal
+- Sample: GPs in West Bengal
   - Active elections long before the amendment.
 - Electoral results from 1998, 2003, 2008
 - Supplemented by survey and experimental data
+
+## Research Design
+
+Exogenous Treatment: **Reservation**
+
+- $\xrightarrow{\text{(1) Election}}$ Electoral Outcomes: Current and prospect
+- $\xrightarrow{\text{(2) Survey}}$ Evaluation of Female Leader’s Effectiveness
+- $\xrightarrow{\text{(3) Experiments}}$ Gender Bias & Stereotype
 
 ---
 
@@ -66,25 +59,17 @@ General discussion around gender quota policy:
 
 # Outcome: Electoral Results
 
-## Reservation is Binding
+## Short-term: Reservation is Binding
 
 ![Fraction of Female Pradhan by Reservation Status](20220523-qje-beaman-duflo-powerful-women.assets/figure1-binding policy effect.png)
 
----
-
-## 
-
-![Pradhan Characteristics in 2003](20220523-qje-beaman-duflo-powerful-women.assets/table2-pradhan characteristics.png)
-
-No significant incumbent advantage or being “shadows for their husband”
-
-## Improved Female Electoral Prospect
+## Long-term: Improved Female Electoral Prospect
 
 ![2008 Ward Council and Pradhan Election Outcomes](20220523-qje-beaman-duflo-powerful-women.assets/figure2-electoral prospect.png)
 
 ---
 
-![Electoral Outcomes for 2002 and 2008](20220523-qje-beaman-duflo-powerful-women.assets/table3-electoral outcomes.png)
+![Electoral Outcomes for 2003 and 2008](20220523-qje-beaman-duflo-powerful-women.assets/table3-electoral outcomes.png)
 
 # Survey: Evaluation of Pradhan
 
@@ -101,21 +86,22 @@ No significant incumbent advantage or being “shadows for their husband”
 
 ![Evaluation of 2003-elected Pradhan](20220523-qje-beaman-duflo-powerful-women.assets/table4-evaluation of pradhan.png)
 
-- Worse evaluation for once and near reservation, compared to non-reserved
-- Improved evaluation for twice reservation (not significant)
+- Worse evaluation for “reserved 2003”, compared to “non-reserved”
+- Improved evaluation for twice reserved (not significant)
   - Characteristic difference? *No*
   - Behavioral difference?
   - Backlash?
 
 ---
 
-## Behavioral Difference for Once v.s. Twice Reserved
+## No Behavioral Difference
 
 ![Pradhan Performance: Public Goods, Bribes, and Satisfactions](20220523-qje-beaman-duflo-powerful-women.assets/table5-public goods performance.png)
 
-- Objective performance (public goods, bribes) and subjective satisfaction was even greater for once reserved
-  1. Not taking bribes: public opinion adversely influenced
-  2. Aligned preference for women
+- Performance and satisfaction was even greater for “reserved 2003”
+  - Not taking bribes: public opinion adversely influenced
+  - Aligned preference for women
+
 
 # Experiments: Stereotypes Against Female
 
@@ -136,11 +122,11 @@ No significant incumbent advantage or being “shadows for their husband”
 
 - IAT Experiment: Matching two concepts in short time
 
-| Left                   | Right               |
-| ---------------------- | ------------------- |
-| Male/Female Picture    | Leadership/Domestic |
-| Male/Female Name       | Good/Bad            |
-| Male/Female Politician | Good/Bad            |
+|          Left          |        Right        |
+| :--------------------: | :-----------------: |
+|  Male/Female Picture   | Leadership/Domestic |
+|    Male/Female Name    |      Good/Bad       |
+| Male/Female Politician |      Good/Bad       |
 
 ---
 
@@ -149,7 +135,16 @@ No significant incumbent advantage or being “shadows for their husband”
 # Conclusion
 
 - Gender quota helps improving female’s political representation.
-- Gender quota reduced bias in evaluating female’s political effectiveness, but gender role bias persists.
+- Gender quota reduced bias in evaluating female’s political effectiveness, but some stereotypes persists.
+
+### Related Subsequent Literatures
+
+- Female entrepreneurship \footnotesize (Ghani, Kerr, and O’Connell 2014) \normalsize
+- Report of crimes against women \footnotesize (Iyer et al. 2012) \normalsize
+- Neonatal mortality of female \footnotesize (Kalsi 2017) \normalsize
+- Female educational attainment \footnotesize (Beaman et al. 2012) \normalsize
+
+### 
 
 # Linkage to My Proposal
 
