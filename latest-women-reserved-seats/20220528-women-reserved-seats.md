@@ -21,16 +21,15 @@ linkstyle: bold
 aspectratio: 43
 date: May 28, 2022
 section-titles: false
-toc: true
+toc: false
 ---
 
-## Highlights
-
-1. We utilized women reserved seats in council elections to estimate casual effects of gender quotas on female status.
-2. Increased gender quotas leads to lower son preference, which is supported by newborns data and survey.
-3. No significant effect on gender role attitudes.
-
 # Background
+
+General discussion around gender quota policy:
+
+1. **Empathy/Information Provision**: exposure improves understanding, updating prior belief to reduce statistical discrimination
+2. **Backlash**: “reverse discrimination”, threatened status for privileged group
 
 ## A Progressive Gender Perspective of *ROC Consitution*
 
@@ -52,8 +51,6 @@ Past researches on effects of women political representation utilized a natural 
 - 1/3 seats reserved for women in local council elections
 - Higher female political representation due to this policy
 - **Identification**: States adopting this policy was designated randomly, causing random treatment and time variation
-
-
 
 # Data and Identification Strategy
 
