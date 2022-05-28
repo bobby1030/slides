@@ -1,0 +1,30 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\scalebox{0.7}{
+    \begin{tabular}{l*{5}{c}}
+        \toprule
+                                                & \multicolumn{1}{c}{(1)}         & \multicolumn{1}{c}{(2)}         & \multicolumn{1}{c}{(3)}    & \multicolumn{1}{c}{(4)}   & \multicolumn{1}{c}{(5)}       \\
+                                                & \multicolumn{1}{c}{Full Sample} & \multicolumn{1}{c}{High School} & \multicolumn{1}{c}{Non-HS} & \multicolumn{1}{c}{Urban} & \multicolumn{1}{c}{Non-Urban} \\
+        \midrule
+        \% Reserved Seats                       & -0.00864\sym{***}               & -0.00568                        & -0.0157\sym{***}           & -0.00898                  & -0.00690\sym{**}              \\
+                                                & (0.00289)                       & (0.00417)                       & (0.00301)                  & (0.00719)                 & (0.00309)                     \\
+        Daughter Son $\times$ \% Reserved Seats & 0.00645\sym{**}                 & 0.00182                         & 0.0160\sym{***}            & 0.0129\sym{*}             & 0.00420                       \\
+                                                & (0.00263)                       & (0.00403)                       & (0.00284)                  & (0.00713)                 & (0.00285)                     \\
+        Son Daughter $\times$ \% Reserved Seats & 0.00651\sym{**}                 & 0.00671                         & 0.0125\sym{***}            & 0.0178\sym{**}            & 0.00375                       \\
+                                                & (0.00261)                       & (0.00417)                       & (0.00268)                  & (0.00681)                 & (0.00280)                     \\
+        Both Son $\times$ \% Reserved Seats     & 0.00655\sym{**}                 & 0.00570                         & 0.0135\sym{***}            & 0.0178\sym{***}           & 0.00357                       \\
+                                                & (0.00281)                       & (0.00424)                       & (0.00299)                  & (0.00649)                 & (0.00304)                     \\
+        Age, Edu Control                        & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+        Log-Population Control                  & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+        Year FE                                 & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+        County FE                               & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+        \midrule
+        Mean                                    & 0.00969                         & 0.0126                          & 0.00715                    & 0.00699                   & 0.0105                        \\
+        Observations                            & 6654418                         & 3088955                         & 3565463                    & 1525767                   & 5128651                       \\
+        Adj. R-square                           & 0.0145                          & 0.0153                          & 0.0130                     & 0.00928                   & 0.0155                        \\
+        \bottomrule
+        \multicolumn{6}{l}{\footnotesize Standard errors in parentheses}                                                                                                                                     \\
+        \multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}                                                                                                       \\
+    \end{tabular}
+}
+}
