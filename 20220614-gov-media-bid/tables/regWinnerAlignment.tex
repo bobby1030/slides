@@ -1,0 +1,28 @@
+\begin{table}
+  \caption{Regression: Winning}
+  \centering
+  \resizebox{0.9\textwidth}{!}{
+    \begin{tabular}[t]{lccccc}
+      \toprule
+                                            & Full            & Full (FEs)      & Full (by Ruling Pty) & Post-2011       & Post-2016       \\
+      \midrule
+      alignment                             & \num{0.093}***  & \num{0.092}***  & \num{0.150}***       & \num{0.149}***  & \num{0.182}***  \\
+                                            & (\num{0.022})   & (\num{0.023})   & (\num{0.037})        & (\num{0.038})   & (\num{0.044})   \\
+      alignment \(\times\) ruling=KMT       &                 &                 & \num{-0.096}*        & \num{-0.075}    & \num{-0.140}*   \\
+                                            &                 &                 & (\num{0.047})        & (\num{0.048})   & (\num{0.059})   \\
+      competitors                           & \num{-0.059}*** & \num{-0.055}*** & \num{-0.055}***      & \num{-0.054}*** & \num{-0.047}*** \\
+                                            & (\num{0.006})   & (\num{0.007})   & (\num{0.007})        & (\num{0.007})   & (\num{0.008})   \\
+      totalWinner                           & \num{0.115}***  & \num{0.111}***  & \num{0.110}***       & \num{0.108}***  & \num{0.096}***  \\
+                                            & (\num{0.005})   & (\num{0.005})   & (\num{0.005})        & (\num{0.005})   & (\num{0.007})   \\
+      \midrule
+      Num.Obs.                              & \num{1256}      & \num{1256}      & \num{1256}           & \num{1179}      & \num{758}       \\
+      R2 Adj.                               & \num{0.310}     & \num{0.307}     & \num{0.309}          & \num{0.312}     & \num{0.278}     \\
+      Std.Errors                            & by: filename    & by: filename    & by: filename         & by: filename    & by: filename    \\
+      FE: county                            &                 & X               & X                    & X               & X               \\
+      FE: year                              &                 & X               & X                    & X               & X               \\
+      p-value: Alignment \(\times\) KMT = 0 & NA              & NA              & \num{0.0657}         & \num{0.0262}    & \num{0.3553}    \\
+      \bottomrule
+      \multicolumn{6}{l}{\rule{0pt}{1em}+ p $<$ 0.1, * p $<$ 0.05, ** p $<$ 0.01, *** p $<$ 0.001}                                         \\
+    \end{tabular}
+  }
+\end{table}
