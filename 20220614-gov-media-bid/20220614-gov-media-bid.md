@@ -146,11 +146,13 @@ for bid $i$, year $t$, opened by county $c$, and issued by media conglomerate $m
 
 \include{tables/regValueAlignment.tex}
 
-# Remarks
+# Conclusions
 
 - Increased ads spending in election year, suggesting incumbency advantage.
 - Both KMT and DPP have preference toward aligned media
-	- while KMT prefers equalizing the value of tenders, DPP prefers giving pro-green media valuable cases
-- Potential omitted variables
-	- Media’s quality
-	- Differed public opinion might change governments’ preference on buying ads
+  - while KMT prefers equalizing the value of tenders, DPP prefers giving pro-green media valuable cases
+- Potential impact of decreased commercial ads on media capture
+- Limits of the findings:
+  - Lack of exogenous instrument to identify causal effect
+  - Media’s *capability* unobserved
+  - Differed public opinion might change government’s preference on buying ads
