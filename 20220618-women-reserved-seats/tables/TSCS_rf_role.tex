@@ -1,0 +1,26 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\scalebox{0.7}{
+    \begin{tabular}{lm{2.5cm}m{2.5cm}m{2.5cm}m{2.5cm}}
+        \toprule
+                                     & (1)                   & (2)                    & (3)                        & (4)                    \\
+                                     & 丈夫的責任就是賺錢,妻子的責任就是照顧家庭 & 如果母親外出工作,對還沒上小學的小孩比較不好 & 當妻子有份全天(職)的工作時,家庭生活總是會受到妨害 & 在經濟不景氣時,女性員工應比男性員工先被解僱 \\
+        \midrule
+        Reserved Seats \%            & \num{0.140}                 & \num{-0.0324}                & \num{0.106}                      & \num{-0.180}\sym{*}          \\
+                                     & (\num{0.130})               & (\num{0.139})                & (\num{0.154})                    & (\num{0.101})                \\
+        女 $\times$ Reserved Seats \% & \num{0.231}                 & \num{0.0812}                 & \num{0.219}                      & \num{0.186}                  \\
+                                     & (\num{0.214})               & (\num{0.200})                & (\num{0.201})                    & (\num{0.120})                \\
+        Age, Edu Control             & Yes                   & Yes                    & Yes                        & Yes                    \\
+        Log-Population Control       & Yes                   & Yes                    & Yes                        & Yes                    \\
+        Year FE                      & Yes                   & Yes                    & Yes                        & Yes                    \\
+        County FE                    & Yes                   & Yes                    & Yes                        & Yes                    \\
+        \midrule
+        Mean                         & \num{0.565}                 & \num{0.448}                  & \num{0.532}                      & \num{0.866}                  \\
+        Observations                 & \num{4057}                  & \num{4024}                   & \num{4031}                       & \num{3970}                   \\
+        Adj. R-square                & \num{0.226}                 & \num{0.0187}                 & \num{0.00833}                    & \num{0.0472}                 \\
+        \bottomrule
+        \multicolumn{5}{l}{\footnotesize Standard errors in parentheses, clustered on year-township}                                        \\
+        \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}                                      \\
+    \end{tabular}
+}
+}

@@ -1,0 +1,28 @@
+\begin{table}
+    {
+        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+        \scalebox{0.8}{
+            \begin{tabular}{l*{2}{c}}
+                \toprule
+                                             & \multicolumn{1}{c}{(1)}    & \multicolumn{1}{c}{(2)}            \\
+                                             & \multicolumn{1}{c}{至少生一兒子} & \multicolumn{1}{c}{理想小孩數}          \\
+                \midrule
+                Reserved Seats \%            & \num{-0.159}                     & \num{-0.623}                             \\
+                                             & (\num{0.262})                    & (\num{0.642})                            \\
+                女 $\times$ Reserved Seats \% & \num{-0.493}\sym{**}             & \num{0.524}                              \\
+                                             & (\num{0.200})                    & (\num{0.765})                            \\
+                Age, Edu Control             & Yes                        & Yes                                \\
+                Log-Population Control       & Yes                        & Yes                                \\
+                Year FE                      & Yes                        & Yes                                \\
+                County FE                    & Yes                        & Yes                                \\
+                \midrule
+                Mean                         & \num{0.460}                      & \num{2.395}                              \\
+                Observations                 & \num{3697}                       & \num{1980}                               \\
+                Adj. R-square                & \num{0.130}                      & \num{0.0780}                             \\
+                \bottomrule
+                \multicolumn{3}{l}{\footnotesize Standard errors in parentheses, clustered on year-township}   \\
+                \multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)} \\
+            \end{tabular}
+        }
+    }
+\end{table}

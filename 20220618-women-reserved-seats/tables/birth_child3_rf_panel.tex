@@ -1,0 +1,33 @@
+\begin{table}
+    \caption{Outcome: 3rd Child Now}
+    {
+        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+        \scalebox{0.7}{
+            \begin{tabular}{l*{5}{c}}
+                \toprule
+                                                        & \multicolumn{1}{c}{(1)}         & \multicolumn{1}{c}{(2)}         & \multicolumn{1}{c}{(3)}    & \multicolumn{1}{c}{(4)}   & \multicolumn{1}{c}{(5)}       \\
+                                                        & \multicolumn{1}{c}{Full Sample} & \multicolumn{1}{c}{High School} & \multicolumn{1}{c}{Non-HS} & \multicolumn{1}{c}{Urban} & \multicolumn{1}{c}{Non-Urban} \\
+                \midrule
+                \% Reserved Seats                       & \num{-0.00864}\sym{***}               & \num{-0.00568}                        & \num{-0.0157}\sym{***}           & \num{-0.00898}                  & \num{-0.00690}\sym{**}              \\
+                                                        & (\num{0.00289})                       & (\num{0.00417})                       & (\num{0.00301})                  & (\num{0.00719})                 & (\num{0.00309})                     \\
+                Daughter Son $\times$ \% Reserved Seats & \num{0.00645}\sym{**}                 & \num{0.00182}                         & \num{0.0160}\sym{***}            & \num{0.0129}\sym{*}             & \num{0.00420}                       \\
+                                                        & (\num{0.00263})                       & (\num{0.00403})                       & (\num{0.00284})                  & (\num{0.00713})                 & (\num{0.00285})                     \\
+                Son Daughter $\times$ \% Reserved Seats & \num{0.00651}\sym{**}                 & \num{0.00671}                         & \num{0.0125}\sym{***}            & \num{0.0178}\sym{**}            & \num{0.00375}                       \\
+                                                        & (\num{0.00261})                       & (\num{0.00417})                       & (\num{0.00268})                  & (\num{0.00681})                 & (\num{0.00280})                     \\
+                Both Son $\times$ \% Reserved Seats     & \num{0.00655}\sym{**}                 & \num{0.00570}                         & \num{0.0135}\sym{***}            & \num{0.0178}\sym{***}           & \num{0.00357}                       \\
+                                                        & (\num{0.00281})                       & (\num{0.00424})                       & (\num{0.00299})                  & (\num{0.00649})                 & (\num{0.00304})                     \\
+                Age, Edu Control                        & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+                Log-Population Control                  & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+                Year FE                                 & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+                County FE                               & Yes                             & Yes                             & Yes                        & Yes                       & Yes                           \\
+                \midrule
+                Mean                                    & \num{0.00969}                         & \num{0.0126}                          & \num{0.00715}                    & \num{0.00699}                   & \num{0.0105}                        \\
+                Observations                            & \num{6654418}                         & \num{3088955}                         & \num{3565463}                    & \num{1525767}                   & \num{5128651}                       \\
+                Adj. R-square                           & \num{0.0145}                          & \num{0.0153}                          & \num{0.0130}                     & \num{0.00928}                   & \num{0.0155}                        \\
+                \bottomrule
+                \multicolumn{6}{l}{\footnotesize Standard errors in parentheses, clustered on year-township}                                                                                                                                     \\
+                \multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}                                                                                                       \\
+            \end{tabular}
+        }
+    }
+\end{table}

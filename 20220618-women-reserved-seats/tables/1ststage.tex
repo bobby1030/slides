@@ -1,0 +1,24 @@
+\begin{table}
+    \caption{1st Stage}
+    {
+        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+        \scalebox{0.8}{
+            \begin{tabular}{l*{2}{c}}
+                \toprule
+                                   & \multicolumn{1}{c}{(1)}               & \multicolumn{1}{c}{(2)}                  \\
+                                   & \multicolumn{1}{c}{\% Elected Female} & \multicolumn{1}{c}{\% Female Candidates} \\
+                \midrule
+                \% Reserved Seats  & \num{1.029}\sym{***}                        & \num{0.758}\sym{***}                           \\
+                                   & (\num{0.0620})                              & (\num{0.0578})                                 \\
+                Population Control & Yes                                   & Yes                                      \\
+                Election Year FE   & Yes                                   & Yes                                      \\
+                County FE          & Yes                                   & Yes                                      \\
+                \midrule
+                Observations       & \num{2210}                                  & \num{2210}                                     \\
+                \bottomrule
+                \multicolumn{3}{l}{\footnotesize Standard errors in parentheses}                                      \\
+                \multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<\num{0.001}\)}      \\
+            \end{tabular}
+        }
+    }
+\end{table}
