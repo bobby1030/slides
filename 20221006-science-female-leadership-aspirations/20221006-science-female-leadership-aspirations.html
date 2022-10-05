@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Female Leadership Raises Aspirations and Educational Attainment for Girls: A Policy Experiment in India</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yu-Hsin Ho (20221005 @ Lab Meeting)" />
+    <script src="20221006-science-female-leadership-aspirations_files/header-attrs-2.14/header-attrs.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Female Leadership Raises Aspirations and Educational Attainment for Girls: A Policy Experiment in India
+]
+.subtitle[
+## Beaman, Duflo, Pande, and Topalova
+Science (2012)
+]
+.author[
+### Yu-Hsin Ho (20221005 @ Lab Meeting)
+]
+
+---
+
+
+# Overview
+
+Impact of female leadership on **aspirations**, **educational outcome**, and **time use**
+
+- For parents: *What I expect my daughters and sons to do?*
+- For adolecents:
+    - Aspirations: *What can I achieve?*
+    - Education: Attends school, literacy, grade completed
+    - Time use: Time spent on domestic chores
+
+
+Focus on change in **gender gap**
+
+---
+
+## Research Design
+
+Leadership Shock: Quota for Female Villiage Leader
+
+- Since Duflo is there, it's a RCT.
+- 1993 Indian Constitution Amendment
+    - ⅓ villiage head reserved for female, **randomly chosen**
+- 3 Types of Villiages:
+    1. Never reserved
+    2. Reserved once
+    3. Reserved twice
+
+--
+
+### Survey Data
+
+- Collected at 2007
+    - 2 elections in between: 1998, 2003
+- Sample size:
+    - Parents with adolecents child (aged 11-15): 2335 male &amp; 2438 female
+    - Adolecents: 1828 boys, 1852 girls
+
+.dim[(Check: Only "dose" effect, no "time since first reservation" effect found)]
+
+---
+
+.caption[Fig 1: Gender Gap in Adolecents' Aspirations, Education, Time-Use]
+
+.center[
+Gap measure: Boys `\(-\)` Girls
+]
+
+![Gender Gap in Adolecent's Aspirations, Education, Time-Use](images/1-gap-aspirations.png)
+
+---
+
+.caption[Table 1: Parents' aspirations for their children]
+
+.center[
+Gap coefficient: Girls `\(-\)` Boys
+]
+
+![Parents' aspirations for their children](images/2-parent-aspiration.png)
+
+---
+
+.caption[Table 2: Adolecents' aspirations]
+
+.center[
+Gap coefficient: Girls `\(-\)` Boys
+]
+
+![Adolecents' aspirations](images/3-adolecent-aspiration.png)
+
+---
+
+.caption[Table 3: Adolecents' Education]
+
+.center[
+Gap coefficient: Girls `\(-\)` Boys
+]
+
+![Adolecents' Educational Outcomes](images/4-adolecent-education.png)
+
+---
+
+## Mechanisms
+
+1. **Phychological process**: role model directly change girls' self-perception
+2. **Environment change**: policy enable girls' oppurtunities, promotes socio-economic status
+
+--
+
+## Test
+
+To test these potential channels, author examine: *adolecent (11-15)* v.s. *young adult (16-30)*
+
+.leftcol[
+### Adolecents
+
+- aged 11-15
+- not yet exposed to environmental change in **education**, **labor market**, etc.
+- Infer future expectation from young adult
+]
+
+.rightcol[
+### Young Adults
+
+- aged 16-30
+- exposed to institutional change
+- served as career indicator for adolecents
+]
+
+.bottomcol[
+If young adults' socio-economic status are not affected due to female leadership, we are likely to reject mechanism (2)
+]
+
+---
+
+.caption[Fig 2: Gender Gap in Young Adults' Socio-Economic Status]
+
+.center[
+Gap measure: Male `\(-\)` Female
+]
+
+![Gender Gap in Young Adults' Socio-Economic Status](images/5-environmental-mechanism.png)
+
+---
+
+class: middle
+
+# Conclusions
+
+1. Exposure to female leader improve girls' aspiration, educational outcomes, time-use
+2. Boys' aspiration was not diminished
+3. Belief change is gradual and slow
+4. Role model effect more likely than environmental change .dim[(induced by institutional amendment)]
+
+--
+
+That is, impact is more on **personal attitudes**, rather than **structural change**.
+
+---
+
+# To our research...
+
+- No effect on female labor force participation
+    - No labor market change
+- No effect on gender gap of neonatal mortality
+    - No reallocation of parents' health investment
+    - Or no policy intervention into girls' healthcare
+
+which is both consistent to the findings of Beaman et. al.
+
+--
+
+--- 
+
+However, the underlying force of decreased fertility is either...
+
+- demand: .dim[(mother-in-law's)] personal preference change
+- supply: councilors block access to sex selection technologies
+
+remains unknown.
+
+--
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
