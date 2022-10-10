@@ -1,0 +1,167 @@
+---
+title: "Entry and Regulation: Evidence from Health Care Professions ^[Schaumans and Verboven 2008, RAND Journal of Economics]"
+subtitle: "2022-10-11 @ Empirical Game Theory Analysis"
+author: "Yu-Hsin Ho"
+output:
+    beamer_presentation:
+        latex_engine: xelatex
+        theme: metropolis
+        colortheme: metropolis
+    xaringan::moon_reader:
+        css: ["./style.css"]
+fontsize: 11pt
+mainfont: Fira Sans
+mathfont: Fira Math
+header-includes:
+    - \linespread{1.3}
+    - \usepackage{appendixnumberbeamer}
+---
+
+# Introduction
+
+- Market of pharmacies and physicians in Belgium
+- Impact of geographical entry restriction
+    - Limiting max. number of pharmacies per municipalities
+    - ***Does it provide higher consumer welfare when the restriction is lifted?***
+        1. Availability
+        2. Markup
+
+---
+
+## Interaction
+
+1. Geographical: 
+    - A market with highly locality, since no advertising is allowed
+    - Defined at township level (smaller than municipalities)
+    - Exclude urban towns to avoid overlapping
+2. Within profession:
+    - **strategic substitutes**
+    - No price competition: \textcolor{gray}{fixed price (markup) negotiated through social insurance regime}
+    - No advertising competition
+    - Within profession competition is limited
+3. Between profession:
+    - **strategic complementary**
+
+---
+
+# Entry Game
+
+type $1$ = pharmacies, type $2$ = physicians
+
+Payoff function:
+
+$$
+\pi^{*}_i (N_1, N_2) = 
+\underbrace{\pi_i(N_1, N_2)}_{\text{Determined by covariates}} 
+- \underbrace{\varepsilon_i}_{\text{Random part}}
+$$
+
+Firm enters the market if $\pi^{*}_i > 0$.
+
+---
+
+## Nash Equilibrium of $N_1, N_2$ Under Free Entry
+
+$(n_1, n_2)$ is a Nash equilibrium if and only if:
+
+$$
+\begin{aligned}
+\pi_1(n_1 + 1, n_2) < \varepsilon_1 \leq \pi_1(n_1, n_2) \\
+\pi_2(n_1, n_2 + 1) < \varepsilon_2 \leq \pi_2(n_1, n_2)
+\end{aligned}
+$$
+
+However, this may show multiplicity.
+
+---
+
+![Multiple Nash Equilibrium](assets/image-20221009235311843.png)
+
+---
+
+### Multiple Equilibrium
+
+- By assuming **sequential entry**, subgame perfect Nash equilibrium predicts higher number of firms would be realized.
+- Prob. dist. for outcome $(n_1, n_2)$ is now well-defined:
+    $$
+    \begin{aligned}
+        \operatorname{Pr}\left(N_1=n_1, N_2=n_2\right)=& \int_{\pi_1\left(n_1+1, n_2\right)}^{\pi_1\left(n_1, n_2\right)} \int_{\pi_2\left(n_1, n_2+1\right)}^{\pi_2\left(n_1, n_2\right)} f\left(u_1, u_2\right) \mathrm{d} u_1 \mathrm{~d} u_2 \\
+        &-\int_{\pi_1\left(n_1+1, n_2\right)}^{\pi_1\left(n_1+1, n_2+1\right)} \int_{\pi_2\left(n_1, n_2+1\right)}^{\pi_2\left(n_1+1, n_2+1\right)} f\left(u_1, u_2\right) \mathrm{d} u_1 \mathrm{~d} u_2 .
+    \end{aligned}
+    $$
+
+---
+
+## Nash Equilibrium of $N_1, N_2$ Under Restriction
+
+By restriction $N_1 = \bar{n}_1$,
+
+$(\bar{n}_1, n_2)$ is a Nash equilibrium if and only if:
+
+$$
+\begin{aligned}
+                            &\varepsilon_1 \leq \pi_1(\bar{n}_1, n_2) \\
+\pi_2(\bar{n}_1, n_2 + 1) < &\varepsilon_2 \leq \pi_2(\bar{n}_1, n_2)
+\end{aligned}
+$$
+
+---
+
+# Econometric Specefication
+
+$$
+\begin{aligned}
+\pi^{*}_i(N_1, N_2) = 
+    & \lambda_1 \ln(S)      & \small\text{Market size} \\
+    & + X \beta_i           & \small\text{Market characteristics} \\
+    & - \alpha^j_i          & \small\text{Own-type FE} \\
+    & + \gamma^k_i / N_i    & \small\text{Other-type complementary FE} \\
+    & - \varepsilon_i
+\end{aligned}
+$$
+
+---
+
+![Estimation Result](assets/image-20221010004148071.png)
+
+---
+
+# Counterfactual: Lifting Restriction
+
+![Entry Predictions under Alternative Regulatory Policies](assets/image-20221010004520141.png)
+
+---
+
+![Keeping Total Number of Pharmacies Constant](assets/image-20221010004815231.png)
+
+---
+
+# Conclusions
+
+- Impacts of entry restriction:
+    - Direct: Reduce pharmacies
+    - Indirect: Reduce physicians
+- \textcolor{teal}{Liberalizing entry restrictions} and \textcolor{teal}{lowering regulated markup} simultaneously would transfer welfare to consumers.
+
+---
+
+\appendix
+
+---
+
+To model "markup drop", authors rewrite pharmacies' payoff function into:
+
+$$
+\Pi^{*}_i(N_1, N_2) = S \mu R(N_1, N_2) \exp(-\varepsilon_1) - F_1(N_1, N_2)
+$$
+
+where $\mu$ is markup rate.
+
+It's equivalent to consider alternative payoff function:
+
+$$
+\pi_1^*\left(N_1, N_2\right) =
+    \ln (S)+\ln (\mu)
+    + \underbrace{\ln \left(R\left(N_1, N_2\right) / F_1\left(N_1, N_2\right)\right)}_{\text{Determined by covariates}}
+    - \varepsilon_1 \geq 0
+$$
