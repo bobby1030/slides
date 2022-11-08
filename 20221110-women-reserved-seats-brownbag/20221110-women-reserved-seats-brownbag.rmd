@@ -37,7 +37,7 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 
 Taiwanese women have a relatively well socioeconomic status:
 
-- \textcolor{mLightBrown}{Gender Inequality Index}: Ranked as 6th place globally, top 1 among Asian societies
+- \textcolor{mLightBrown}{Gender Inequality Index}: top 1 among Asian societies
 - \textcolor{mLightBrown}{> 40\% female legislators}: close to Scandinavian countries
 
 What factors contributed to these achievements?
@@ -46,11 +46,12 @@ What factors contributed to these achievements?
 
 ## Woman Reserved Seats in Taiwan
 
-- Implemented since 1946, at national and county representatives elections
+- Implemented since 1946, at national legislators and county councilors elections
 - For every 4 political seats (or 5 before 1999), 1 seat is reserved for female candidates.
 - 14% ~ 25% female councilor for constituencies with $\geq$ 4 seats
-- Man with lowest vote share get replaced by woman with highest vote share.
+- Elected man with lowest vote share get replaced by unelected woman with highest vote share.
 
+```{hide}
 ---
 
 ## Impact of Quota Policy in India
@@ -65,77 +66,132 @@ Policy intervention randomly reserves village head for female:
 
 Let woman becomes political leaders reduces gender gap well beyond political field.
 
----
-
-## This paper
-
-Examine the casual impact between \textcolor{mLightBrown}{political seats reservation} and \textcolor{mLightBrown}{son preference}
-
-- A changing and prominent phenomenon of Taiwanese society
-- A behavioral indicator for gender attitudes
-
----
-
-# Data and Identification Strategy
-
-## Data
-
-- Councilor elections
-- 1994, 1998, 2002, 2006
-
-## Instrument: % of reserved seats
-
-- $Z_{ed} = \frac{\text{\# Reserved Seats}}{\text{Total Seats}}$, in election year $e$, electoral district $d$
-- Determined by population size of electoral district.
-
-## Potential Treatments
-
-1. % female elected
-2. % female candidates
-
-Both could affect outcomes. Exclusion restriction not satisfied. Thus I’ll present 1st stage and reduced form.
-
----
-
-# First stage correlation
-
-```{r first-stage, fig.cap="First Stage Correlations of IV and Treatments (2002 Council Election)", out.width="100%"}
-knitr::include_graphics("./graphs/firstStage.png")
 ```
 
 ---
 
-# Main Outcome
+## This paper
 
-## 3rd parity fertility (conditional on sex composition of first 2 children)
-- An indicator for son preference
-  - Mothers without son for first 2 parities likely to have additional birth
-  - Strong sex selective practice in 3rd parity
-- Data gathered from MOI birth record
-  - 1994 - 2006, each observation merged with most recent electoral result with 1 year lag
-  - Sample consists of mothers with 2 children, not yet having 3rd
-  - Outcome = 1 if mother give birth 3rd child at year $t$, 0 otherwise.
+Examine the casual relationship between \textcolor{mLightBrown}{female political representativeness} and \textcolor{mLightBrown}{son preference}
+
+- A changing and prominent phenomenon of Taiwanese society
+- An indicator for more general gender attitudes
 
 ---
 
-```{r sexratio-by-parity, fig.cap="Sex Ratio at Birth by Parities", out.width="80%"}
+## Data on Political Representativeness
+
+- Councilor election result from Central Election Committee
+- Election years: 1994, 1998, 2002, 2006
+
+## Treatment: % Female Elected
+
+$$
+\text{\% Female Elected}_{td} = \cfrac{\text{\# Female Elected}_{td}}{\text{\# Total Seats}_{td}}
+$$
+for year $t$, constituency (electoral district) $d$
+
+- Omitted variable bias: Cultural norm that has less son preference and less bias toward female politician.
+- Instrumental variable approach is used to deal with endogeneity.
+
+---
+
+# Instrumental Variable Design
+
+## Source of Exogenous Variation: Woman Reserved Seats
+
+Define instrument as
+
+$$
+\text{\% Reserved Seats}_{td} = \cfrac{\text{\# Reserved Seats}_{td}}{\text{\# Total Seats}_{td}} 
+$$
+
+which is determined by population size.
+
+Utilizing local variation in population between constituencies gives us exogenous variation in reserved seats and female elected.
+
+---
+
+```{r first-stage, fig.cap="Total Seats, Reserved Seats, and Treatments per Constituency (2002)", out.width="80%"}
+knitr::include_graphics("./graphs/firstStage.png")
+```
+
+However, IV correlated not only with female \textcolor{mLightBrown}{elected} but also \textcolor{mLightBrown}{candidates}.
+
+1st stage and reduced form estimates are presented throughout this paper.
+
+---
+
+# Outcome
+
+## Fertility of 3rd child
+
+$$
+\text{Child3}_{itcd} = \mathbb{1}\{\text{3rd child is born at time } t \}
+$$
+for mother $i$, living in county $c$, constituency $d$
+
+- An indicator for son preference
+  - Strong son preference at 3rd child
+  - Mothers with 2 daughters would like to have 3rd child
+- Data gathered from MOI birth record
+  - Panel data from 1994 — 2006, each observation linked to most recent electoral result with 1 year lag
+  - Sample consists of mothers with 2 children, not yet having 3rd
+
+---
+
+## Strong son preference at 3rd child
+
+```{r sexratio-by-parity, fig.cap="Time Trend of Sex Ratio, by Birth Order", out.width="80%"}
 knitr::include_graphics("./graphs/sexratioByParity.png")
 ```
 
 ---
 
-```{r survival-child3, fig.cap="Kaplan–Meier Survival Function Estimate for 3rd Parity Fertility", out.width="90%"}
+## Mothers with 2 daughters would like to have 3rd child
+
+```{r survival-child3, fig.cap="Survival Function Estimate for 3rd Parity Fertility", out.width="90%"}
 knitr::include_graphics("./graphs/survival/survival_child3.png")
+```
+
+---
+
+# Regression Specification
+
+## First Stage
+
+$$
+\text{Treatment}_{itcd} = \alpha + \beta \text{\% Reserved Seats}_{tcd} + \mathbf{X}_i \Gamma + \mathbf{X}_{tcd} \rho + \delta_t + \delta_c + \varepsilon_{itcd}
+$$
+
+## Reduced Form
+
+$$
+\text{Child3}_{itcd} = \alpha + \beta \text{\% Reserved Seats}_{tcd} \times \text{Sex Composition}_i + \mathbf{X}_i \Gamma + \mathbf{X}_{tcd} \rho + \delta_t + \delta_c + \varepsilon_{itcd}
+$$
+
+---
+
+# First Stage
+
+```{r birth-fs}
+cells <- readxl::read_excel("./tables/table.xlsx", sheet = "birth_fs", .name_repair = "minimal", col_names = F)
+table = cells[c(4:5, 10:12), ]
+
+kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c("", cells[2, -1]), align = "lcc", escape = T) %>%
+    add_header_above(c("", 1:2)) %>%
+    add_footnote(str_split(cells[13, 1], "\n")[[1]], notation = "none") %>%
+    kable_styling(font_size = 8)
 ```
 
 ---
 
 ```{r birth-child3-rf}
 cells <- readxl::read_excel("./tables/table.xlsx", sheet = "birth_child3_rf", .name_repair = "minimal", col_names = F)
-table = cells[4:28, ]
+table = cells[c(4:11, 22:28), ]
 
 kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c("", cells[2, -1]), align = "lcccccc", escape = F) %>%
-    add_header_above(c("", 1:6)) %>%
+    add_header_above(c("", 1:5)) %>%
     add_footnote(str_split(cells[29, 1], "\n")[[1]], notation = "none") %>%
     kable_styling(full_width = F, latex_options = "scale_down")
 ```
@@ -145,8 +201,8 @@ kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c(""
 ```{r birth-sex3}
 table <- readxl::read_excel("./tables/table.xlsx", sheet = "birth_sex3", .name_repair = "minimal", col_names = F)
 
-kable(table[4:28, ], booktabs = T, linesep = "", caption = table[1, 1], col.names = c("", table[2, -1]), align = "lcccccc", escape= F) %>%
-    add_header_above(c("", 1:6)) %>%
+kable(table[c(4:11, 22:28), ], booktabs = T, linesep = "", caption = table[1, 1], col.names = c("", table[2, -1]), align = "lcccccc", escape= F) %>%
+    add_header_above(c("", 1:5)) %>%
     add_footnote(str_split(table[29, 1], "\n")[[1]], notation = "none") %>%
     kable_styling(full_width = F, latex_options = "scale_down")
 ```
@@ -156,14 +212,15 @@ kable(table[4:28, ], booktabs = T, linesep = "", caption = table[1, 1], col.name
 # Mechanism Discussion
 
 ## Benefit-Cost Hypothesis
-- Willing to have daughter due to improved career prospect
+- Satisfied with daughters due to improved career prospect
+  - Female councilors delivering beliefs of promising future
 - Daughters being more "valuable"
 - **Test**: Gender gap in health investment
 
-## Intrahousehold Bargaining
-- Women preferred less children while men like to have sons
-- Woman gains bargaining power, then her preference realized.
-- **Test**: Household decision making
+## Intrahousehold Bargaining Hypothesis
+- Men like to have sons, but women simply prefer less children
+- When women are gaining awareness in participating household decisions, her preference are more likely to be realized.
+- **Test**: Gender division in household decision making
 
 ---
 
@@ -182,7 +239,7 @@ kable(table[4:28, ], booktabs = T, linesep = "", caption = table[1, 1], col.name
 ```{r death-rf}
 cells <- readxl::read_excel("./tables/table.xlsx", sheet = "death_rf", .name_repair = "minimal", col_names = F)
 
-table <- cells[4:20, ]
+table <- cells[c(4:13, 18:20), ]
 
 kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c("", cells[3, -1]), align = "lcc", escape = T) %>%
     add_header_above(c("", 1:2)) %>%
@@ -206,7 +263,7 @@ kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c(""
 
 ## Taiwan Social Change Survey, TSCS
 - Outcome:
-  - *In order to continue to patrilineal family, it's important to have at least one son*
+  - *In order to continue the patrilineal family, it's important to have at least one son*
   - Ideal number of children
 - Period: 2001, 2006
 
@@ -228,7 +285,7 @@ kable(table[5:18, ], booktabs = T, linesep = "", caption = table[1, 1], col.name
 ```{r SSDT-bargaining-logit}
 table <- readxl::read_excel("./tables/table.xlsx", sheet = "SSDT_bargaining_logit", .name_repair = "minimal", col_names = F)
 
-kable(table[4:23, ], booktabs = T, linesep = "", caption = table[1, 1], col.names = c("", table[3, -1]), align = "lcccc") %>%
+kable(table[c(4:16, 23), ], booktabs = T, linesep = "", caption = table[1, 1], col.names = c("", table[3, -1]), align = "lcccc") %>%
     add_header_above(c("", 1:4)) %>%
     pack_rows("Woman decides over man decides", 1, 6) %>%
     pack_rows("Mutually decides over man decides", 8, 13) %>%
@@ -254,4 +311,7 @@ kable(table[4:16, ], booktabs = T, linesep = "", caption = table[1, 1], col.name
 
 # Conclusions
 
+- Increasing female political representativeness has an impact on family birth decision
+- 3rd parity fertility decreased for mothers without son.
+- Female gaining more awareness in decision making which affects joint decision (including birth) outcome
 
