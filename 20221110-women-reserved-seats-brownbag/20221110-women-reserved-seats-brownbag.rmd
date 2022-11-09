@@ -16,6 +16,7 @@ header-includes:
     - \usepackage{booktabs}
     - \AtBeginEnvironment{table}{\setlength\belowcaptionskip{-15pt}}
     - \linespread{1.3}
+    - \setbeameroption{show notes}
 ---
 ```{r setup, echo = FALSE, include=F}
 library(knitr)
@@ -51,6 +52,12 @@ What factors contributed to these achievements?
 - 14% ~ 25% female councilor for constituencies with $\geq$ 4 seats
 - Elected man with lowest vote share get replaced by unelected woman with highest vote share.
 
+\note{
+One approach to explain this phenomenon is Taiwan's special political institution. That is, the reserved seats for woman candidates.
+
+This reservation design is quite unique even in the scope of global democracies. As far as we know, although Japan and Korea has similar reservation design but only for candidates, few countries actually practiced mandatory female quota on elected representatives.
+}
+
 ```{hide}
 ---
 
@@ -77,6 +84,14 @@ Examine the casual relationship between \textcolor{mLightBrown}{female political
 - A changing and prominent phenomenon of Taiwanese society
 - An indicator for more general gender attitudes
 
+\note{
+Essentially, our goal of this paper is to identify the casual relationship between female political representativeness, which is partly driven by women reserved seats, and gender attitudes toward female.
+
+Specifically, we chose a important aspect of gender attitudes that is son preference. The reason is that it's an chaning and prominent phenomenon of Taiwanese society which is still common in these years. And it's serving as an indicator for more general gendr attitudes of parents toward their next generation.
+
+So our treatment is more woman being elected into office, and the outcome is change of son preference in parent's birth decisions.
+}
+
 ---
 
 ## Data on Political Representativeness
@@ -94,6 +109,18 @@ for year $t$, constituency (electoral district) $d$
 - Omitted variable bias: Cultural norm that has less son preference and less bias toward female politician.
 - Instrumental variable approach is used to deal with endogeneity.
 
+\note{
+Now we can discuss the data we used for treatment variable.
+
+We used the electoral result of elections from 1994 to 2006, total of 4 terms. And the treatment is defined as proportion of female councilors.
+
+The unit of treatment observation is per year t and constituency d. There will be multiple constituencies in each county.
+
+However, this treatment might suffer from omitted variable bias. For example, some places may have more gender equal cultural norm that promotes women into office and having less son preference in the same time. And we cannot control for it.
+
+Thus, instrumental variable approach is used to deal with this kind of endogeneity.
+}
+
 ---
 
 # Instrumental Variable Design
@@ -110,21 +137,41 @@ which is determined by population size.
 
 Utilizing local variation in population between constituencies gives us exogenous variation in reserved seats and female elected.
 
+\note{
+The instrument we're using is proportion of reserved seats, which is defined as number of reseved seats over number of total seats.
+
+This instrument is determined by population size of constituency, which is predetermined and almost exogenous.
+
+By comparing constituencies with slightly lower population size and slightly higher population size, we get exogenous variations in proportion of reserved seats while holding all else equals.
+}
+
 ---
 
-```{r first-stage, fig.cap="Total Seats, Reserved Seats, and Treatments per Constituency (2002)", out.width="80%"}
+```{r first-stage, out.width="100%"}
 knitr::include_graphics("./graphs/firstStage.png")
 ```
 
-However, IV correlated not only with female \textcolor{mLightBrown}{elected} but also \textcolor{mLightBrown}{candidates}.
+- IV highly correlated with % female elected.
+- However, IV correlated not only with female \textcolor{mLightBrown}{elected} but also \textcolor{mLightBrown}{candidates}.
+- 1st stage and reduced form estimates are presented throughout this paper.
 
-1st stage and reduced form estimates are presented throughout this paper.
+\note{
+Left-hand side of this figure plots the percent of female elected and proportion of reserved seats, conditional on total seats of constituencies.
+
+You can see that for constituencies with total seats of 1 to 3, there's no reserved seats for woman. Once the total seats increases to 4 because of larger population, 1 seat is reserved which is 25\% of total seats. This proportion gradually decreases until one more seat is reserved at total seats of 8.
+
+Blue line indicates the proportion of female elected. For constituencies with total seats of 1 to 3, there's only 5\% woman councilor on average. However, once total seats grows to 4 and having 1 seat reserved, there's more than 30% woman councilors on average.
+
+The problem is that our IV is not only correlated with our treatment but also proportion of female candidates which might simultaneously affect our outcome. Have a look at right-hand side of this figure, we can see that for female candidates proportion it shows similar pattern as female elected proportion. Highly correlated with IV. And when candidates are running their campaign in their communities, role model effect already established no matter she get elected or not. Making impacts on our outcome variable that is gender attitudes.
+
+Essentially, we got 2 treatments but 1 IV. Exclusion restriction does not hold. We cannot obtain a reliable "treatment effect" from 2SLS. Therefore, we'll instead provide 1st stage and reduced form estimate throughout this paper.
+}
 
 ---
 
 # Outcome
 
-## Fertility of 3rd child
+## Propensity of having 3rd child
 
 $$
 \text{Child3}_{itcd} = \mathbb{1}\{\text{3rd child is born at time } t \}
@@ -138,6 +185,15 @@ for mother $i$, living in county $c$, constituency $d$
   - Panel data from 1994 — 2006, each observation linked to most recent electoral result with 1 year lag
   - Sample consists of mothers with 2 children, not yet having 3rd
 
+\note{
+Now we can define our outcome variable as propensity to have 3rd child for mothers with 2 children. 
+
+It's an indicator variable which equals one if a mother $i$ is having her 3rd child born in time $t$. Since we know where the mother currently lives, we can link to electoral data based on her residency.
+
+The propensity to have 3rd child serve as a reliable indicator for son preference due to two observations.
+}
+
+
 ---
 
 ## Strong son preference at 3rd child
@@ -146,6 +202,16 @@ for mother $i$, living in county $c$, constituency $d$
 knitr::include_graphics("./graphs/sexratioByParity.png")
 ```
 
+\note{
+First, people are displaying strong son preference at 3rd child compared to birth order of 1 or 2.
+This graph plots the time trend of realized sex ratio by birth order.
+
+For 1st and 2nd child, the realized sex ratio is comparatively normal, locating at around 106 to 107.
+However, for 3rd child the neonatal sex ratio significantly increases since 1985 which is the time that Taiwan introduced supersonic technology and legalize sex-selective abortion.
+
+Essentially, people are displaying their son preference strongest in their 3rd child. And this does not applies to 1st and 2nd child.
+}
+
 ---
 
 ## Mothers with 2 daughters would like to have 3rd child
@@ -153,6 +219,18 @@ knitr::include_graphics("./graphs/sexratioByParity.png")
 ```{r survival-child3, fig.cap="Survival Function Estimate for 3rd Parity Fertility", out.width="90%"}
 knitr::include_graphics("./graphs/survival/survival_child3.png")
 ```
+
+\note{
+Another important observation is that mothers with 2 daughters would be more likely to have 3rd child.
+
+This figure plots survival function of mothers having their 3rd child after they got their 2nd. The x-axis indicates months after her 2nd child born. Y-axis indicates the proportion of mothers not yet having 3rd child.
+
+We can see that for "both daughter" group that is mothers with 2 daughters and no son, they would be running for another child 10 months after they got their 2nd children. 
+
+This special behavior is most likely due to the fact that mothers with no son are displaying strong son preference and desperately trying to obtain a son.
+
+Therefore, their propensity to have 3rd child would be an behavioral indicator for their son preference. If she won't get it, she might have less son preference. If she desperately tries to get it, she is showing strong preference.
+}
 
 ---
 
@@ -184,6 +262,16 @@ kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c(""
     kable_styling(font_size = 8)
 ```
 
+\note{
+This table shows the first stage regression result.
+
+1 percent increase in reserved seats is associated with 0.9\% increase in female councilors. 
+
+And 1 percent increase in reserved seats is associated with 0.7\% increase in female candidates.
+
+Both two treatments are binding with the policy variation.
+}
+
 ---
 
 ```{r birth-child3-rf}
@@ -196,6 +284,16 @@ kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c(""
     kable_styling(full_width = F, latex_options = "scale_down")
 ```
 
+\note{
+Now we can have a look at our main regression result of propensity to have 3rd child.
+
+Our benchmark group of interaction is two daughter mothers. From 0 to 100\% increase in reservation would induce 3.25 percent less propensity for two daughter mother to have another child. For 25\% increase in reservation, there's 0.8\% decrease in propensity, roughly accounts for 37\% of the mean.
+
+For other sex compositions, their coefficients cancel out. Marginal effects are zero (we cannot reject the hypothesis that it equals zero).
+
+If we split our sample into few subgroups including mothers with high school degree or not, living in urban area or not, we see similar estimate. There's no significant difference between mothers with or without high school degree. But the effect are concentrated in the group of mothers living in urban area. (Taipei, New Taipei, Taoyuan, Taichung, Tainan, Kaoshiung)
+}
+
 ---
 
 ```{r birth-sex3}
@@ -206,6 +304,16 @@ kable(table[c(4:11, 22:28), ], booktabs = T, linesep = "", caption = table[1, 1]
     add_footnote(str_split(table[29, 1], "\n")[[1]], notation = "none") %>%
     kable_styling(full_width = F, latex_options = "scale_down")
 ```
+
+\note{
+Now we shows the estimate of regressing realized neonatal sex of 3rd child on our IV.
+
+Outcome equals 1 if the sex of 3rd child is a son, 0 if a daughter.
+
+Now we see that increasing reservation leads to higher probability of having a son.
+
+This is most likely due to self-selection issue. Given the fact mothers with weaker son preference would prefer not to have additional child, those who insist to have it might be the ones with strong son preference. They might utilize sex-selective abortion to pick sons, resulting in higher sex ratio.
+}
 
 ---
 
@@ -248,6 +356,14 @@ kable(table, booktabs = T, linesep = "", caption = cells[1, 1], col.names = c(""
     kable_styling(font_size = 7)
 ```
 
+\note{
+This table shows the regression result of neonatal mortality.
+
+Although increasing reservation do reduce the mortality for high order children, there's no reduction in gender gap.
+
+We cannot reject the joint hypothesis that the coefficients are equal.
+}
+
 ---
 
 # Test for Intrahousehold Bargaining Hypothesis
@@ -280,6 +396,16 @@ kable(table[5:18, ], booktabs = T, linesep = "", caption = table[1, 1], col.name
     kable_styling(full_width = F, latex_options = "scale_down")
 ```
 
+\note{
+This table shows the regression result of household decision making.
+
+Outcome variable equals one if woman are participating in household decision, no matter it's sole decision by wife or mutual decision by couple.
+
+Increasing reservation leads to high probability that female respondents are considering themselves participating the decision making. While husbands do not aware that their wives are doing more decision making.
+
+This shows an increase of awareness by female respondents that they're considering themselves having power in decision making. Supporting our hypothesis that women's preference would be more likely to get realized in joint family decisions such as birth decision.
+}
+
 ---
 
 ```{r SSDT-bargaining-logit}
@@ -292,6 +418,10 @@ kable(table[c(4:16, 23), ], booktabs = T, linesep = "", caption = table[1, 1], c
     add_footnote(str_split(tail(table, 1)[[1]], "\n")[[1]], notation = "none") %>%
     kable_styling(full_width = F, latex_options = "scale_down")
 ```
+
+\note{
+By using multilevel logit model to seperate "mutual decision" from "wife decision", our result remains consistent.
+}
 
 ---
 
@@ -306,6 +436,16 @@ kable(table[4:16, ], booktabs = T, linesep = "", caption = table[1, 1], col.name
     add_footnote(str_split(tail(table, 1)[[1]], "\n")[[1]], notation = "none") %>%
     kable_styling(full_width = F, latex_options = "scale_down")
 ```
+
+\note{
+Now we look at the change of self-reported son preference.
+
+Increasing reservation leads to lower probability that a female would endorse the statement of "important to have at least one son". And this effect concentrates in older woman aged more than 45, suggesting a potential inter-generational factors playing in couple's birth decision.
+
+For instance, mothers-in-law are relaxing their norms on son preference and giving less pressure on couples. Therefore they prefer to have less children instead of desperately chasing for a son.
+
+In the same time, increasing reservation do not lowers the preferred number of children. Thus the change in propensity to get 3rd child is more likely to be a preference change in gender not in quantity.
+}
 
 ---
 
