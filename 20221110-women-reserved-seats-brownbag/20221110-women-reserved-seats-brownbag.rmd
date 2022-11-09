@@ -2,7 +2,7 @@
 title: "Woman Reserved Seats and Female Status in Taiwan"
 subtitle: "NTU Brownbag Seminar"
 date: "Nov 10, 2022"
-author: "Yu-Hsin Ho"
+author: "何雨忻 Yu-Hsin Ho"
 output:
     beamer_presentation:
         latex_engine: xelatex
@@ -11,7 +11,7 @@ colortheme: metropolis
 fontsize: 10pt
 mainfont: "Fira Sans"
 mathfont: "Fira Math"
-CJKmainfont: "GenRyuMin TW"
+CJKmainfont: "AR UDJingXiHeiU30"
 header-includes:
     - \usepackage{booktabs}
     - \AtBeginEnvironment{table}{\setlength\belowcaptionskip{-15pt}}
