@@ -16,7 +16,6 @@ header-includes:
     - \usepackage{booktabs}
     - \AtBeginEnvironment{table}{\setlength\belowcaptionskip{-15pt}}
     - \linespread{1.3}
-    - \setbeameroption{show notes}
 ---
 ```{r setup, echo = FALSE, include=F}
 library(knitr)
@@ -34,28 +33,45 @@ options(knitr.kable.NA = "")
 knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
 
-# Introduction
+# Motivation
 
 Taiwanese women have a relatively well socioeconomic status:
 
-- \textcolor{mLightBrown}{Gender Inequality Index}: top 1 among Asian societies
+- \textcolor{mLightBrown}{Gender Gap Index}: ranked 36 globally
+    - 100 for South Korea
+    - 117 for Japan
 - \textcolor{mLightBrown}{> 40\% female legislators}: close to Scandinavian countries
+    - 9% in South Korea
+    - 10% in Japan
 
-What factors contributed to these achievements?
+---
+
+```{r female-principal, out.width="100%"}
+knitr::include_graphics("./graphs/female-principal.png")
+```
+
+---
+
+```{r female-professor, out.width="100%"}
+knitr::include_graphics("./graphs/female-professor.png")
+```
+
+What factors are driving this great gap between Taiwan, Japan and South Korea?
 
 ---
 
 ## Woman Reserved Seats in Taiwan
 
+- Unique institution among global democracies
 - Implemented since 1946, at national legislators and county councilors elections
 - For every 4 political seats (or 5 before 1999), 1 seat is reserved for female candidates.
 - 14% ~ 25% female councilor for constituencies with $\geq$ 4 seats
 - Elected man with lowest vote share get replaced by unelected woman with highest vote share.
 
 \note{
-One approach to explain this phenomenon is Taiwan's special political institution. That is, the reserved seats for woman candidates.
+One factor driving this phenomenon is Taiwan's special political institution. That is, the women reserved seats for councilor election.
 
-This reservation design is quite unique even in the scope of global democracies. As far as we know, although Japan and Korea has similar reservation design but only for candidates, few countries actually practiced mandatory female quota on elected representatives.
+This reservation design is quite unique even in the scope of global democracies. As far as we know, very few countries in the world actually practiced mandatory female quota on elected representatives.
 }
 
 ```{hide}
@@ -77,17 +93,19 @@ Let woman becomes political leaders reduces gender gap well beyond political fie
 
 ---
 
+# Goal
+
 ## This paper
 
-Examine the casual relationship between \textcolor{mLightBrown}{female political representativeness} and \textcolor{mLightBrown}{son preference}
+Examine the casual impact of \textcolor{mLightBrown}{female political representativeness} on \textcolor{mLightBrown}{son preference}, and the potential \textcolor{mLightBrown}{mechanisms}.
 
-- A changing and prominent phenomenon of Taiwanese society
-- An indicator for more general gender attitudes
+- A changing and prominent norm of Taiwanese society
+- An important component of gender attitudes
 
 \note{
-Essentially, our goal of this paper is to identify the casual relationship between female political representativeness, which is partly driven by women reserved seats, and gender attitudes toward female.
+Essentially, our goal of this paper is to identify the casual impact of female political representativeness, which is partly driven by women reserved seats, on gender attitudes toward female.
 
-Specifically, we chose a important aspect of gender attitudes that is son preference. The reason is that it's an chaning and prominent phenomenon of Taiwanese society which is still common in these years. And it's serving as an indicator for more general gendr attitudes of parents toward their next generation.
+Specifically, we chose a important aspect of gender attitudes that is son preference. The reason is that it's an changing and prominent phenomenon of Taiwanese society which is still common in these years. And it's serving as an indicator for more general gender attitudes of parents toward their next generation.
 
 So our treatment is more woman being elected into office, and the outcome is change of son preference in parent's birth decisions.
 }
@@ -106,65 +124,16 @@ $$
 $$
 for year $t$, constituency (electoral district) $d$
 
-- Omitted variable bias: Cultural norm that has less son preference and less bias toward female politician.
-- Instrumental variable approach is used to deal with endogeneity.
-
 \note{
-Now we can discuss the data we used for treatment variable.
+Now we can discuss the data we used to construct treatment variable.
 
-We used the electoral result of elections from 1994 to 2006, total of 4 terms. And the treatment is defined as proportion of female councilors.
+We used the result of elections from 1994 to 2006, total of 4 terms. And the treatment is defined as proportion of female elected councilors.
 
 The unit of treatment observation is per year t and constituency d. There will be multiple constituencies in each county.
 
-However, this treatment might suffer from omitted variable bias. For example, some places may have more gender equal cultural norm that promotes women into office and having less son preference in the same time. And we cannot control for it.
+However, if we naively do a regression of son preference on \% female elected, the estimated coefficient would be biased due to omitted variable. For example, some places may have more gender equal cultural norm that promotes women into office and having less son preference in the same time. And we cannot control for it.
 
 Thus, instrumental variable approach is used to deal with this kind of endogeneity.
-}
-
----
-
-# Instrumental Variable Design
-
-## Source of Exogenous Variation: Woman Reserved Seats
-
-Define instrument as
-
-$$
-\text{\% Reserved Seats}_{td} = \cfrac{\text{\# Reserved Seats}_{td}}{\text{\# Total Seats}_{td}} 
-$$
-
-which is determined by population size.
-
-Utilizing local variation in population between constituencies gives us exogenous variation in reserved seats and female elected.
-
-\note{
-The instrument we're using is proportion of reserved seats, which is defined as number of reseved seats over number of total seats.
-
-This instrument is determined by population size of constituency, which is predetermined and almost exogenous.
-
-By comparing constituencies with slightly lower population size and slightly higher population size, we get exogenous variations in proportion of reserved seats while holding all else equals.
-}
-
----
-
-```{r first-stage, out.width="100%"}
-knitr::include_graphics("./graphs/firstStage.png")
-```
-
-- IV highly correlated with % female elected.
-- However, IV correlated not only with female \textcolor{mLightBrown}{elected} but also \textcolor{mLightBrown}{candidates}.
-- 1st stage and reduced form estimates are presented throughout this paper.
-
-\note{
-Left-hand side of this figure plots the percent of female elected and proportion of reserved seats, conditional on total seats of constituencies.
-
-You can see that for constituencies with total seats of 1 to 3, there's no reserved seats for woman. Once the total seats increases to 4 because of larger population, 1 seat is reserved which is 25\% of total seats. This proportion gradually decreases until one more seat is reserved at total seats of 8.
-
-Blue line indicates the proportion of female elected. For constituencies with total seats of 1 to 3, there's only 5\% woman councilor on average. However, once total seats grows to 4 and having 1 seat reserved, there's more than 30% woman councilors on average.
-
-The problem is that our IV is not only correlated with our treatment but also proportion of female candidates which might simultaneously affect our outcome. Have a look at right-hand side of this figure, we can see that for female candidates proportion it shows similar pattern as female elected proportion. Highly correlated with IV. And when candidates are running their campaign in their communities, role model effect already established no matter she get elected or not. Making impacts on our outcome variable that is gender attitudes.
-
-Essentially, we got 2 treatments but 1 IV. Exclusion restriction does not hold. We cannot obtain a reliable "treatment effect" from 2SLS. Therefore, we'll instead provide 1st stage and reduced form estimate throughout this paper.
 }
 
 ---
@@ -192,7 +161,6 @@ It's an indicator variable which equals one if a mother $i$ is having her 3rd ch
 
 The propensity to have 3rd child serve as a reliable indicator for son preference due to two observations.
 }
-
 
 ---
 
@@ -230,6 +198,59 @@ We can see that for "both daughter" group that is mothers with 2 daughters and n
 This special behavior is most likely due to the fact that mothers with no son are displaying strong son preference and desperately trying to obtain a son.
 
 Therefore, their propensity to have 3rd child would be an behavioral indicator for their son preference. If she won't get it, she might have less son preference. If she desperately tries to get it, she is showing strong preference.
+}
+
+---
+
+## Endogeneity
+
+- Reverse causality: Gender attitudes might have impact on election result
+- Instrumental variable approach is used to deal with endogeneity.
+
+---
+
+# Instrumental Variable Design
+
+## Source of Exogenous Variation: Woman Reserved Seats
+
+Define instrument as
+
+$$
+\text{\% Reserved Seats}_{td} = \cfrac{\text{\# Reserved Seats}_{td}}{\text{\# Total Seats}_{td}} 
+$$
+
+which is mostly determined by population size.
+
+However, since the allocation rule of seats is non-linear, even after controlling the population size, variation of IV is still rich.
+
+\note{
+The instrument we're using is proportion of reserved seats by law, which is defined as number of reseved seats over number of total seats.
+
+This instrument is determined by population size of constituency, which is predetermined and virtually exogenous.
+
+By comparing constituencies with lower population size and higher population size, we get exogenous variations in proportion of reserved seats while holding all else equals.
+}
+
+---
+
+```{r first-stage, out.width="100%"}
+knitr::include_graphics("./graphs/firstStage.png")
+```
+
+- IV highly correlated with % female elected.
+- However, IV correlated not only with female \textcolor{mLightBrown}{elected} but also \textcolor{mLightBrown}{candidates}.
+- 1st stage and reduced form estimates are presented throughout this paper.
+
+\note{
+Left-hand side of this figure plots the percent of female elected and proportion of reserved seats, conditional on total seats of constituencies.
+
+You can see that for constituencies with total seats of 1 to 3, there's no reserved seats for woman. Once the total seats increases to 4 because of larger population, 1 seat is reserved which is 25\% of total seats. This proportion gradually decreases until one more seat is reserved at total seats of 8.
+
+Blue line indicates the proportion of female elected. For constituencies with total seats of 1 to 3, there's only 5\% woman councilor on average. However, once total seats grows to 4 and having 1 seat reserved, there's more than 30% woman councilors on average.
+
+The problem is that our IV is not only correlated with our treatment but also proportion of female candidates which might simultaneously affect our outcome. Have a look at right-hand side of this figure, we can see that for female candidates proportion it shows similar pattern as female elected proportion. Highly correlated with IV. And when candidates are running their campaign in their communities, role model effect already established no matter she get elected or not. Making impacts on our outcome variable that is gender attitudes.
+
+Essentially, we got 2 treatments but 1 IV. Exclusion restriction does not hold. We cannot obtain a reliable "treatment effect" from 2SLS. Therefore, we'll instead provide 1st stage and reduced form estimate throughout this paper.
 }
 
 ---
@@ -320,19 +341,22 @@ This is most likely due to self-selection issue. Given the fact mothers with wea
 # Mechanism Discussion
 
 ## Benefit-Cost Hypothesis
-- Satisfied with daughters due to improved career prospect
-  - Female councilors delivering beliefs of promising future
-- Daughters being more "valuable"
+- Female councilors delivering beliefs of promising future
+- Both husband and wife are satisfied with daughters due to improved career prospect
+- Daughters are considered more "valuable"
 - **Test**: Gender gap in health investment
 
 ## Intrahousehold Bargaining Hypothesis
-- Men like to have sons, but women simply prefer less children
+- Wife, not husband, is susceptible to the increase of female councilor 
+- She has a preference for less children
 - When women are gaining awareness in participating household decisions, her preference are more likely to be realized.
 - **Test**: Gender division in household decision making
 
 ---
 
 # Test for Benefit-Cost Hypothesis
+
+Is there a reduction in gender gap of neonatal mortality?
 
 ## NHRI Mortality Record
 - Outcome: Neonatal mortality
