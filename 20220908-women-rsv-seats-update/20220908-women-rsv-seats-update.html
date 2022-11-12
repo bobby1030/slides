@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Progress Update on Women Reserved Seats</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yu-Hsin Ho" />
+    <script src="20220908-women-rsv-seats-update_files/header-attrs-2.14/header-attrs.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Progress Update on Women Reserved Seats
+]
+.subtitle[
+## 20220908 @ Lab Meeting
+]
+.author[
+### Yu-Hsin Ho
+]
+
+---
+
+
+
+
+## Household Bargaining
+
+- How to explain the change in son preference / 3rd parity fertility?
+- Having baby is a joint decision under household bargaining
+- If role model effect is valid:
+    - Powerful female politician is associated with higher bargaining power for wives
+    - Husbands might be less susceptible
+
+--
+
+## Data
+
+.leftcol[
+
+#### 社會發展趨勢調查
+
+*Survey on Social Development Trends*
+
+- 1998, 2002
+- Sample:
+    - Age: 16-45
+    - Married
+]
+
+.rightcol[
+
+#### Variables
+
+1. allocation of daily expenditures
+2. parenting
+3. saving and investments
+4. allocation of houseworks
+
+Dummy = 1 if woman is the decision maker / joint decision
+]
+
+---
+
+.reg[
+<table border="0" width="*">
+<caption>SSDT Bargaining (Reduced Form), Dummy 0-1</caption>
+<tr><td colspan=6><hr></td></tr>
+<tr><td>                    </td><td>         (1)              </td><td>         (2)              </td><td>         (3)              </td><td>         (4)              </td><td>         (5)              </td></tr>
+<tr><td>                    </td><td>日常支出分配              </td><td>子女的教養方式              </td><td>    儲蓄理財              </td><td>    家事分配              </td><td>         PCA              </td></tr>
+<tr><td colspan=6><hr></td></tr>
+<tr><td>Reserved Seats %    </td><td>      -0.123              </td><td>     -0.0726              </td><td>      -0.124              </td><td>      -0.151<sup>**</sup> </td><td>      -0.699<sup>*</sup>  </td></tr>
+<tr><td>                    </td><td>     (0.119)              </td><td>    (0.0900)              </td><td>    (0.0890)              </td><td>    (0.0610)              </td><td>     (0.363)              </td></tr>
+<tr><td>女 # Reserved Seats %</td><td>       0.184<sup>***</sup></td><td>      0.0289              </td><td>       0.234<sup>***</sup></td><td>      0.0783<sup>*</sup>  </td><td>       0.669<sup>***</sup></td></tr>
+<tr><td>                    </td><td>    (0.0686)              </td><td>    (0.0569)              </td><td>    (0.0651)              </td><td>    (0.0474)              </td><td>     (0.258)              </td></tr>
+<tr><td>女                  </td><td>      0.0138              </td><td>      0.0238<sup>**</sup> </td><td>      0.0115              </td><td>     0.00607              </td><td>      0.0781<sup>*</sup>  </td></tr>
+<tr><td>                    </td><td>    (0.0118)              </td><td>   (0.00947)              </td><td>    (0.0105)              </td><td>   (0.00907)              </td><td>    (0.0427)              </td></tr>
+<tr><td>Age, Edu Control    </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+<tr><td>Log-Population Control </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+<tr><td>Year FE             </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+<tr><td>County FE           </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+<tr><td colspan=6><hr></td></tr>
+<tr><td>Mean                </td><td>       0.833              </td><td>       0.882              </td><td>       0.895              </td><td>       0.938              </td><td>       0.158              </td></tr>
+<tr><td>Observations        </td><td>       17358              </td><td>       16384              </td><td>       17013              </td><td>       17358              </td><td>       16039              </td></tr>
+<tr><td>Adj. R-square       </td><td>      0.0160              </td><td>      0.0558              </td><td>      0.0422              </td><td>     0.00385              </td><td>      0.0166              </td></tr>
+<tr><td colspan=6><hr></td></tr>
+<tr><td colspan=6>
+Clustered (election-township level) standard errors in parentheses
+<br /><sup>*</sup> <i>p</i> < 0.1, <sup>**</sup> <i>p</i> < 0.05, <sup>***</sup> <i>p</i> < 0.01
+</td></tr>
+</table>
+]
+
+---
+
+## Concerns...
+
+- Interpretation of coefficient
+    - "Real" bargaining power?
+    - Self-awareness?
+--
+- Measurement?
+    - Over 80% reported "mutual decision" or "wife decision"
+---
+
+.reg.scale80[
+<table border="0" width="*">
+    <caption>SSDT Bargaining (Logistic Regression)</caption>
+    <tr><td colspan=5><hr></td></tr>
+    <tr><td>                    </td><td>         (1)              </td><td>         (2)              </td><td>         (3)              </td><td>         (4)              </td></tr>
+    <tr><td>                    </td><td>日常支出分配              </td><td>子女的教養方式              </td><td>    儲蓄理財              </td><td>    家事分配              </td></tr>
+    <tr><td colspan=5><hr></td></tr>
+    <tr><td>男性決定            </td><td>                          </td><td>                          </td><td>                          </td><td>                          </td></tr>
+    <tr><td colspan="5">Base Group</td></tr>
+    <tr><td colspan=5><hr></td></tr>
+    <tr><td>女性決定            </td><td>                          </td><td>                          </td><td>                          </td><td>                          </td></tr>
+    <tr><td>Reserved Seats %    </td><td>       0.460              </td><td>       0.123<sup>**</sup> </td><td>       0.457              </td><td>      0.0806<sup>**</sup> </td></tr>
+    <tr><td>                    </td><td>     (0.432)              </td><td>     (0.127)              </td><td>     (0.512)              </td><td>    (0.0802)              </td></tr>
+    <tr><td>女 # Reserved Seats %</td><td>       4.500<sup>***</sup></td><td>       8.060<sup>***</sup></td><td>       4.681<sup>*</sup>  </td><td>       3.879              </td></tr>
+    <tr><td>                    </td><td>     (2.568)              </td><td>     (6.153)              </td><td>     (3.798)              </td><td>     (3.245)              </td></tr>
+    <tr><td>女                  </td><td>       1.193<sup>*</sup>  </td><td>       1.055              </td><td>       1.448<sup>**</sup> </td><td>       1.146              </td></tr>
+    <tr><td>                    </td><td>     (0.117)              </td><td>     (0.111)              </td><td>     (0.224)              </td><td>     (0.183)              </td></tr>
+    <tr><td colspan=5><hr></td></tr>
+    <tr><td>共同決定            </td><td>                          </td><td>                          </td><td>                          </td><td>                          </td></tr>
+    <tr><td>Reserved Seats %    </td><td>       0.372              </td><td>       0.220<sup>*</sup>  </td><td>       0.729              </td><td>      0.0922<sup>**</sup> </td></tr>
+    <tr><td>                    </td><td>     (0.310)              </td><td>     (0.189)              </td><td>     (0.653)              </td><td>    (0.0978)              </td></tr>
+    <tr><td>女 # Reserved Seats %</td><td>       3.816<sup>***</sup></td><td>       3.809<sup>**</sup> </td><td>       2.750              </td><td>       3.908<sup>*</sup>  </td></tr>
+    <tr><td>                    </td><td>     (1.712)              </td><td>     (2.375)              </td><td>     (1.870)              </td><td>     (3.082)              </td></tr>
+    <tr><td>女                  </td><td>       1.051              </td><td>       1.126              </td><td>       1.335<sup>**</sup> </td><td>       1.061              </td></tr>
+    <tr><td>                    </td><td>    (0.0767)              </td><td>    (0.0875)              </td><td>     (0.162)              </td><td>     (0.161)              </td></tr>
+    <tr><td>Age, Edu Control    </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+    <tr><td>Log-Population Control </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+    <tr><td>Year FE             </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+    <tr><td>County FE           </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td><td>         Yes              </td></tr>
+    <tr><td colspan=5><hr></td></tr>
+    <tr><td>Observations        </td><td>       17358              </td><td>       16384              </td><td>       17013              </td><td>       17358              </td></tr>
+    <tr><td colspan=5><hr></td></tr>
+    <tr><td colspan=5>
+    Exponentiated coefficients; Clustered (on election-township level) standard errors in parentheses
+    <br /><sup>*</sup> <i>p</i> < 0.1, <sup>**</sup> <i>p</i> < 0.05, <sup>***</sup> <i>p</i> < 0.01
+    </td></tr>
+</table>
+]
+
+---
+
+class: middle
+
+## Labor Market Outcomes
+
+- Female Labor Participation
+- Wage
+
+### Data
+
+- End-of-year labor insurance record
+- 1998 - 2005
+- Sample:
+    - Age: 20-60
+    - Already have 2 children
+
+
+---
+
+.reg.scale80[
+<table border="0" width="*">
+<caption>Female Labor Participation</caption>
+<tr><td colspan=3><hr></td></tr>
+<tr><td>                    </td><td>         (1)              </td><td>         (2)              </td></tr>
+<tr><td>                    </td><td> Baseline              </td><td>   FEs              </td></tr>
+<tr><td colspan=3><hr></td></tr>
+<tr><td>% Reserved Seats    </td><td>      -0.223<sup>***</sup></td><td>      0.0335              </td></tr>
+<tr><td>                    </td><td>    (0.0511)              </td><td>    (0.0439)              </td></tr>
+<tr><td>Both Daughter # % Reserved Seats</td><td>           0              </td><td>           0              </td></tr>
+<tr><td>                    </td><td>         (.)              </td><td>         (.)              </td></tr>
+<tr><td>Daughter Son # % Reserved Seats</td><td>    -0.00499              </td><td>    -0.00688              </td></tr>
+<tr><td>                    </td><td>   (0.00956)              </td><td>   (0.00949)              </td></tr>
+<tr><td>Son Daughter # % Reserved Seats</td><td>     -0.0113              </td><td>     -0.0116              </td></tr>
+<tr><td>                    </td><td>   (0.00960)              </td><td>   (0.00949)              </td></tr>
+<tr><td>Both Son # % Reserved Seats</td><td>     -0.0103              </td><td>    -0.00916              </td></tr>
+<tr><td>                    </td><td>   (0.00981)              </td><td>   (0.00958)              </td></tr>
+<tr><td>ln_pop              </td><td>      0.0112<sup>**</sup> </td><td>      0.0122<sup>*</sup>  </td></tr>
+<tr><td>                    </td><td>   (0.00525)              </td><td>   (0.00693)              </td></tr>
+<tr><td>Parent Age, Edu Control </td><td>         Yes              </td><td>         Yes              </td></tr>
+<tr><td>Year FE             </td><td>          No              </td><td>         Yes              </td></tr>
+<tr><td>County FE           </td><td>          No              </td><td>         Yes              </td></tr>
+<tr><td colspan=3><hr></td></tr>
+<tr><td>Mean                </td><td>       0.554              </td><td>       0.554              </td></tr>
+<tr><td>Observations        </td><td>    15226201              </td><td>    15226201              </td></tr>
+<tr><td>Adj. R-square       </td><td>     0.00696              </td><td>      0.0236              </td></tr>
+<tr><td colspan=3><hr></td></tr>
+<tr><td colspan=3>
+Standard errors in parentheses
+<br /><sup>*</sup> <i>p</i> < 0.1, <sup>**</sup> <i>p</i> < 0.05, <sup>***</sup> <i>p</i> < 0.01
+</td></tr>
+</table>
+]
+
+---
+
+.reg.scale80[
+<table border="0" width="*">
+    <caption>Wage of Employed Female</caption>
+    <tr><td colspan=3><hr></td></tr>
+    <tr><td>                    </td><td>         (1)              </td><td>         (2)              </td></tr>
+    <tr><td>                    </td><td> Baseline              </td><td>   FEs              </td></tr>
+    <tr><td colspan=3><hr></td></tr>
+    <tr><td>% Reserved Seats    </td><td>     -1478.7              </td><td>       663.6              </td></tr>
+    <tr><td>                    </td><td>     (928.7)              </td><td>     (692.8)              </td></tr>
+    <tr><td>Both Daughter # % Reserved Seats</td><td>           0              </td><td>           0              </td></tr>
+    <tr><td>                    </td><td>         (.)              </td><td>         (.)              </td></tr>
+    <tr><td>Daughter Son # % Reserved Seats</td><td>      -272.8<sup>*</sup>  </td><td>      -276.2<sup>*</sup>  </td></tr>
+    <tr><td>                    </td><td>     (161.6)              </td><td>     (155.9)              </td></tr>
+    <tr><td>Son Daughter # % Reserved Seats</td><td>      -443.3<sup>***</sup></td><td>      -403.5<sup>**</sup> </td></tr>
+    <tr><td>                    </td><td>     (169.0)              </td><td>     (166.1)              </td></tr>
+    <tr><td>Both Son # % Reserved Seats</td><td>      -162.6              </td><td>      -96.78              </td></tr>
+    <tr><td>                    </td><td>     (154.7)              </td><td>     (152.9)              </td></tr>
+    <tr><td>ln_pop              </td><td>       625.8<sup>***</sup></td><td>      -3.077              </td></tr>
+    <tr><td>                    </td><td>     (93.78)              </td><td>     (95.34)              </td></tr>
+    <tr><td>Parent Age, Edu Control </td><td>         Yes              </td><td>         Yes              </td></tr>
+    <tr><td>Year FE             </td><td>          No              </td><td>         Yes              </td></tr>
+    <tr><td>County FE           </td><td>          No              </td><td>         Yes              </td></tr>
+    <tr><td colspan=3><hr></td></tr>
+    <tr><td>Mean                </td><td>     22523.0              </td><td>     22523.0              </td></tr>
+    <tr><td>Observations        </td><td>     8436365              </td><td>     8436365              </td></tr>
+    <tr><td>Adj. R-square       </td><td>      0.0870              </td><td>       0.108              </td></tr>
+    <tr><td colspan=3><hr></td></tr>
+    <tr><td colspan=3>
+    Standard errors in parentheses
+    <br /><sup>*</sup> <i>p</i> < 0.1, <sup>**</sup> <i>p</i> < 0.05, <sup>***</sup> <i>p</i> < 0.01
+    </td></tr>
+    </table>
+    
+]
+
+---
+
+class: middle
+
+## Current findings
+
+Likely mechanism:
+
+  1. Woman under treatment has less son preference *(known by TSCS)*
+  2. They gain more bargaining power in joint household decisions *(known by SSDT)*
+  3. Pro-equal preference is then revealed through change of birth pattern *(known by birth registry)*
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

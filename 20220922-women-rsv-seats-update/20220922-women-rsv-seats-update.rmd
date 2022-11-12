@@ -1,0 +1,67 @@
+---
+title: "Progress Update on Women Reserved Seats"
+subtitle: "20220922 @ Lab Meeting"
+author: "Yu-Hsin Ho"
+output:
+    xaringan::moon_reader:
+        css: ["./style.css"]
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.kable.NA = "")
+```
+
+# IV Exclusion Restriction Check
+
+## Sample
+
+- 1998 ~ 2005 (complying election results from 1998, 2002)
+- "Complier" for candidates, but not % elected woman councilor
+  - IV increased in 2002 (compared to 1998)
+  - Candidates increased
+  - Elected holds
+- 42 out of 369 townships (~ 11%)
+
+---
+
+## First stage
+
+.reg[
+```{r}
+htmltools::includeHTML("./birth_fs.html")
+```
+]
+
+---
+
+## Reduced Form for 3rd Parity Fertility
+
+.reg.scale80[
+```{r}
+htmltools::includeHTML("./birth_child3_rf.html")
+```
+]
+
+---
+
+class: center,middle
+
+# Birth Preference Change
+
+---
+
+## TSCS
+
+.reg.scale80[
+```{r TSCS-birth-pref-rf}
+table <- readxl::read_excel("./table.xlsx", sheet = "TSCS_son_rf", .name_repair = "minimal", col_names = F)
+
+knitr::kable(table[4:16, ], caption = table[1, 1], col.names = c("", table[2, -1]), align = "lcccccc") %>%
+    kableExtra::add_header_above(c("", 1:6)) %>%
+    kableExtra::add_header_above(c("", "Important to have at least one son" = 3, "Number of children willing to have" = 3)) %>%
+    kableExtra::add_footnote(str_split(tail(table, 1)[[1]], "\n")[[1]], notation = "none") %>% 
+    kableExtra::kable_classic_2(html_font = "inherit")
+```
+]

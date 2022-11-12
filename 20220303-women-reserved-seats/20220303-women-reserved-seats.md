@@ -14,7 +14,7 @@ mainfont: "Myriad Pro"
 CJKmainfont: "AR UDJingXiHeiPU30"
 CJKoptions:
   - ItalicFont=AR PL UKai TW
-fontsize: 9pt
+fontsize: 10pt
 urlcolor: red
 linkstyle: bold
 aspectratio: 43

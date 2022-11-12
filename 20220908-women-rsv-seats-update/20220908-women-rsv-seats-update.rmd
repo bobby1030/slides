@@ -1,0 +1,120 @@
+---
+title: "Progress Update on Women Reserved Seats"
+subtitle: "20220908 @ Lab Meeting"
+author: "Yu-Hsin Ho"
+output:
+    xaringan::moon_reader:
+        css: ["./style.css"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Household Bargaining
+
+- How to explain the change in son preference / 3rd parity fertility?
+- Having baby is a joint decision under household bargaining
+- If role model effect is valid:
+    - Powerful female politician is associated with higher bargaining power for wives
+    - Husbands might be less susceptible
+
+--
+
+## Data
+
+.leftcol[
+
+#### 社會發展趨勢調查
+
+*Survey on Social Development Trends*
+
+- 1998, 2002
+- Sample:
+    - Age: 16-45
+    - Married
+]
+
+.rightcol[
+
+#### Variables
+
+1. allocation of daily expenditures
+2. parenting
+3. saving and investments
+4. allocation of houseworks
+
+Dummy = 1 if woman is the decision maker / joint decision
+]
+
+---
+
+.reg[
+```{r}
+htmltools::includeHTML("./SSDT_rf_bargaining.html")
+```
+]
+
+---
+
+## Concerns...
+
+- Interpretation of coefficient
+    - "Real" bargaining power?
+    - Self-awareness?
+--
+- Measurement?
+    - Over 80% reported "mutual decision" or "wife decision"
+---
+
+.reg.scale80[
+```{r}
+htmltools::includeHTML("./SSDT_logit_bargaining.html")
+```
+]
+
+---
+
+class: middle
+
+## Labor Market Outcomes
+
+- Female Labor Participation
+- Wage
+
+### Data
+
+- End-of-year labor insurance record
+- 1998 - 2005
+- Sample:
+    - Age: 20-60
+    - Already have 2 children
+
+
+---
+
+.reg.scale80[
+```{r}
+htmltools::includeHTML("./labor_rf.html")
+```
+]
+
+---
+
+.reg.scale80[
+```{r}
+htmltools::includeHTML("./wage_rf.html")
+```
+]
+
+---
+
+class: middle
+
+## Current findings
+
+Likely mechanism:
+
+  1. Woman under treatment has less son preference *(known by TSCS)*
+  2. They gain more bargaining power in joint household decisions *(known by SSDT)*
+  3. Pro-equal preference is then revealed through change of birth pattern *(known by birth registry)*
