@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The Labor Supply Consequences of Having a Child in China</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yu-Hsin Ho (20230131 @ Lab Meeting)" />
+    <script src="20230131-wang-child-penalty-china_files/header-attrs-2.17/header-attrs.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# The Labor Supply Consequences of Having a Child in China
+]
+.subtitle[
+## Wang, Shing-Yi (2022)
+]
+.author[
+### Yu-Hsin Ho (20230131 @ Lab Meeting)
+]
+
+---
+
+
+
+
+## Introduction
+
+.leftcol[
+This paper addressed the impacts of **child birth** in rural China on following dimensions:
+
+1. Parents’ labor supply
+2. Household income &amp; expenditure
+3. Time use
+
+Past literature on child penalty:
+
+- Denmark (Kleven, Landais, and Søgaard 2019; AEJ: Applied)
+- Sweden (Angelov, Johansson, and Lindahl 2016; JLE)
+]
+
+.rightcol[
+![Kleven et al (2019)](20230131-wang-child-penalty-china.assets/Kleven-denmark-earning.png)
+.caption[Kleven, Landais, and Søgaard (2019)]
+]
+
+???
+
+This paper addressed the impacts of child birth on 3 dimensions:
+
+1. Parents' labor supply
+2. Household income &amp; expenditure
+3. time use
+
+This paper echo with the child penalty literature established by a Denmark research published on AEJ Applied in 2019 and a Swedish research on Journal of Labor Economics in 2016.
+Basically an event-study that makes with-in parent comparisons before and after a child has been born.
+Both of them addressed the gender gap in wage, income, labor force participation created by the birth of child in Nordic countries.
+
+--
+
+Feature in rural Chinese households:
+
+1. Family cooperation (direction of child effect goes opposite)
+2. Heterogeneous child penalty by **gender of the child**
+
+???
+
+But this paper stands out with some unique stories in rural Chinese families.
+
+First they observed a opposite trend for mother and father after a child has been born, instead of only mothers receiving "penalties". 
+
+Secondly, there's heterogeneous child effect by the gender of the child. Saying that having a son or having a daughter would lead to different consequences of the parents.
+
+---
+
+## Data
+
+.leftcol[
+National Fixed Point Survey (NFP)
+
+- Individual-level panel data from 2003 to 2010
+- Mainly **rural** households
+- Unbalanced panel, 2285 births observed
+- Imputed birth year of child
+- Outcomes: labor supply, household expenditure
+]
+
+???
+
+The main data the author used is called National Fixed Point Survey, conducted by Ministry of Agricultural in China.
+
+It's an individual level panel data spanned from 2003 to 2010 and covers mainly rural households.
+
+And it's an unbalanced panel with more than 2000 births observed. Not as much as administrative data we're utilizing in Taiwan of course.
+
+Through imputation they can construct the birth year of child and they have key outcome variables like labor supply and household expenditure.
+
+--
+
+.rightcol[
+![Summary Statistics (NFP)](20230131-wang-child-penalty-china.assets/summary-nfp.png)
+]
+
+Women:
+
+- Mostly works in family occupation
+- Labor supply is determined by household arrangements more than labor market conditions
+- Labor force drop-out is not induced by rigidity (unlike Nordic)
+
+???
+
+This is the summary statistics for NFP sample. 
+
+An important and interesting point is that nearly 60% of women in the data is working in family enterprise. And nearly half of them is working in agriculture.
+
+This is saying that labor supply is determined by internal household arrangements more than external labor market conditions.
+For example, drop-out of labor force would reflect rearrangement in family labor instead of rigidity (like lacking of flexible measures for parents).
+
+---
+
+name: CHNS
+
+## Data
+
+.leftcol[
+China Health and Nutrition Survey
+- 10 waves, 1989 to 2015
+- Limited to rural households
+- Unbalanced panel
+- Used for time-use, household decision-making outcomes
+]
+
+???
+
+The next set of data is China Health and Nutrition Survey, which has been conducted 10 waves from 1989 to 2015.
+Sample was limited to rural households and it's an unbalanced panel.
+
+--
+
+.rightcol[
+![Summary Statistics (CHNS)](20230131-wang-child-penalty-china.assets/summary-chns.png)
+]
+
+???
+
+The main focus here is that the women that's going to have a boy and women before getting a daughter is very much the same.
+
+We'll come back to this later to see why it's important.
+
+---
+
+## Empirical Specification
+
+Twoway fixed effect model:
+
+`$$y_{it}=\alpha+\sum_{j=-3}^7 \beta_j \text { Birth }_{it, j} + \tau_t + \gamma_i+\epsilon_{i t}$$`
+
+for individual `\(i\)` at calendar year `\(t\)`, event time `\(j\)`.
+
+- Event study, j = -3 ~ 7
+- `\(\beta_{-1}\)` was omitted as benchmark. 
+- Standard errors are clustered at individual level.
+
+???
+
+The empirical specification is a standard event-study twoway fixed effect model that regress outcome on discrete event time from 3 years before birth to 7 years after birth.
+
+Year -1 was omitted as a benchmark period.
+
+---
+
+## Empirical Results
+
+### Labor Force Participation
+
+.leftcol[
+Women LFP
+![Labor Force Participation - Women](20230131-wang-child-penalty-china.assets/image-20230128211154418.png)
+10% ↓ post birth
+]
+
+.rightcol[
+Men LFP
+![Labor Force Participation - Men](20230131-wang-child-penalty-china.assets/image-20230128211216060.png)
+2.4% ↑ post birth
+]
+
+???
+
+Now these two graph presents the coefficient estimate for labor force participation. The left hand side is for women and right hand side is for men.
+
+You can see that in the left hand side, women's labor force participation drop significantly once they have a child and goes downward until 1 years after the birth. The participation recovers rather quickly that 4 years after the birth it goes nearly to the original level.
+
+On the right hand side, the labor force participation for men increased significantly after 1 year of birth and recovers at roughly 3 to 4 years after birth.
+
+The magnitude of the change would be 10% decrease for women and 2.4% increase for men, which is a number smaller than Nordic countries.
+
+---
+
+## Empirical Results
+
+### Heterogeneous Effect by Gender of Child
+
+Identify the “son effect” using:
+
+`$$y_{i t}=\alpha+\sum_{j=-3}^7 \beta_j \text { Birth}_{i t, j} \times \text { Son}_i+\sum_{j=-3}^7 \delta_j \text { Birth}_{i t, j}+\tau_t+\gamma_i+\epsilon_{i t}$$`
+
+???
+
+Now the author tries to identify heterogeneous "son effect" by adding an interaction term of child's gender. 
+
+---
+
+class: middle
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./20230131-wang-child-penalty-china.assets/image-20230128214152003.png" alt="Heterogeneous Effect by Gender of Child" width="60%" /&gt;
+&lt;p class="caption"&gt;Heterogeneous Effect by Gender of Child&lt;/p&gt;
+&lt;/div&gt;
+
+???
+
+On the upper left graph, mothers do work less after having a child. But, as you can see on the upper right, if the child is a son, then the magnitude of the reduction is bigger.
+
+And for men, there's no this kind of heterogeneous effect created by the birth of a son.
+
+---
+
+class: middle
+
+#### Gender of child might be endogenous
+
+- Families that are sex-selecting a son might prefer women being as housewife, not working women.
+- Assumption: household gender preference is time-invariant.
+	- Panel data w/ fixed effect would capture this household characteristic.
+- Robustness Check
+	1. [No significant difference](#CHNS) in pre-birth characteristics between son v.s. daughter group
+	2. Parallel pre-trend
+	3. Sub-sample of first-born children: less skewed sex ratio
+	4. Artificially balance the sex ratio by assigning male births to female births
+
+???
+
+However there's one concern about the identification of heterogeneous effect. That is, the gender of child might be endogenous, especially in countries like China that sex-selective abortion is a common practice.
+
+In this case, families that are sex-selecting a son might prefer women being as housewife, not working women because of their gender preference. And the estimation of son effect would be upward biased.
+
+So the assumption here would be that household gender preference is time-invariant. Then by the nature of panel data and fixed effect estimator, it would capture this household characteristic and provide more robust estimation.
+
+The author has also done some robustness check, ...
+
+Artificially balance the sex ratio by reassigning male births to female births to obtain conservative results and finds it similar.
+
+---
+
+## Mechanism
+
+What makes mothers work less when having a son compared with having a daughter?
+
+.leftcol[
+### Investment in Son?
+
+Marginal return of childcare investment in sons &gt; investment in daughters.
+
+#### Test
+
+Gender gap in other types of observable investments: cigarette/dairies/meat consumption
+
+- No difference except reduced cigarette consumption
+- No additional childcare hours for son
+]
+
+???
+
+Now we can discuss the mechanism that makes mothers work less when having a son compared with having a daughter.
+
+One explanation is that marginal return to childcare investment in sons is higher than in daughters. So mothers would be arranged to stay at home.
+
+If this explanation is true, then there should be gender gaps in other types of observable investments, too.
+
+But the data shows no difference in consumption expect reduced cigarette consumption when having a son.
+
+And there's no additional childcare hours while having a male baby.
+
+--
+
+.rightcol[
+### Household Preference for Mother with Son?
+
+&gt; 能生兒子的媳婦才是好媳婦
+
+In son-preferring families, mothers are rewarded for producing a son.
+
+#### Empirical Evidence
+
+For mothers after the birth of **a son**:
+
+1. ↓ Agricultural work
+2. ↑ Mothers’ education
+3. ↑ Participation in household decision-making
+4. ↑ Leisure
+]
+
+???
+
+Another possible explanation is that households has preference over wives that brings them son.
+So when mothers are having a male birth, she would be rewarded with reduced laboring and increased leisure or personal investments.
+
+There are some empirical evidences observed in the data that support this explanation, including that mothers take less agricultural work and having more education.
+She participates more in household decision making (household purchasing) and having more leisure time.
+
+Overall, the explanation of households having preference over mothers with son is more likely to be true.
+
+---
+
+## Conclusions
+
+- Child penalty in Denmark are larger in magnitude and more persistent in time.
+	- **Denmark**: Induced by rigidity in formal sector job / discrimination against mothers.
+	- **Rural China**: Labor division between husband and wife.
+- Mothers are rewarded more for having a son.
+  - A realization of household gender preference.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
