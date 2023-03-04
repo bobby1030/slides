@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Educational Consequences of Women Reserved Seats</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yu-Hsin Ho (20230306 @ Lab Meeting)" />
+    <script src="20230304-women-reserved-seats-edu-outcomes_files/header-attrs-2.17/header-attrs.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Educational Consequences of Women Reserved Seats
+]
+.author[
+### Yu-Hsin Ho (20230306 @ Lab Meeting)
+]
+
+---
+
+
+class: middle
+
+
+
+.leftcol[
+
+Does increased female political representation affect educational preference?
+
+Specifically, we care for two outcomes:
+
+1. Taking **College Entrance Exam**
+  - Measure for educational aspiration
+2. Choice of **College Major**:
+  - Political Science / Public Admin / Law
+  - Measure for willingness to become politician
+]
+
+???
+
+Today I'm going to share some progress we've made in the last few weeks.
+
+The focus would be the educational consequences of gender quota. 
+
+We already know that quota make more women become politicians. 
+Given this fact, it may be true that the role model effect would improve educational aspirations on daughters for their parents and girls themselves.
+
+This should be reflected by changes in taking college entrance exam and choice of college major.
+
+For example, parents would be more willing to let daughters go to college, and preferring their daughters to become a politician in the future.
+
+So the proportion of students taking college entrance exam should be higher in districts with more female politicians and choice of college major might move toward PS/PA/Law.
+
+--
+
+.rightcol[
+
+## Data
+
+- University admission record
+- Sample for **College Entrance Exam (大學聯考)**
+  - 18-year-old students at 2000 to 2003
+- Sample for **College Major**:
+  - Students taken 指考 at 2004 to 2010
+  - Construct variables based on personal ranked preference of college-major pair
+
+]
+
+???
+
+Now to investigate if there is any effect on educational aspiration, we collect data from university admission record.
+
+The sample for "taking college entrance exam" is 18-year-old students at 2000 to 2003. We construct dummy variable to indicate whether one takes exam or not.
+
+And the sample for "choice of college major" is students that have taken AST at 2004 to 2010. We construct variables based on personal ranked preference of college-major pair
+
+---
+
+.leftcol.reg.center[
+.caption[Outcome: Taking **College Entrance Exam**]
+
+|                         | (1)       | (2)      |
+| ----------------------- | --------- | -------- |
+|                         | Men       | Women    |
+|                         |           |          |
+| Reserved Seats %        | 0.0177    | .0492**  |
+|                         | (0.020)   | (0.020)  |
+|                         |           |          |
+| Parent Age, Edu Control | Yes       | Yes      |
+| Population Control      | Yes       | Yes      |
+| Cohort FE               | Yes       | Yes      |
+| County FE               | Yes       | Yes      |
+|                         |           |          |
+| Mean Dep. Var.          | 0.274     | 0.292    |
+| Observations            | 569388    | 532046   |
+| Adj. R-square           | 0.114     | 0.119    |
+
+.caption.scale80[
+Clustered standard errors in parentheses &lt;/br&gt; \* p &lt; 0.1, \*\* p &lt; 0.05, \*\*\* p &lt; 0.01 
+]
+
+]
+
+???
+
+This table show the regression result of outcome variable: taking college entrance exam. 
+
+You can see that women are significantly more likely to take exam when there's more reserved seats, while men does not respond to the change.
+
+The effect size is roughly 1.2 percentage point increase from no reservation to 25% reservation.
+
+---
+
+.caption[Outcome: Ranked Preference for **Political Science / Public Admin** major]
+
+.center.reg[
+
+|                    | (1)         | (2)         | (3)                 | (4)                 | (5)                 | (6)                 | (7)             | (8)             |
+| ------------------ | ----------- | ----------- | ------------------- | ------------------- | ------------------- | ------------------- | --------------- | --------------- |
+|                    | Any&lt;br /&gt;.dim[(Male)] | Any&lt;br /&gt;.dim[(Female)] | Top10&lt;br /&gt;.dim[(Male)] | Top10&lt;br /&gt;.dim[(Female)] | Proportion&lt;br /&gt; .dim[(Male)] | Proportion&lt;br /&gt; .dim[(Female)] | # Ranking&lt;br /&gt; .dim[(Male)] | # Ranking&lt;br /&gt;.dim[(Female)] |
+|                    |             |             |                     |                     |                     |                     |                 |                 |
+| Reserved Seats %   | -.0542**    | 0.0151      | -0.0156             | .0384**             | -.00136*            | 0.00111             | 0.492           | -1.78           |
+|                    | (0.026)     | (0.030)     | (0.015)             | (0.017)             | (0.00074)           | (0.00086)           | (1.18)          | (1.26)          |
+|                    |             |             |                     |                     |                     |                     |                 |                 |
+| Population Control | Yes         | Yes         | Yes                 | Yes                 | Yes                 | Yes                 | Yes             | Yes             |
+| Cohort FE          | Yes         | Yes         | Yes                 | Yes                 | Yes                 | Yes                 | Yes             | Yes             |
+| County FE          | Yes         | Yes         | Yes                 | Yes                 | Yes                 | Yes                 | Yes             | Yes             |
+|                    |             |             |                     |                     |                     |                     |                 |                 |
+| Mean Dep. Var.     | 0.444       | 0.512       | 0.136               | 0.16                | 0.0104              | 0.0117              | 24              | 24              |
+| Observations       | 319736      | 299937      | 319736              | 299937              | 319736              | 299937              | 140789          | 152752          |
+| Adj. R-square      | 0.0407      | 0.0234      | 0.0041              | 0.00196             | 0.0685              | 0.0377              | 0.00865         | 0.00813         |
+
+.caption.scale80[
+Clustered standard errors in parentheses \* p &lt; 0.1, \*\* p &lt; 0.05, \*\*\* p &lt; 0.01 
+]
+]
+
+
+???
+
+This table shows the result of preference toward political science or public administration major.
+
+"Any" in the first two column means that one have picked at least one political science major out of 90 preference slots. And men are less likely to put political science into their consideration when there's more reservation.
+
+"Top10" in column 3 and 4 means one have put at least one political science major out of top 10 preference ranking. And the probability of female exam taker to apply for political science in top10 preference significantly increased. 
+
+And the proportion of political science among all preferences decreased for men but not for women.
+
+All together, we can see that women are preferring political science major compared to men when the role model is created by gender quota.
+
+---
+
+.caption[Outcome: Ranked Preference for **Law** major]
+
+.center.reg[
+
+|                    | (1)         | (2)         | (3)                 | (4)                 | (5)                 | (6)                 | (7)             | (8)             |
+| ------------------ | ----------- | ----------- | ------------------- | ------------------- | ------------------- | ------------------- | --------------- | --------------- |
+|                    | Any&lt;br /&gt;.dim[(Male)] | Any&lt;br /&gt;.dim[(Female)] | Top10&lt;br /&gt;.dim[(Male)] | Top10&lt;br /&gt;.dim[(Female)] | Proportion&lt;br /&gt; .dim[(Male)] | Proportion&lt;br /&gt; .dim[(Female)] | # Ranking&lt;br /&gt; .dim[(Male)] | # Ranking&lt;br /&gt;.dim[(Female)] |
+| |  |  |  |  |  |  |  |  |
+| Reserved Seats % | -0.0121               | 0.0434                  | 0.0189                  | .0277*                    | -0.000617                     | .00154*                         | -1.69                        | -1.62                         |
+|                    | (0.024)               | (0.027)                 | (0.016)                 | (0.016)                   | (0.00093)                     | (0.00089)                       | (1.44)                       | (1.19)                        |
+|                    |                       |                         |                         |                           |                               |                                 |                              |                               |
+| Population Control | Yes                   | Yes                     | Yes                     | Yes                       | Yes                           | Yes                             | Yes                          | Yes                           |
+| Cohort FE          | Yes                   | Yes                     | Yes                     | Yes                       | Yes                           | Yes                             | Yes                          | Yes                           |
+| County FE          | Yes                   | Yes                     | Yes                     | Yes                       | Yes                           | Yes                             | Yes                          | Yes                           |
+|                    |                       |                         |                         |                           |                               |                                 |                              |                               |
+| Mean Dep. Var.     | 0.459                 | 0.514                   | 0.158                   | 0.154                     | 0.0109                        | 0.0117                          | 23.6                         | 24.9                          |
+| Observations       | 319736                | 299937                  | 319736                  | 299937                    | 319736                        | 299937                          | 146348                       | 153779                        |
+| Adj. R-square      | 0.0381                | 0.0212                  | 0.0044                  | 0.00229                   | 0.0359                        | 0.0288                          | 0.0112                       | 0.0202                        |
+
+.caption.scale80[
+Clustered standard errors in parentheses \* p &lt; 0.1, \*\* p &lt; 0.05, \*\*\* p &lt; 0.01 
+]
+]
+
+???
+
+This table shows the result of Law major. 
+
+The overall results are similar to political science. Women are preferring law major more when there's higher reservation and men does not respond to the shock.
+
+---
+
+## Conclusion
+
+Women's...
+
+- subjective willingness to go to college ↑
+- preference for PolSci / Public Admin / Law  ↑
+
+Consistent with Indian literature: Parents on daughters'...
+
+- educational aspiration ↑
+- political career more preferable
+
+???
+
+This basically tells us that female politician changed people's educational aspiration and even showing preference for law and political science major, which is consistent with Indian literature that reservation improved educational aspirations for daughters and daughter's potential political career is more preferable for parents.
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

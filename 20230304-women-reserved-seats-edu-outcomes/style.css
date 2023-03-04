@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+	font-family: "Concourse T4", "PingFang TC", sans-serif;
+	color: #303030;
+}
+
+.remark-slide-content {
+  font-size: 23px;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Yanone Kaffeesatz";
+	font-weight: normal;
+	margin: 0.3em 0;
+}
+
+.dim {
+	color: rgb(126, 129, 134);
+}
+
+caption {
+	text-align: left;
+}
+
+hr {
+	color: #394350;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100vh;
+}
+
+table caption::before {
+	content: "Table: ";
+}
+
+a {
+  color: #394350;
+}
+
+blockquote {
+  font-family: "Optima", "Kaiti TC", cursive;
+  border-left: solid 3px #394350;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.title-slide {
+	background: #394350;
+	color: #fff;
+}
+
+.author {
+  margin-top: 4em;
+}
+
+
+.reg {
+	overflow: scroll;
+}
+
+.scale80 {
+	font-size: 80%;
+}
+
+.reg table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	font-family: "Concourse T4";
+}
+
+.reg table tbody tr, .reg table tbody td {
+  height: 1em;
+}
+
+.caption {
+	display: block;
+	font-style: italic;
+	font-weight: 500;
+	text-align: center;
+}
+
+.remark-code,
+.remark-inline-code {
+	font-family: "Source Code Pro", "Lucida Console", Monaco, monospace;
+}
+
+.leftcol {
+	float: left;
+	width: 45%;
+	margin-right: 5%;
+}
+
+.rightcol {
+	float: right;
+	width: 45%;
+	margin-left: 5%;
+}
+
+.bottomcol {
+	clear: both;
+}
+
+p {
+	line-height: 1.6em;
+}
+
+li {
+	margin-top: 0.5em;
+}
