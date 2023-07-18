@@ -1,0 +1,446 @@
+---
+title: "Evidence on Self-Stereotyping and the Contribution of Ideas"
+subtitle: "Katherine B. Coffman (2014, QJE)"
+author: "Yu-Hsin Ho"
+date: "Jul 18, 2023"
+output: 
+    xaringan::moon_reader:
+        css: ["style.css", default]
+        nature:
+            highlightStyle: atom-one-light
+            highlightLines: true
+            countIncrementalSlides: false
+            ratio: "4:3"
+        lib_dir: libs
+---
+
+# Introduction
+
+- Women are now jointly making important decisions in public domains
+  - Politically: more females are becoming MPs
+  - Economically: female share of board members is increasing
+- However, participation does not mean having real influential power
+- Some people talk more than others, and gender plays a significant role here
+  - Imagine: seminars, meetings, classrooms, and committees.
+
+---
+
+class: middle
+
+```{r echo=F, out.width="90%", fig.align="center"}
+knitr::include_graphics("./plot_committee_gender.png")
+```
+.caption.scale80[Proportion of speaking by MP's gender in legislative committees in Taiwan]
+
+---
+
+## Problems
+
+Willingness to contribute ideas varies between domains:
+
+- Valuable knowledge may not be elicited in group discussion
+- Valuation of individual ability is biased
+  - Affect labor market outcomes: wage, promotion, leadership
+- Systematically differed behaviors generate gender gaps in equilibrium outcome
+  - willingness to compete
+  - willingness to lead
+  - .red[willingness to contribute ideas]
+
+---
+
+## Goals of This Paper
+
+Coffman (2014) conducted experiments to:
+
+1. Identify the role of gender self-stereotyping on willingness to contribute ideas
+2. Discuss the mechanism
+3. Impute the efficiency loss in group discussion due to gender stereotypes
+
+---
+
+# Experimental Design
+
+#### Part B: Measuring objective ability
+
+- Each participant answers 5 multiple choice questions (MCQs) from each of 6 domains of knowledge
+- Variables collected as a measure of individual ability
+
+#### Part C: Measuring willingness to contribute ideas
+
+- Each participant is assigned to a group of 2
+- Answers MCQs and then choose a relative position to stand in the group → .red[key outcome variable]
+
+#### Part D: Measuring confidence and risk preference
+
+???
+
+The experiment could be divided into three key parts.
+
+I don't list Part A because it's designed to collect some auxiliary data and is unimportant.
+
+---
+
+## Part B: Measuring objective ability
+
+- Individuals answer 5 MCQs from each of 6 different domains of knowledge (30 in total)
+  - .dim[Incentivized: Get ECUs if an answer is correct]
+
+--
+- Domains of knowledge: purposefully generate variations in gender stereotypes
+.scale80[
+1. Arts and literature (Art)
+2. Pop culture (Pop)
+3. Environmental science (Env)
+4. History (Hist)
+5. Geography (Geo)
+6. Sports and games (Sports)
+]
+- Target: objective ability of subjects in different domains of knowledge
+
+---
+
+### Sample questions:
+
+> SPORTS&GAMES: How many Major League Baseball teams today are named for four-footed animals?
+> 
+> (A) one	(B) two	(C) three	(D) four	(E) five
+
+--
+
+> .red[(B) Two: Tigers, Cubs.]
+
+--
+
+<hr/>
+
+
+> ART&LIT: What war do the girls in Little Women grow up during?
+> 
+> (A) American Revolution	(B) World War I	(C) World War II	(D) Civil War	(E) Vietnam War
+
+--
+
+> .red[(D) Civil War]
+
+---
+
+## Part C: Measuring willingness to contribute ideas
+
+Each participant is assigned to a group of 2; plays 30 rounds of group tasks:
+
+1. Two members both answer the MCQ
+2. Decides which position they want in the group: 1, 2, 3, or 4.
+   .red[→ willingness to contribute ideas]
+3. Group member with the smallest chosen number is selected as the group representative
+
+--
+
+> E.g. Eva picks 2, and Dexter picks 3.
+> → Eva's answer becomes the group representative 
+
+---
+
+## Part C: Measuring willingness to contribute ideas
+
+Each participant is assigned to a group of 2; plays 30 rounds of group tasks:
+
+1. Two members both answer the MCQ
+2. Decides which position they want in the group: 1, 2, 3, or 4.
+   .red[→ willingness to contribute ideas]
+3. Group member with the smallest chosen number is selected as the group representative
+
+#### Payoff scheme
+
+1. Get ECUs if one answers correctly
+2. Get extra ECUs if one group representative's answer is correct
+
+*Key: Subjects are incentivized to elicit answers from the most knowledgeable person*
+
+---
+
+layout: true
+
+## Part D: Measuring confidence, risk preference, and stereotypes
+
+---
+
+#### Self-confidence & confidence in the teammate
+
+Incentivized elicitation mechanism:
+
+- For question $q$, participant $i$ states her minimum acceptable correct probability $p_{iq}$
+- $p^{c}_{iq}$ is randomly drawn from $[0.01,1]$
+  - if $p^{c}_{iq} \geq p_{iq}$, then the computer would help the participant select one answer with correct probability $p^c_{iq}$ 
+  - if $p^{c}_{iq} < p_{iq}$, then the participant's answer is used
+- Get ECUs if the finally chosen answer is correct
+
+???
+
+If a participant is very confident that her answer is correct, then she should state a high minimum acceptable probability to prevent a dumb computer replaces her answer.
+
+---
+
+#### Risk preference
+
+Measured by multiple price lists. Used as a control variable.
+
+--
+
+#### Stereotypes
+
+- For each domain of question, subjects are asked to pick a number on a continuous slider scaled $-1$ to $1$:
+  - $-1$: women know more
+  - $0$: no gender difference
+  - $1$: men know more
+
+Standardized z-scores are constructed as "maleness" scores for each domain of question
+
+???
+
+The benefit of asking experimental subjects their stereotypes instead of relying on outside evaluators is that this measure is drawn from the same sample and thus should be more consistent with participants' behaviors.
+
+---
+
+layout: false
+
+## Treatment Intervention
+
+Between subjects, $2 \times 2$ treatment intervention:
+
+1. .red[Feedback]: Showing domains that one's Part B score dominates her teammate in before the beginning of Part C
+2. .red[Public]: Taking a picture before Part C and having the picture revealed to the teammate in Part F
+   - Still, subjects do not know the teammate's gender in Part C
+
+--
+
+## Sessions information
+
+- 460 participants
+- 38 sessions at Ohio State University
+
+---
+
+class: middle, center, inverse
+
+# Results
+
+---
+
+## Summary statistics
+
+```{r echo=F, fig.align="center", out.width="70%"}
+knitr::include_graphics("./imgs/table1.png")
+```
+
+???
+
+- 60% of participants are male
+- less than 50% correct rate
+- Env, hist, sports: men perform better than women
+
+---
+
+## The maleness of knowledge
+
+Average maleness score (stereotypes)
+
+```{r echo=F, fig.align="center"}
+knitr::include_graphics("./imgs/table2.png")
+```
+
+???
+
+This table presents the average maleness elicited from a -1 to 1 scale.
+
+Art and Pop are perceived as female-typed, whereas Env, Hist, Geo, and Sports are considered male-typed.
+
+---
+
+## Gender gap in willingness to contribute ideas
+
+Average positions in line
+
+```{r echo=F, fig.align="center"}
+knitr::include_graphics("./imgs/table3.png")
+```
+
+???
+
+The numbers here are the average place in line reported by male and female subjects in 6 different domains of knowledge.
+
+You can see that in female-typed domains, women's numbers are smaller indicating greater willingness to contribute ideas. 
+
+And in male-typed domains, men's numbers are smaller.
+
+---
+
+## Gender gap persists after controlling individual ability
+
+Outcome: position in line
+
+```{r echo=F, fig.align="center"}
+knitr::include_graphics("./imgs/table4.png")
+```
+
+???
+
+If we run an OLS regressing position on a female dummy, and add objective ability as covariates, the results are still significant.
+
+The unit of observation is one person answering one question in part C. (Each round in Part C)
+
+.red[**One-standard-deviation increase in maleness score would make females step back for 0.265**]
+
+---
+
+## Mechanism
+
+- People shy away from contributing ideas when a topic is **gender-incongruent**
+  - Persists after conditional on ability
+  - The degree of shying away: female > male
+- One explanation: People **lack confidence** in gender-incongruent topics
+  - Gender stereotypes play a significant role in shaping beliefs
+  - Empirical question: Can the gender-incongruency predict self-reported confidence?
+
+---
+
+## Gender-incongruency effect on self-confidence
+
+Probit outcome: guessing myself has the highest Part B score in the group (conducted at the end of Part B)
+
+```{r echo=F, fig.align="center"}
+knitr::include_graphics("./imgs/table5.png")
+```
+
+.caption.scale80[People display significantly lower confidence in stereotypically mismatch areas.]
+
+???
+
+In the female-typed categories, women display strong confidence. But on the opposite direction, women display low confidence in the male-typed categories.
+
+One-standard-deviation increase in maleness would reduce the probability of women reporting confidence in themselves by 0.25.
+
+---
+
+## Controlling self- and other-confidence...
+
+```{r echo=F, fig.align="center"}
+knitr::include_graphics("./imgs/table6.png")
+```
+
+.caption.scale80[Gender-incongruent effects still exist after conditional on ability and confidence]
+
+???
+
+Now we put the confidence measures into the regressions as controls.
+
+Some of the gender effects are explained by confidence level, but there still exists some unexplained gender-incongruency effects, especially in Env and Sports.
+
+If we pool the data altogether, then we can still identify a gender-incongruency effect of 0.071 by every one-standard-deviation increase in maleness score. 
+
+---
+
+## Welfare: Missed opportunity
+
+- **Missed opportunity**: One answers the question correctly but not being chosen as the group's answer.
+- Stereotypes may cause efficiency loss if the actually chosen representative answer is wrong.
+
+--
+
+```{r echo=F, fig.align="center"}
+knitr::include_graphics("./imgs/fig2.png")
+```
+
+???
+
+For the left-hand side of the figure shows the probability of missed opportunity for female-typed questions, and for the right-hand side shows the male-typed counterpart.
+
+X-axis corresponds to individual ability which is measured by Part B score.
+
+High-ability women are very likely to miss out on male-typed questions.
+
+Thus, we would expect to see lots of inefficiencies in male-typed domains when stereotypes are prevalent in the society.
+
+---
+
+## Treatment effects
+
+```{r echo=F, fig.align="center", out.width="55%"}
+knitr::include_graphics("./imgs/table7.png")
+```
+
+.scale80[
+No effect of feedback on willingness to contribute
+   - Telling people *"you're good"* does not help
+]
+
+???
+
+Feedback treatment does not significantly improve females' willingness to contribute ideas in any domain.
+
+It seems like it slight boosted male's willingness to contribute ideas in male-typed questions, but the significance level is not high.
+
+---
+
+## Wrap up
+
+1. People shy away from contributing ideas when a topic is **gender-incongruent**
+   - Gender stereotypes of tasks are important. Not identified via gender-neutral real-effort games.
+2. This could be mostly (but not fully) explained by low confidence
+3. Efficiency costs incurred by stereotypes:
+   1. Average individual ability: .red[51%] correct rate
+   2. Group answer correct rate: .red[58%] correct rate
+   3. At least one member is correct: .red[71%] correct rate
+4. Providing positive information on self-ability does not help
+
+---
+
+class: middle, center, inverse
+
+# Further extensions
+
+---
+
+class: middle
+
+- We already knew quotas help mitigate the gender gap in willingness to compete and overcome some norms in mixed-gender environments.
+- Can we fix this problem through policy intervention without efficiency loss?
+
+---
+
+# Proposal
+
+- Preferential treatment in Part C for women:
+  - Having women's answers moved forward by one position
+- Coffman (2014) manipulated data to do a simple counterfactual:
+  - Moving all women forward by one position reduces missed opportunity: 23.8% → 21.2% 
+  - But, this does not capture the **subject's response** & **general equilibrium** effect.
+- Under a well-designed lab experiment, we aim to evaluate the effectiveness of preferential treatment on willingness to contribute ideas
+
+---
+
+## Research questions
+
+1. **Baseline**: Does the gender-incongruence effect on willingness to contribute ideas exist in Taiwan?
+
+--
+2. **Behaviors**: How would subjects respond to preferential treatment (PT)?
+   - Moderate-confidence women may take the PT, while low-confidence women may actively try to offset PT.
+   - This self-selection mechanism may generate Pareto-improvement in male-typed domains: .red[All group members benefit from high-quality answers.]
+   - Would male participants move themselves forward?
+
+--
+3. **Attitudes**:
+   - Backfire? How would subjects treat each other in the dictator game?
+   - What's the self-efficacy of preferentially treated women?
+
+---
+
+## Experimental design
+
+- 2 people in a group: one man and one woman
+  - Teammate's gender is explicitly revealed to participants through roll-calling
+- Treatment in Part C: Move females forward by one position
+- Dictator game following Part C: Measuring treatment effect on attitudes toward teammate
+- Survey questions on self- and other-efficacy
+  - *"From 1 to 10, how would you grade your/your teammate's performance?"*
+  - *"To what extent do you consider your team's outcome could be attributed to your performance?"*

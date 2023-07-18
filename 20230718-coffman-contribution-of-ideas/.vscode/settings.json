@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "rmd",
+            "scheme": "file",
+            "pattern": "20230718-coffman-contribution-of-ideas.Rmd"
+        }
+    ]
+}
