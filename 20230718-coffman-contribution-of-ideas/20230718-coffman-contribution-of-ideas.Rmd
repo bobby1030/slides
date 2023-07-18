@@ -27,7 +27,7 @@ output:
 
 class: middle
 
-```{r echo=F, out.width="90%", fig.align="center"}
+```{r echo=F, out.width="100%", fig.align="center"}
 knitr::include_graphics("./plot_committee_gender.png")
 ```
 .caption.scale80[Proportion of speaking by MP's gender in legislative committees in Taiwan]
