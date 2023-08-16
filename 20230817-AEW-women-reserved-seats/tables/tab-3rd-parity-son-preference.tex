@@ -1,0 +1,32 @@
+\begin{table}[]
+
+	\caption{Estimating the effects of gender quota on son preference}
+	\label{tab:3rd-parity-son-preference}
+
+	\resizebox{0.88\columnwidth}{!}{
+		\begin{tabular}{l *{5}{d{1.5}}}
+			\toprule
+			                                                                & \mc{(1)}         & \mc{(2)}         & \mc{(3)}       & \mc{(4)}     & \mc{(5)}       \\
+			                                                                & \multicolumn{5}{c}{Dependent variable: Giving 3rd-parity birth}                      \\ \cline{2-6} \addlinespace
+			                                                                & \mc{Full Sample} & \mc{High School} & \mc{Non-HS}    & \mc{Urban}   & \mc{Non-urban} \\ \midrule
+			($\hat{\beta}_1$) Gender quota proportion                       & -.126***         & -.141***         & -.117***       & -.204***     & -.115***       \\
+			                                                                & (0.015)          & (0.018)          & (0.016)        & (0.037)      & (0.017)        \\
+			($\hat{\beta}_2$) Two sons $\times$ Gender quota proportion     & .174***          & .202***          & .158***        & .272***      & .162***        \\
+			                                                                & (0.017)          & (0.020)          & (0.017)        & (0.042)      & (0.018)        \\
+			($\hat{\beta}_3$) Son daughter $\times$ Gender quota proportion & .157***          & .183***          & .146***        & .246***      & .147***        \\
+			                                                                & (0.015)          & (0.019)          & (0.015)        & (0.038)      & (0.016)        \\
+			($\hat{\beta}_4$) Daughter son $\times$ Gender quota proportion & .152***          & .166***          & .15***         & .22***       & .144***        \\
+			                                                                & (0.015)          & (0.019)          & (0.015)        & (0.037)      & (0.016)        \\ \midrule
+			Mean dep. var.                                                  & 0.0609           & 0.0636           & 0.0583         & 0.0445       & 0.0654         \\
+			Obs.                                                            & \mc{3,588,478}   & \mc{1,740,241}   & \mc{1,848,237} & \mc{780,949} & \mc{2,807,529} \\
+			Adj. $R^2$                                                      & 0.111            & 0.109            & 0.117          & 0.0839       & 0.116          \\ \midrule
+
+			\multicolumn{6}{l}{\textit{F-test on marginal effect}}                                                                                                 \\ \addlinespace
+			p-value of $H_0: \hat{\beta}_1 + \hat{\beta}_2 = 0$             & 0.000            & 0.000            & 0.000          & 0.000        & 0.000          \\
+			p-value of $H_0: \hat{\beta}_1 + \hat{\beta}_3 = 0$             & 0.001            & 0.000            & 0.003          & 0.031        & 0.002          \\
+			p-value of $H_0: \hat{\beta}_1 + \hat{\beta}_4 = 0$             & 0.004            & 0.017            & 0.001          & 0.390        & 0.006          \\ \bottomrule
+			\multicolumn{6}{l}{Standard errors are clustered at township-election level. * p<0.1, ** p<0.05, *** p<0.01.}
+		\end{tabular}
+	}
+
+\end{table}

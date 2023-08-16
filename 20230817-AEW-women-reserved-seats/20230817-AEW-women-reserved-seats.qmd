@@ -1,0 +1,498 @@
+---
+title: How does gender quota shape gender attitudes?
+author: "Yu-Hsin Ho, \\newline joint with Yen-Chien Chen, Elliott Fan, Matthew Yi-Hsiu Lee, and Jin-Tan Liu"
+institute: Department of Economics, National Taiwan University
+date: 2023-08-17
+date-format: long
+format: 
+  beamer:
+    aspectratio: 169
+    pdf-engine: xelatex
+    theme: metropolis
+    # themeoptions: numbering=fraction
+    slide-level: 2
+    fontsize: 11pt
+    mainfont: "IBM Plex Sans"
+    mathfont: "Fira Math"
+    monofont: "Cascadia Code"
+include-in-header: 
+  text: |
+    \usepackage{hyperref}
+    \usepackage{graphicx}
+    \usepackage{booktabs}
+    \usepackage{lscape}
+    \usepackage{dcolumn}
+    \captionsetup[table]{aboveskip=0pt}
+    \newcolumntype{d}[1]{D{.}{.}{#1}}
+    \newcommand\mc[1]{\multicolumn{1}{c}{#1}}
+    %\setbeameroption{show notes}
+include-before-body: 
+  text: |
+    \note{It's so nice to have this opportunity to present our work on Taiwan's gender quota and its impacts on gender attitudes. I'm Yu-Hsin from National Taiwan University, and this is a joint work with Yen-Chien Chen, Elliott Fan, Matthew Yi-Hsiu Lee, and Jin-Tan Liu.}
+---
+
+## Introduction
+
+- Taiwan experienced a significant improvement in female status in post-WWII era.
+- Women in national parliament, 2021:
+  - **Taiwan: 41.6%**
+  - Japan: 9.9%; South Korea: 19%
+- Gender wage gap, 2020:
+  - **Taiwan: 14.8%**
+  - Japan: 30.7%; South Korea: 30.4%
+- Commonalities: Rapid econ growth; compulsory education; democratic transition.
+- Uniqueness of Taiwan: Gender quota for political seats.
+
+::: {.notes}
+
+First, I want to give you some context about Taiwan's female status compared to neighboring East Asian countries.
+
+These countries do share some commonalities including rapid economic growth, compulsory education, and democratic transition after WWII.
+
+However, there's one unique design that didn't exist in other countries which is the gender quota for political seats in local council elections.
+
+:::
+
+---
+
+\include{figures/fig-proportion-of-female-representatives.tex}
+
+::: {.notes}
+
+This figure plots the trend of female shares of locally-elected political seats.
+
+The red line indicates the national parliament's female share, while the blue line indicates the city/county council's.
+
+In the late 1990s, the female share took off from 10-15% to nearly 35% for locally-elected seats. This coincides with a law reform in the late 1990s demanding a more stringent requirement for female share in each electoral district.
+
+:::
+
+---
+
+## Goal of this paper
+
+Evaluating the causal effect of the gender quota design on:
+
+1. increasing female political representation
+2. alleviating norms against women
+3. women's gender attitudes and educational choice
+
+::: {.notes}
+
+The goal of this paper is to evaluate the causal effect of the gender quota design on...
+
+:::
+
+---
+
+## Background: Gender quota in Taiwan
+
+- City/county councilors are elected through SNTV system.
+- Each council has multiple electoral districts.
+- Each electoral district has multiple seats, some of them reserved for women.
+- Since 2002, 1 seat reserved for every 4 seats.
+- Prior to 2002, only 1 seat was reserved for districts with # of seats $\in [5, 14]$
+
+This rule generated cross-sectional variations in the proportion of quota assigned to each district.
+
+::: {.notes}
+
+How does the quota system work? In Taiwan city/county councilors are elected through single non-transferable vote system. 
+
+Each council has multiple electoral districts. Each electoral district has multiple seats to be elected. And some of them are reserved for women.
+
+The law requires that 1 seat must be reserved for every 4 seats in an electoral district since 2002.
+
+Prior to 2002, the requirement is that 1 seat was reserved for districts with # of seats between 5 to 14.
+
+This rule generated cross-sectional variations in the proportion of quota assigned to each district.
+
+:::
+
+---
+
+::: {.columns}
+
+::: {.column width=35% align=center}
+
+| Seats | Quota | Proportion |
+|:-----:|:-----:|:----------:|
+|   1   |   0   |     0%     |
+|   2   |   0   |     0%     |
+|   3   |   0   |     0%     |
+|   4   |   1   |    25.0%   |
+|   5   |   1   |    20.0%   |
+|   6   |   1   |    16.6%   |
+|   7   |   1   |    14.3%   |
+|   8   |   2   |    25.0%   |
+
+: Example for 2002
+
+:::
+
+::: {.column width=70% align=center}
+
+### Formalize
+
+For electoral district $d$, election $e$, the gender quota proportion $R_{de}$ was determined according to the following formula: 
+
+- $R_{de} = \operatorname{GreatInt} \left( \frac{E_{de}}{4} \right) / E_{de}, \; e \geq 2002$
+- $R_{de} = \operatorname{Round} \left( \frac{E_{de}}{10} \right) / E_{de}, \; e \leq 1998$
+
+where $e \in \{1994, 1998, 2002, 2005\}$, and $E_{de}$ = number of seats in the electoral district. 
+
+:::
+
+:::
+
+
+---
+
+\include{figures/fig-firstStage-elected.tex}
+
+::: {.notes}
+
+If we plot the functions as yellow curves in the figure, you can see that the required proportion is a zig-zag-shaped function. 
+
+And the X-axis is the number of seats in an electoral district, and Y-axis is the proportion. 
+
+The blue curve is the proportion of female elected which shows a strong 1st-stage relationship with the quota requirement.
+
+:::
+
+---
+
+\include{figures/fig-firstStage-candidates.tex}
+
+:::
+
+If we plot the proportion of female candidates instead of female elected, the relationship is still strong and similar to the previous graph.
+
+---
+
+## The assignment of gender quota
+
+The assignment of gender quota proportion has the following features:
+
+1. The quota proportion is a non-linear, zig-zag-shaped function of the number of seats.
+2. The number of seats is exclusively determined by the relative population of an electoral district within the city/county.
+3. Thus, the quota proportion is a **non-monotonic function of a district's relative population size within county**.
+
+#### Identifying assumption
+
+Conditional on the district's population size, the assignment of gender quota proportion is arguably exogenous (uncorrelated with pre-existing gender attitudes).
+
+Thus, $R_{de}$ serves as our instrumental variable.
+
+::: {.notes}
+
+The assignment of gender quota proportion has the following features:
+
+If we have this identification assumption in mind, that is conditional on the assignment of gender quota proportion, the assignment of gender quota should be arguably exogenous.
+
+And this quota proportion serves as instrumental variable in our identification strategy.
+
+:::
+
+---
+
+## Checking the determinants of IV
+
+\include{tables/tab-IV-determinants.tex}
+
+::: {.notes}
+
+To support our exogeneity assumption, we check if the assignment of quota is correlated with observable gender-related preference.
+
+We ran two OLS regressions of quota proportion in 2002 and 2005 on the district's female vote share in previous election, controlling female candidates in previous election and population size.
+
+Indeed, the assignment of quota is uncorrelated with observable pre-determined preferences for female politicians. 
+
+:::
+
+---
+
+## Impact of quota on the share of female councilors and candidates
+
+For electoral district $d$ of county $c$ and election $e$, we consider: 
+$$
+F_{dce} = \alpha_{1} + \beta_1 R_{dce} + \pi_1 P_{dce} + \rho_c + \sigma_e + u_{dce}
+$$
+
+\include{tables/tab-first-stage.tex}
+
+::: {.notes}
+
+In the previous graphs, we already saw a strong relationship between quota and female share of elected councilors and even candidates.
+
+Now we pin down the degree of this relationship with linear regression.
+
+1 percentage increase in quota proportion leads to 1.01 percentage point increase in female elected, and 0.75 ppt increase in female candidates.
+
+Note that our instrument is correlated with both (1) proportion female elected and (2) proportion female candidates. Thus, we'll consider a reduced form setup in the remaining part of this paper. And the quota effect should be interpreted as an aggregate effect of both channels.
+
+:::
+
+# The effects of gender quota
+
+## Son preference: $\mathbb{P}(\text{3rd child} | \text{sex1}, \text{sex2})$
+
+- A key aspect of gender attitude in East Asia.
+- We propose a behavioral measure: $\mathbb{P}(\text{3rd child} | \text{sex1}, \text{sex2})$
+  - 4 sex compositions: $S = \{(D, D), (D, B), (B, D), (B, B)\}$
+- If $\Delta\downarrow \mathbb{P}(\text{3rd child} | D, D) > \Delta\downarrow \mathbb{P}(\text{3rd child} | S - \{(D, D)\})$, then we say mothers are displaying weaker son preference.
+
+### Facts
+
+1. High sex ratio for 3rd-parity birth after the legalization of abortion.
+2. Mothers with 2 daughters have a shorter birth gap for 3rd-parity.
+
+### Data
+
+Universal birth registry, 1978-2006.
+
+Variables: Newborn's birth date, township, sibling sex, parents' ID, and characteristics (residence and education).
+
+::: {.notes}
+
+The first gender norm we would like to investigate is the parents' preference for sons. This is a key aspect of gender attitudes in the East Asian context. However, son preference is intrinsically hard to measure which often relies on survey data. Here, we propose a behavioral measure for son preference which should be valid in Taiwan that is **the probability of a mother having 3rd-parity child, conditional on the sex composition of her first two children**.
+
+There is a total of 4 possible sex compositions. 
+
+If **we see a decrease in the probability of having 3rd child for two-daughter-mothers**, and **the decrease is more than other sex compositions**, then we say mothers are displaying weaker son preference.
+
+This proposition is built on two facts: the sex ratio for third parity is high, and mothers with 2 daughters have a significantly shorter birth gap for 3rd child, which suggests that they're following the son-stopping rule and eager to chase for a son.
+
+We will later have a look at these patterns using variables built with the universal birth registry from 1978-2006, which is an individual-level data recording every newborn's birth date, township, sibling sex, their parent's ID, and characteristics.
+
+:::
+
+## 3rd-parity birth: Empirical specification
+
+To estimate the effect of gender quota proportion ($R_{dce}$) on the propensity to have 3rd-parity birth $Y_{idce}$, we consider this OLS specification:
+$$
+\begin{aligned}
+Y_{idce} = & \alpha_{1} + \beta_{1} R_{dce} + \beta_{2}R_{dce} \cdot BB_{idce} + \beta_{3} R_{dce} \cdot BD_{idce} + \beta_{4} R_{dce} \cdot DB_{idce}            \\
+           & \alpha_{2} BB_{idce} + \alpha_{3} BD_{idce} + \alpha_{4} DB_{idce} + \pi P_{dce} + \mathbf{X}_{i} \gamma + \rho_{c} + \sigma_{e} + \varepsilon_{idce}
+\end{aligned}
+$$
+for mother $i$, electoral district $d$, county $c$, and election $e$.
+
+- $Y_{idce} \in \{0, 1\}$ = mother has her 3rd birth in the electoral term of $e$
+- $R_{dce}$ = electoral district's gender quota proportion
+- $P_{dce}$ = electoral district's population size
+- $\mathbf{X}_i$ = parent's age and education
+- $\rho_c$ = county dummies
+- $\sigma_e$ = election dummies
+
+::: {.notes}
+
+Having the son preference measure in mind, we can now discuss our empirical specification.
+
+Consider a mother i, living in electoral district d, county c, and election e, we ran an OLS regression of Y -- an indicator variable for a mother having her 3rd birth in the electoral term of e --, on our instrument R -- the gender quota proportion of the electoral district.
+
+And we interact the quota proportion with sex composition dummies to separate the conditional probability of different types of mothers.
+
+As we mentioned, we control for the population size of electoral district to mitigate selection bias.
+
+Parent's characteristics & county, election fixed effects are also included.
+
+:::
+
+---
+
+\include{tables/tab-3rd-parity-son-preference.tex}
+
+::: {.notes}
+
+This is our main result.
+
+In column 1, you can see that an increased quota proportion from 0 to 25% would lead to a 3 ppt decrease in the propensity to give 3rd birth for two daughter mothers. 
+
+This is not the case for other mothers with at least one son. The effects on them are very close to zero and slightly positive at most.
+
+From columns 2 through 5, we present subsample estimates. It's apparent that mothers with a highschool diploma and those who live in urban areas are more susceptible to the exposure of female politicians.
+
+:::
+
+---
+
+## Survey evidence: Self-reported son preference
+
+\small
+- Data: Taiwan Social Change Survey, 2001 and 2006.
+- Outcome: *the importance of having at least one son in order to continue the family bloodline*. $1$ = important; $0$ = neutral or unimportant.
+- Specification: $Y_{idce} = \alpha_{1} + \beta_{1}R_{dce} + \beta_{2}R_{dce} \cdot F_{i} + \beta_{3}F_{i} + \pi P_{dce} + \mathbf{Z}_{i}\gamma + \rho_{c} + \sigma_{e} + \varepsilon_{idce}$
+
+\include{tables/tab-tscs-self-reported-son-preference.tex}
+
+:::
+
+Now we turn to survey data to further support our behavioral findings.
+
+The data we used are Taiwan Social Change Survey, which was conducted in 2001 and 2006. It included a question, asking the respondent how they consider the importance of having at least one son in order to continue the family bloodline. We coded the response into a binary variable with value 1 indicating "important" and 0 indicating "neutral" or "unimportant".
+
+The OLS specification is a simplified version of the son preference spec. For respondent $i$ living in district $d$ county $c$ during electoral term $e$, we regress the response on gender quota proportion and an interaction term of quota and female dummy. Again we control for population size and respondent's characteristics. 
+
+The result shows that while men's attitude is not susceptible to the quota, the exposure to female politicians reduced the self-reported son preference of female respondents. And this is mainly an effect on senior citizens with age higher than 45. 
+
+It's likely that senior citizens like grandma who serve an influential role in Taiwanese family's birth decisions are altering their preference for sons, and putting less pressure on mothers.
+
+:::
+
+---
+
+## Mechanism
+
+We propose and test the following 2 mechanisms:
+
+1. **Gender role model**: The exposure to powerful female politicians changed women's gender attitudes, including son preference.
+2. **Intra-household bargaining**: Women gained more power in household decision-making, realizing their changed son preference through the birth decision.
+
+::: {.notes}
+
+To explain these findings, we propose two non-mutually exclusive mechanisms. One is gender role model, suggesting that the exposure to powerful image of female politicians would change women's gender attitudes.
+
+And the changed attitude was brought into family birth decisions through an increased intra-household bargaining power of women.
+
+:::
+
+---
+
+## Gender role model: Girl's educational choice
+
+\small
+- Data: University Entrance Test records, 2000 to 2003.
+- Outcome: Taking up the entrance exam at 18 or not.
+
+\include{tables/tab-college-entrance-test.tex}
+
+::: {.notes}
+
+The first thing we look at is the girl's educations choice: whether they take the university entrance exam or not.
+
+We used the test records data available from 2000 to 2003 to evaluate the effect of quota on taking up the exam at 18.
+
+And find that the quota significantly increased the probability of female students taking up the exam, while, again, not the case for male students.
+
+:::
+
+---
+
+## Gender role model: Girl's preference for college major
+
+\small
+- Data: University Entrance Test records, 2002 to 2010.
+
+\include{tables/tab-college-major.tex}
+
+::: {.notes}
+
+Now, using similar data but with different time availability, we evaluate the gender quota effect on college majors.
+
+We focus on two majors: law and political science which were the primary degrees that Taiwanese politicians hold.
+
+In columns 1 and 2, the outcome variable is the proportion of law and political science programs among the whole application list. You can see that the quota makes women more likely to fill their application list with law and political science programs. A formal F-test in the bottom row shows the significance.
+
+In columns 3 and 4, you can see where the students rank their first program in law or political science in the application list. Women are more likely to move their first law program forward, suggesting a stronger preference for law. And on average, the first law program was put at 22nd place.
+
+These educational evidence provide support for our role model mechanism.
+
+:::
+
+---
+
+## Intra-household bargaining: Household decision-making
+
+\small
+- Data: Survey on Social Development Trends, 1998 and 2002.
+- Outcome: $1$: Wife/wife+husband are decision makers; $0$: Only husband is making decision
+
+\include{tables/tab-household-decision-making.tex}
+
+::: {.notes}
+
+Another mechanism to be tested is intra-household bargaining. The value of outcome variable takes 1 or 0, indicating that whether wife/wife&husband involved in household decisions or only husband is the decision maker.
+
+In the table, we show that quota makes women more likely to report themselves involved in financial decisions such as expenditure and saving, and also parenting. Using the 1st principle component of all four types of decision, we still see that women are more involved in household decisions in a general sense.
+
+:::
+
+---
+
+## Conclusions
+
+- Gender quota generates powerful female politicians, altering women's gender attitudes
+  - son preference $\downarrow$
+  - take-up rate of university entrance exam $\uparrow$
+  - preference for law & political science $\uparrow$
+  - self-reported involvement in household decisions $\uparrow$
+  - neonatal mortality $\rightarrow$
+- This is likely driven by the role model effect
+- Changed preference realized in behaviors through household bargaining
+
+---
+
+\appendix
+
+---
+
+\include{figures/fig-1998-winner-survival.tex}
+
+---
+
+\include{tables/tab-1998-winner-loser.tex}
+
+---
+
+\include{tables/tab-1998-winner-cox.tex}
+
+---
+
+## High sex ratio for 3rd-parity birth
+
+\include{figures/fig-sex-ratio-by-birth-order.tex}
+
+::: {.notes}
+
+Now this figure plots the realized sex ratio for 1st, 2nd, and 3rd-parity children for every year of birth between 1980 to 2006.
+
+The sex ratio of 3rd parity was significantly higher than other parities after 1985, which is the year that Taiwan legalized abortion. This shows that the mother's behavior on 3rd-parity is a place that strongly reveals people's son preference. 
+
+:::
+
+## Shorter birth gap for two-daughters-mothers $(D,D)$
+
+\include{figures/fig-probability-no-3rd-birth-survival.tex}
+
+::: {.notes}
+
+Another observation is that mothers with two daughters have a shorter birth gap between 2nd and 3rd child.
+
+This figure plots the survival curve of giving 3rd child along months after 2nd-parity birth.
+
+The blue line is the survival curve for two-daughters-mothers, and you can see that their propensity to have 3rd child is significantly higher than any other sex composition.
+
+If these mothers reduce their propensity to have a 3rd child more than other mothers, then it's likely they're giving up the son-stopping fertility rule.
+
+:::
+
+---
+
+\include{tables/tab-sex-selective-abortion.tex}
+
+::: {.notes}
+
+In this table, we replaced the outcome variable with a dummy indicating that the sex of 3rd-parity child is male. We find that conditional on mother insisting to have 3rd child, the quota would make her child more likely to be a son. This is consistent with our previous finding, suggesting that mothers who insist to have additional birth are those with most determined son preference. 
+
+Consistent with the previous table, this is not the case for other sex compositions.
+
+:::
+
+---
+
+\include{tables/tab-neonatal-mortality.tex}
+
+---
+
+\include{tables/tab-definition-law-and-polsci-programs.tex}
