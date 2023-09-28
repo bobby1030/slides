@@ -15,6 +15,15 @@ format:
     mainfont: "IBM Plex Sans"
     mathfont: "Fira Math"
     monofont: "Cascadia Code"
+  beamer+lualatex:
+    aspectratio: 169
+    pdf-engine: lualatex
+    theme: metropolis
+    slide-level: 2
+    fontsize: 11pt
+    filters: 
+      - ./remove-notes.lua
+    keep-tex: true
 include-in-header: 
   text: |
     \usepackage{hyperref}
