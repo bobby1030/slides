@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Concourse T4", "PingFang TC", sans-serif;
+$presentation-font-size-root: 50px;
+$presentation-h1-font-size: 1.6em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 1.2em;
+$presentation-h4-font-size: 1em;
+
+/*-- scss:rules --*/
+
+.dim {
+    opacity: 0.5;
+}
+
+.theorem {
+    background-color: $body-bg;
+}

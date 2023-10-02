@@ -1,0 +1,243 @@
+---
+title: "The US-China Trade War and Global Reallocations"
+subtitle: |
+  Fajgelbaum et. al. (2023, NBER Working Paper) <br/>
+  Lab Meeting
+author: "Yu-Hsin Ho"
+date: "Oct 2, 2023"
+format: 
+  revealjs:
+    width: 1920
+    height: 1080
+    theme: ["default", "style.scss"]
+    slide-number: true
+# output: 
+#     xaringan::moon_reader:
+#         css: ["style.css", default]
+#         nature:
+#             highlightStyle: atom-one-light
+#             highlightLines: true
+#             countIncrementalSlides: false
+#             ratio: "4:3"
+#         lib_dir: libs
+---
+
+# US-China Trade War
+
+- 2018-2019: mutually escalating tariffs on targeted products
+- ***deglobalization*** or ***reallocations***?
+  - global trade flow decreases?
+  - trade flow reallocate to bystander countries?
+- This paper: quantify the country-variety-specific tariff elasticity
+  - percent change in trade flow for a 1% increase in tariff
+
+# General Equilibrium Framework
+
+## Demand
+
+- There is a set of countries $\mathcal{I}$; $n$ denotes importer (destination), $i$ denotes exporter (origin)
+- There are $j=1,\dots,J$ sectors
+- $\omega \in \Omega^j$ denotes a product in sector $j$
+- $i\omega$: A combination of origin and product, which is a **variety**
+
+:::: {.columns}
+::: {.column width="65%"}
+
+Importer $n$'s share of spending in a variety $i\omega$:
+
+$$
+s_{i \omega}^{n} = 
+\underbrace{a_{i \omega}^{n}}_{\substack{\text{idiosyncratic} \\ \text{demand}}} + 
+\sum_{i^{\prime} \in \mathcal{I}} (
+  \underbrace{\sigma_{i' i}^{j}}_{\substack {\text{substitution} \\ \text{elasticity of} \\ \text{origin}} } \cdot \underbrace{\ln p_{i' \omega}^{n}}_{\substack{\text{competitor's} \\ \text{price}}}
+)
+$$
+
+:::
+
+::: {.column width="35%"}
+
+The elasticity of substitution between origin $i$ and $i'$: $\sigma_{i' i}^{j}$
+
+- $> 0$: origin $i$ and $i'$ are substitutes
+- $< 0$: origin $i$ and $i'$ are complements
+- Think of $\sigma_{\text{CH},i}^j$ and $\sigma_{\text{US},i}^j$
+
+:::
+::::
+
+## Supply
+
+Destination price incurs **ad-valorem (proportional) tariff** and **iceberg transport cost**:
+
+$$
+p_{i \omega}^{n} =
+\underbrace{T_{i \omega}^n}_{\text{tariff}} \cdot
+\underbrace{\tau_{i \omega}^{n}}_{\substack{\text{transport} \\ \text{cost}}} \cdot
+p_{i \omega}
+$$
+
+::: {.columns}
+::: {.column width="60%"}
+
+Variety $i\omega$'s total sales:
+
+$$
+X_{i \omega} = \underbrace{A_i^j}_{\substack{\text{exporter-sector} \\ \text{component}}} \cdot \underbrace{Z_{i \omega}}_{\text{cost shock}} \cdot p_{i \omega}^{\frac{1}{b_i^j}}
+$$
+:::
+::: {.column width="40%"}
+
+Inverse supply elasticity $b_i^j$
+
+- $>0$: upward-sloping supply
+- $<0$: downward-sloping supply (scale economy)
+
+:::
+:::
+
+## Equilibrium
+
+In equilibrium, variety global sales = variety global demand.
+
+$$
+X_{i\omega} = 
+\sum_{n \in \mathcal{I}} \frac{s_{i\omega}^{n}}{T_{i\omega}^{n}}E_{\omega}^{n}
+$$
+
+---
+
+:::{#prp-1}
+
+To a first-order approximation, the change in the log of variety $i\omega$'s global sales is:
+
+$$
+\begin{aligned}
+  \Delta\ln X_{i\omega}^{n} =
+  &\beta_{1i\omega}^{n}\Delta\ln{T}_{CH,\omega}^{US} +
+  \beta_{2i\omega}^{n}\Delta\ln{T}_{US,\omega}^{CH} +
+  \beta_{3i\omega}^{n}\Delta\ln{T}_{i,\omega}^{US} +
+  \beta_{4i\omega}^{n}\Delta\ln{T}_{i,\omega}^{CH} \\
+  &+ \beta_{5i\omega}^{n} \sum_{j \neq CH, US, i} \Delta \ln{T}_{j,\omega}^{US} \\
+  &+ \beta_{6i\omega}^{n} \sum_{j \neq CH, US, i} \Delta \ln{T}_{j,\omega}^{CH} \\
+  &+ \eta_{i\omega}^{n}
+\end{aligned}
+$$
+
+:::
+<!-- end of proposition 1 -->
+
+. . .
+
+:::{#prp-2}
+
+By identifying $\beta_{1i\omega}^n$ (US tariff elasticity) and $\beta_{2i\omega}^n$ (China tariff elasticity), $n=\{US, CH, RW\}$, we jointly identify:
+
+1. $b_i^j$ **inverse supply elasticity** [(supply side scale economy)]{.dim}
+2. $\sigma_{US,i}^j, \sigma_{CH,i}^j$ **elasticity of substition** [(demand side)]{.dim}
+
+:::
+<!-- end of proposition 2 -->
+
+---
+
+![Table A.1: Parameter Regions Implied by Export Responses to US Tariffs on China](./images/table-a1.png)
+
+# Data
+
+- **Export flow**
+  - UN Comtrade, 2014-2019
+  - top 50 exporting countries excluding oil exporters
+  - 5203 HS 6-digit products
+- **US-China, China-US, and US tariffs on other countries**: Fajgelbaum et al. (2020, QJE)
+- **China tariffs on other countries**: Bown et al. (2019)
+
+## Tariff Changes
+
+::: {.columns}
+::: {.column}
+![Figure A.2: Tariff Changes](./images/figure-a2-1.png)
+:::
+::: {.column}
+![](./images/figure-a2-2.png)
+:::
+:::
+
+- Blue: US/China on each other
+- Red: US/China on other countries
+
+## Pre-war Export Baskets
+
+![Figure A.1: Pre-War Export Baskets](./images/figure-a1.png)
+
+# Empirical Findings
+
+## Average Export Responses
+
+![Figure 1](./images/figure1-1.png)
+
+Finding: An average bystander country is a **China substitute (for US)**, but not a **US substitute (for China)**.
+
+---
+
+![Figure 1](./images/figure1-2.png)
+
+Finding: Trade war created a net increase in export! (elasticity = 0.2)
+
+## Heterogeneous Export Responses
+
+$$
+\begin{aligned}
+\Delta \ln X_{i\omega}^{n} = 
+& \beta_{1i\omega}^{n} \Delta \ln{T}_{CH,\omega}^{US}
++ \beta_{2i\omega}^{n} \Delta \ln{T}_{US,\omega}^{CH}
++ \beta_{3i\omega}^{n} \Delta \ln{T}_{i,\omega}^{US}
++ \beta_{4i\omega}^{n} \Delta \ln{T}_{i,\omega}^{CH} \\
+&+ \underbrace{\alpha_{i j}^{n}}_{\substack{\text{orig-dest-sector} \\ \text{FE}}}
++ \underbrace{\Gamma^{n} \text{SIZE}_{i\omega}}_{\substack{\text{within-sector} \\ \text{variety size effect}}}
++ \pi^{n} \Delta \ln{X}_{i\omega,t-1}^{n}
++ \epsilon_{i\omega}^{n}
+\end{aligned}
+$$
+
+- Identification assumption: Parallel trend within origin-destination-sector block
+- Variation across varieties is controlled by variety size
+- Serial correlation tackled by lagged export growth
+
+Sum up across varieties and destinations to get exporter $i$'s export growth:
+
+$$
+\Delta \widehat{\ln X_{i}^{WD}} = 
+\sum_{\omega} \sum_{n} \lambda_{i\omega}^n (
+  \widehat{\beta_{1i\omega}^{n}} \Delta \ln{T}_{CH,\omega}^{US}
++ \widehat{\beta_{2i\omega}^{n}} \Delta \ln{T}_{US,\omega}^{CH}
++ \widehat{\beta_{3i\omega}^{n}} \Delta \ln{T}_{i,\omega}^{US}
++ \widehat{\beta_{4i\omega}^{n}} \Delta \ln{T}_{i,\omega}^{CH}
+)
+$$
+
+---
+
+### Heterogeneous Export Responses
+
+![Figure 2: Relative Export Growth in Targeted Products across Countries](./images/figure2-hl.png)
+
+---
+
+### Export Growth to US and RW after US-China Tariffs
+
+![Figure 4: Supply and Demand Forces](./images/figure4-1.png)
+
+---
+
+### Export Growth to US and RW after China-US Tariffs
+
+![Figure 4: Supply and Demand Forces](./images/figure4-2.png)
+
+
+# Key Takeaways
+
+- Trade war **reallocates** trade flow to bystander countries
+- Net increase in global trade oppurtunities
+- Strong heterogeneity in export responses to US-China trade war
+- Taiwan, Korea, and Vietnam benefit from the trade war
