@@ -1,0 +1,192 @@
+---
+title: "Irregular Terrain Model and Its Application in Media Economics"
+subtitle: |
+  Lab Meeting
+author: "Yu-Hsin Ho"
+date: "Nov 27, 2023"
+format: 
+  revealjs:
+    width: 1920
+    height: 1080
+    theme: ["default", "style.scss"]
+    slide-number: true
+    incremental: true
+---
+
+# Motivation
+
+- A typical research interest of media economics: **treatment effect of the availability of certain medium**
+  - E.g. Radio, TV, mobile broadband, etc.
+- We need some kind of availability measure to define exposure
+  - *Jensen and Oster (2009, QJE)*: Staggered introduction of cable TV in India
+    - ↓ acceptance of domestic violence & son preference for female subjects
+  - *Guriev et al. (2021, QJE)*: Staggered introduction of 3G worldwide
+    - ↓ approval to the government
+- Another choice: (squared-)distance to the nearest transmitter
+  - **Imprecise**: terrains, buildings, etc.
+  - **Endogeneity**: The placement of transmitter is endogenous (E.g. close to the population center)
+
+::: {.notes}
+
+A typical research interest in media economics is to estimate the effect of certain medium on people's behavior.
+
+For example, what would people do when they listen to certain radio station, watch certain TV channel, or having access to mobile broadband?
+
+To estimate the effect, we need some kind of availability measure to define exposure.
+
+Jensen and Oster: utilize the staggered introduction of cable TV in India to estimate the effect of TV on reported attitudes toward domestic violence and son preference.
+
+Guriev et al.: utilize the staggered introduction of 3G worldwide to estimate the effect of mobile broadband on approval to the government.
+
+Both papers took advantage of panel data and used a staggered diff-in-diffs approach to estimate the effect.
+
+But for historical studies, panel data is too luxurious to have.
+
+Another way to obtain cross-sectional variation is to use the distance to the nearest transmitter which is a way to measure the signal strength.
+
+Imprecise: It does not take terrains and buildings into account.
+
+And the placement of transmitter is endogenous.
+
+:::
+
+# Irregular Terrain Model
+
+::: {.nonincremental}
+- ITM is a statistical model to calculate the propagation loss of radio waves while taking account of irregular terrain.
+- Propagation loss = f(height, distance, frequency, terrain)
+:::
+
+![Olken (2009, AEJ:Applied) Figure 2](./olken-2009-fig2.png)
+
+::: {.notes}
+
+So instead of simply using the distance measure, we want to get a more precise estimate of signal strength at the receiver.
+
+The Irregular Terrain Model (or ITM for short) is here to help. It is a statistical model to calculate the propagation loss of radio waves while taking account of irregular terrain.
+
+Essentially, it models the signal propagation loss as a function of the height, distance, frequency, and terrain, based on electromagnetic theory.
+
+You can look at this figure stolen from Olken's paper to get a sense of how the model works.
+
+We specify the source of signal with its location and heights, and describe the terrain with elevation data. Then we can predict the signal loss in certain distance away from the source of signal. 
+
+If there is a high mountain blocking the signal, the predicted loss would be higher. And the loss is even higher for a position sitting on the backside of the mountain.
+
+:::
+
+## Implementation
+
+`itmlogic`: Free Python library
+
+### Inputs:
+
+1. DEM (Digital elevation model): GIS data of the terrain elevation (could be obtained online)
+2. Signal source: position, height and frequency
+3. Receiver: position
+
+### Outputs:
+
+- Propagation loss in dB = f(**distance**; confidence, reliability)
+  - statistical confidence (percentiles of predicted loss)
+  - reliability: variance introduced by location and time
+- Transmission power - propagation loss = signal strength at the receiver
+
+
+::: {.notes}
+
+To really calculate this, we have to gather some data.
+
+First, we need the GIS data of the terrain elevation. This could be obtained online.
+
+Second, we need to know where is the source of signal, including its position, height, and frequency.
+
+Third, we need to know where is the receiver. It's common to use the centroid of a village as the receiver's position if you don't have the exact coordinate information of the receiver.
+
+Then we can calculate the propagation loss in dB, which is a function of distance, confidence, and reliability.
+
+There are two parameters that we can play with: confidence and reliability.
+
+Confidence is just the statistical confidence. Because it's a statistical model, it outputs a distribution of predicted loss. You can chooce a percentile which is kind of a upper bound of predicted loss with probability of confidence.
+
+:::
+
+---
+
+![ITM Predicted Loss with Different Confidence Parameters](https://udel.edu/~mm/itm/itmLoss.png)
+
+::: {.notes}
+
+This is the predicted loss given different statistical confidence parameters.
+
+With higher confidence which means higher percentiles, the predicted loss is higher.
+
+:::
+
+---
+
+![ITM Predicted Loss with Different Reliability Parameters](https://udel.edu/~mm/itm/itmConf.png)
+
+::: {.notes}
+
+This is the predicted loss given different reliability parameters.
+
+If you allow more variance in location and time randomness in the model, again the predicted loss is higher.
+
+:::
+
+# Applications
+
+- *Olken (2009, AEJ:Applied)*: Availability of TV and radio
+  - ↓ social participation & lower trust
+- *Enikolopov et al. (2011, AER)*: Independent TV station
+  - ↓ aggregate vote for the government party in Russia
+- *DellaVigna et al. (2014, AEJ:Applied)*: Cross-border spillover of nationalist content
+  - Croatians unexpectedly listening to Serbian nationalist radio
+  - ↑ Croatian's ethnic hatred to Serbians
+- *Yanagizawa-Drott (2014, QJE)*: Radio propaganda
+  - ↑ violence toward Tutsi in the Rwanda genocide
+
+## Empirical specification
+
+Most articles rely on the following specification:
+
+$$
+y_{ic} = \alpha + \beta s_i + \gamma f_i + \delta_c + \epsilon_{ic}
+$$
+
+where $i$ denotes a receiver and $c$ is the locational index.
+
+- $\gamma$ captures the effect from "terrain-free" signals (as if the Earth is flat)
+- $\delta_c$ captures the locational differences
+- $\beta$ captures the effect from local variations created by terrains (within-location, net of distance effect)
+
+### Identification
+
+- The main concern rises from the endogenous placement of the transmitter.
+- **Identifying assumption:** the terrain in the middle of the path was exogenously determined.
+
+::: {.notes}
+
+$s_i$ is the signal predicted by ITM, and $f_i$ is the predicted signal with a hypothetical flat Earth.
+
+$\gamma$ captures the effect from "terrain-free" signals (as if the Earth is flat), roughly the squared distance effect of the signal.
+
+$\delta_c$ captures the locational differences, which is the locational fixed effect.
+
+$\beta$ is the coefficient of interest which captures the effect from local variations created by terrains (within-location, net of distance effect).
+
+In terms of identification, the main concern comes from the fact that the placement of the transmitter is endogenous.
+
+Under this type of empirical specification, the identifying assumption is that the terrain in the middle of the path, the straight line connecting the source and the receiver, was exogenously determined.
+
+:::
+
+# Caveats
+
+1. Variations created by terrains may correlate with unobservables: inaccessible, less development, looser population
+   - Finer locational fixed effects
+   - Test: pre-treatment observables (if you have panel data)
+2. Predicted signal strength does not take account of the building reflections
+   - Bad for estimates of urban areas
+3. Measurement error: impute individual reception from geographic centroid
