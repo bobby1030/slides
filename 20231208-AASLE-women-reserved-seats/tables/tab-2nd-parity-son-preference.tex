@@ -1,0 +1,27 @@
+\begin{table}[h]
+
+    \caption{Estimating the effects of gender quota on son preference (2nd parity)}
+    \label{tab:2nd-parity-son-preference}
+
+    \resizebox{\columnwidth}{!}{
+        \begin{tabular}{l *{5}{d{1.5}}}
+            \toprule
+                                                                                      & \mc{(1)}         & \mc{(2)}         & \mc{(3)}       & \mc{(4)}     & \mc{(5)}       \\
+                                                                                      & \multicolumn{5}{c}{Dependent variable: Giving 2nd-parity birth}                      \\ \cline{2-6} \addlinespace
+
+                                                                                      & \mc{Full Sample} & \multicolumn{4}{c}{Subgroups}                                     \\ \cmidrule(l){3-6}
+                                                                                      &                  & \mc{High School} & \mc{Non-HS}    & \mc{Urban}   & \mc{Non-urban} \\ \midrule
+            ($\hat\beta_1$) Gender quota proportion                                   & -.00716          & -.00353          & .00337         & -.0254       & -.00504        \\
+                                                                                      & (0.015)          & (0.018)          & (0.016)        & (0.038)      & (0.016)        \\
+            ($\hat\beta_2$) 1st-parity is a daughter $\times$ Gender quota proportion & -.0118**         & -.00178          & -.0332***      & -.0162       & -.0113*        \\
+                                                                                      & (0.0058)         & (0.0093)         & (0.0058)       & (0.018)      & (0.0061)       \\
+            1st-parity is a daughter                                                  & .0158***         & .0192***         & .0134***       & .016***      & .0159***       \\
+                                                                                      & (0.00093)        & (0.0015)         & (0.0010)       & (0.0029)     & (0.00098)      \\ \midrule
+            Mean Dep. Var.                                                            & 0.175            & 0.234            & 0.118          & 0.156        & 0.180          \\
+            Obs.                                                                      & \mc{3,837,237}   & \mc{1,882,788}   & \mc{1,954,449} & \mc{884,685} & \mc{2,952,552} \\
+            Adj. $R^2$                                                                & 0.241            & 0.251            & 0.218          & 0.224        & 0.245          \\ \midrule
+            \multicolumn{6}{l}{\textit{F-test on marginal effect}}                                                                                                           \\ \addlinespace
+            p-value of $H_0: \hat{\beta}_1 + \hat{\beta}_2 = 0$                       & 0.202            & 0.773            & 0.070          & 0.304        & 0.319          \\ \bottomrule
+        \end{tabular}
+    }
+\end{table}
