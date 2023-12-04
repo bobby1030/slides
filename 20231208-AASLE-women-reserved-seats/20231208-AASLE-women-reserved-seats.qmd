@@ -193,7 +193,7 @@ The assignment of gender quota proportion has the following features:
 
 We plan to use $R_{de}$ as our instrumental variable for female political leadership.
 
-- Conditional on the district's population size, the assignment of gender quota proportion is arguably random (at least uncorrelated with pre-existing gender attitudes).
+- Conditional on the district's population size, the assignment of gender quota proportion is arguably exogenous (at least uncorrelated with pre-existing gender attitudes).
 - We test this assumption by checking the correlation between pre-existing voter's preference and quota assignment.
 
 
