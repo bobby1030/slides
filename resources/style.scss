@@ -9,14 +9,13 @@ $presentation-h4-font-size: 1em;
 
 /*-- scss:rules --*/
 
-strong {
-    font-weight: 200;
+html.print-pdf .reveal .slide-number-pdf {
+    font-size: 0.6em;
 }
 
 .dim {
     opacity: 0.5;
 }
-
 
 .theorem {
     background-color: $body-bg;

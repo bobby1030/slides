@@ -189,13 +189,13 @@ Network characteristics (Cingano and Rosolia 2012, Figure 1)
 
 :::: {.columns}
 
-::: {.column width=55%}
+::: {.column width=45%}
 
 ![Baseline results (Cingano and Rosolia 2012, Table 2)](./baseline-unemployment-duration.png)
 
 :::
 
-::: {.column width=45%}
+::: {.column width=50%}
 
 LHS: log unemployment duration
 
