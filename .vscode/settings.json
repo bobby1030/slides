@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "quarto",
+            "scheme": "file",
+            "pattern": "20240531-empirical-io-us-newspaper/20240531-empirical-io-us-newspaper.qmd"
+        }
+    ]
+}
