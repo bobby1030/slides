@@ -29,6 +29,15 @@ This paper:
   - A banned merger of 2 newspapers in Minneapolis-St. Paul metro area
   - Duopoly and triopoly mergers
 
+# Model Overview: Features of the Newspaper Market
+
+- 3 types of agents: readers, advertisers, publishers
+  1. Readers: subscribe to ≤ 2 newspapers per year
+  2. Advertiser: demand for advertising space
+  3. Publisher: maximize (joint) profit from subscription & advertising revenue
+- Newspapers have differentiated characteristics
+  - Endogenous: annual subscription price, content quality, local news ratio, variety
+
 # Model - Reader's Demand
 
 Utility of subscribing to newspaper $j$, for household $i$ in county $c$ in year $t$:
@@ -48,7 +57,7 @@ $$
 \beta_{kict} = \beta_k + {\bf z}_{c t} \boldsymbol\theta_k + \sigma_k\varsigma_{kict}
 $$
 
-Outside choice (decreasing interest in reading newspapers)
+Outside choice [(decreasing interest in reading newspapers)]{.dim}
 
 $$
 u_{i0t} = (t - t_0) \rho + \varepsilon_{i0t}
@@ -56,14 +65,15 @@ $$
 
 ## Product Characteristics
 
-- Endogenous:
-  - Content quality:
-    - nonadvertising space
-    - \# staff for opinion section
-    - \# of reporters
-  - Local news ratio
-  - Variety: HHI of share of staff in each section
-- Exogenous: distance to newspaper's home county
+- Endogenous ${\bf x}_{j t}$:
+  1. Content quality: $x_{1j t} = x_{11j t} + \varpi_{2}x_{12j t} + \varpi_{3}x_{13j t}$
+      - $x_{11j t}$: nonadvertising space
+      - $x_{12j t}$: \# staff for opinion section
+      - $x_{13j t}$: \# reporters
+  2. Local news ratio
+  3. Variety: HHI of share of staff in each section
+- Exogenous ${\bf y}_{j c t}$:
+  - \# households in the market, morning edition, local newspaper, distance to newspaper's home county
 
 ## Reader's multiple discrete choices problem
 
@@ -88,7 +98,7 @@ where
 
 # Model - Advertiser's Demand
 
-Consider a Cobb-Douglas (hence log-linear) form of advertising demand:
+Consider a Cobb-Douglas form of advertising demand:
 
 $$
 \begin{aligned}
@@ -120,7 +130,7 @@ Newspaper's sources of revenue:
 
 # Supply - Publisher's Profit Maximization Problem
 
-In a two-stage game, a firm $j$ decides on:
+In a two-stage game, a publisher $j$ decides on:
 
 1. Make editorial decisions (choose $\bf x_{jt}$)
 2. Set price $p_{jt}$ and advertising rate $r_{jt}$
@@ -143,11 +153,11 @@ where
 
 - Average costs per copy:
   $$
-  a c_{j}^{(q)} = \left(\gamma_{1} + \gamma_{2}f_{j} + \gamma_{3} \underbrace{\big(x_{1j} + a_{j}\big)}_{\text{pages}}\right) \underbrace{\log{(Q_{j})^{\gamma_{4}}}}_{\text{decreasing in total qty}} + \omega_{j}
+  a c_{j}^{(q)} = \bigl(\gamma_{1} + \gamma_{2}f_{j} + \gamma_{3} \underbrace{\big(x_{1j} + a_{j}\big)}_{\text{pages}}\bigr) \underbrace{\log{(Q_{j})^{\gamma_{4}}}}_{\text{decreasing in total qty}} + \omega_{j}
   $$
 - Ad profit: 
   $$
-  \left(r_j - \underbrace{(1 + 1 / \lambda_{2}) \bigl(\overline{{{\zeta}}}+\zeta_{j} \bigr)}_{\text{MC of ad sales}}\right) \cdot \underbrace{a_j}_{\text{convex in qty}}
+  \bigl(r_j - \underbrace{(1 + 1 / \lambda_{2}) \bigl(\overline{{{\zeta}}}+\zeta_{j} \bigr)}_{\text{MC of ad sales}}\bigr) \cdot \underbrace{a_j}_{\text{convex in qty}}
   $$
 - Preprint profit: $\mu_1 q_j + \frac{1}{2} \mu_2 q_j^2$
 
@@ -172,11 +182,11 @@ Intuitively, scale economies may come from **lower average costs** & **higher ad
 
 Apply GMM. Moment conditions are from:
 
-- Demand system: Newspaper demand, display ads demand
+- Demand system: (1) Newspaper demand; (2) display ads demand
 - Equilibrium conditions: FOC of the profit maximization problem
-  - advertising rate
-  - price
-  - editorial decisions (characteristics)
+  - \(3\) advertising rate
+  - \(4\) price
+  - \(5\) editorial decisions (endogenous characteristics)
 - Excluded instrument: the demographics in the market of $j$'s competitors (excluding $j$'s own market)
   - Relevant for the decision of $j$'s competitors, hence $j$'s decision
   - Exclusion restriction: only affect $j$'s demand through its competitors
@@ -234,7 +244,7 @@ $\kappa = 1.919$ → Duplicate readership is negligible in about 45% of counties
 
 ![Welfare Effects of Ownership Consolidation](table7-welfare.png)
 
-Underestimated welfare loss for consumers and gain for firms if we do not consider the endogenous product characteristics.
+Underestimated welfare loss for consumers and gain for firms if we ignore endogenous product characteristics.
 
 ## Duopoly Mergers
 
@@ -247,8 +257,8 @@ Underestimated welfare loss for consumers and gain for firms if we do not consid
 # Conclusion
 
 - Omitting product characteristics in merger analysis underestimates welfare loss for consumers and gain for firms
-- Negative changes in reader's surplus due to mergers are in markets where
+- Negative changes in reader's surplus due to mergers are in markets with
   - higher newspaper penetration
   - higher overlap of merged newspapers prior to the merger
-  - merged newspapers's sizes are comparable
-  - market structure is duopoly
+  - comparable merged newspapers's sizes
+  - duopoly market structure
