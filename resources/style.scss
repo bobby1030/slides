@@ -9,22 +9,36 @@ $presentation-h4-font-size: 1em;
 
 /*-- scss:rules --*/
 
+.reveal .bh {
+	// block header
+	font-weight: var(--r-heading-font-weight);
+	display: inline-block;
+	margin-right: 0.5em;
+    padding: 0 0.2em;
+}
+
+.reveal .invert {
+	color: var(--r-background-color);
+	background-color: var(--r-main-color);
+}
+
 html.print-pdf .reveal .slide-number-pdf {
-    font-size: 0.6em;
+	font-size: 0.6em;
 }
 
 .dim {
-    opacity: 0.5;
+	opacity: 0.5;
 }
 
 .theorem {
-    background-color: $body-bg;
+	background-color: $body-bg;
 }
 
-ol, ul {
-    padding-left: 0.5em;
+ol,
+ul {
+	padding-left: 0.5em;
 }
 
 li li {
-    font-size: 0.95em;
+	font-size: 0.95em;
 }
