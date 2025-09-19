@@ -36,8 +36,10 @@ format:
 
 1. Build a quantitative spatial model to predict real wage gains of CHSR
    - 3 types of transit demand: commuting, leisure, and business travel
+   - Planner's belief = model-predicted real wage gains
 2. Estimate the voting response to the projected real wage gains
-3. Planner's problem: weighing economic efficiency against favorable votes
+   - Planner's belief = estimated voting elasticity × model-predicted real wage gains
+3. Planner's problem: max expected economic welfare + expected votes in favor
 4. Estimate the planner's Pareto and political weights from the data
 5. Counterfactual: Route and station placement without political considerations
 
@@ -52,11 +54,11 @@ format:
   - 2 hrs 40 mins
   - 24 stations
 - Early planning began in 1996
-- Bond measure went on ballot in 2008, 52.6% approved
+- Bond measure (Proposition 1A) went on ballot in 2008, 52.6% approved
 - Still under construction since 2015
 - 3 routes were considered:
-  - Coastal route (expensive, ❌)
-  - via Interstate 5 (remote from populated areas, ❌)
+  - Coastal route (❌, expensive)
+  - via Interstate 5 (❌, remote from populated areas)
   - via Central Valley (✔️)
 :::
 
@@ -64,6 +66,11 @@ format:
 ![Proposition 1A votes](./figure1.png){#fig-proposition1a}
 :::
 ::::
+
+::: {.notes}
+- Favorable votes are concentrated in the Bay Area and LA, as well as Central Valley regions where a station is located near them.
+- Q: whether this distribution of station is affected by political incentives?
+:::
 
 ---
 
@@ -76,7 +83,7 @@ $u_{\omega}(s) = \mathbb{E} \left[ \ln W(i, s) \mid \mathcal{I}_i \right] + \ln 
 
 - [$W(i, s)$]{.bh} real wage of residents in $i$ with (or without) CHSR
 - [$\mathcal{I}_i$]{.bh} information set for voters in $i$
-- [$a(i, s)$]{.bh} non-monetary preference for CHSR
+- [$a(i, s)$]{.bh} exogenous non-monetary preference for CHSR
 - [$\varepsilon^{u}_{\omega}(s)$]{.bh} T1EV shock with shape $\theta_V$
 
 [Vote share]{.bh .invert} 
@@ -88,6 +95,10 @@ v(i) = \frac{
 },
 \quad \hat{W}(i) \equiv \frac{W(i, Y)}{W(i, N)}
 $$
+
+::: {.notes}
+Sincere voting, no strategic voting.
+:::
 
 ---
 
@@ -101,8 +112,8 @@ $$
 $$
 
 - [$t$]{.bh} income tax rate to finance CHSR
-- [$1/(1+r)$]{.bh} discount factor
 - [$T$]{.bh} minimum years of construction
+- [$1/(1+r)$]{.bh} discount factor
 - [$p$]{.bh} probability of completion after $T$ years
 - [$\hat{V}(i)$]{.bh} net gain of operational CHSR
   - Importantly, differ by $i$
@@ -113,7 +124,7 @@ $$
 
 Augmented Berlin-wall model with 3 types of travel: commuting, leisure, and business.
 
-[Worker's problem]{.bh .invert} $v_{\omega}(i, j_C, m_C, j_L, m_L, s) =$
+[Worker's problem]{.bh .invert} Indirect utility $v_{\omega}(i, j_C, m_C, j_L, m_L, s) =$
 $$
 \begin{aligned}
 \max_{C, H_C, T_L}
@@ -138,7 +149,7 @@ $$
 
 ---
 
-[Commuting costs]{.bh .invert} $d_{k}(i, j, m, s) = D_{k}(i, m) \tau_{k}(i, j, m, s)^{\rho} \quad \text{for } k = C, L$
+[Commuting costs]{.bh .invert} $d_{k}(i, j, m, s) = D_{k}(i, m) \tau_{k}(i, j, m, s)^{\rho} \quad \text{for } k = C, L, B$
 
 - $D_{k}(i, m)$ taste shifter (e.g. urbanite prefers public transit)
 - $\tau_{k}(i, j, m, s)$ travel time
@@ -165,7 +176,7 @@ A(j, s) H_Y^{\mu_H} N_Y^{1-\mu_H-\mu_B}
 \varepsilon^{B}_{\omega}(j_B, m_B).
 $$
 
-- Freely traded
+- A continuum of firms $\omega$ produce a homogeneous, freely traded good
 - Inputs: floor space ($H_Y$), labor ($N_Y$), and business trips ($T_B$)
 - $A(j,s)$ productivity, $T_B$ number of firms
 - $\varepsilon^{B}_{\omega}$ T2EV shocks with shapes $\theta_B$
@@ -173,18 +184,18 @@ $$
 
 ---
 
-[Productivity spillovers]{.bh .invert}
+[Productivity & amenity spillovers]{.bh .invert}
 
 $$
 A(j, s) = Z_A(j) \Bigg( \sum_{k \in \mathcal{J}} e^{-\rho_A^{\text{spillover}} \tau^{\min}(j, k, s)} \underbrace{\frac{\tilde{N}_Y(k, s)}{H(k)}}_{\text{employment density}} \Bigg)^{\gamma_A^{\text{spillover}}}
 $$
-
-[Amenity spillovers]{.bh .invert}
 $$
 B(i, s) = Z_B(i) \Bigg( \sum_{k \in \mathcal{J}} e^{-\rho_B^{\text{spillover}} \tau^{\min}(j, k, s)} \underbrace{\frac{\tilde{N}_Y(k, s)}{H(k)}}_{\text{employment density}} \Bigg)^{\gamma_B^{\text{spillover}}}
 $$
 
 Compare to Berlin-wall paper: Residence is fixed, so both spillovers depend on employment.
+
+Taken from the Berlin-wall paper: $\gamma_A = 0.071, \gamma_B = 0.155, \rho_A=0.361, \rho_B=0.759$.
 
 ---
 
@@ -211,7 +222,7 @@ $
 \right)^{\frac{1}{\theta_L}}
 $
 
-[Equilibrium productivity]{.bh .invert}
+[Equilibrium productivity]{.bh .invert} TFP of firm in $j$ is
 $$
 \Omega_B(j, s) \equiv \kappa_B A(j, s)
 \left(
@@ -244,7 +255,7 @@ $\lambda$'s are pre-CHSR origin-destination-mode shares.
 
 ## Data
 
-7,866 census tracts in CA.
+7,866 census tracts in California.
 
 - 2006-2010 ACS: commuting flow [$\lambda_C(i,j,m)$]{.dim}
 - 2010-2012 California Household Travel Survey: leisure [$\lambda_L$]{.dim} and business trips [$\lambda_B$]{.dim}
@@ -343,7 +354,7 @@ Spatial Distribution of Real-Income Gains ($\hat{W}(i)$) from the CHSR (without 
 
 ---
 
-## Estimating voting response to projected real income gains
+## Estimating votes elasticity
 
 [Voters' belief on gains]{.bh .invert} Assumed to be model-predicted gains + two errors
 $$
@@ -353,7 +364,7 @@ $$
 - $\ln \hat{W}_{19}(i)$: model-predicted real income gains evaluated with 2019 fundamentals
 - $\epsilon_{W,1}(i)$: voters' expectation error (voter's error)
   - Rational expectation implies zero-mean → classical measurement error
-  - Instrument $\ln \hat{W}_{19}(i)$ with $\ln \hat{W}_{08}(i)$ to get rid of this term
+  - Instrument $\ln \hat{W}_{19}(i)$ with $\ln \hat{W}_{08}(i)$ to difference out this term
 - $\epsilon_{W,2}(i)$: model misspecification error (econometrician's error)
   - Can only be addressed by robustness checks
     - with vs without GE, 2008 vs 2022 business plan
@@ -444,10 +455,14 @@ $$
 ::: {.column width="55%"}
 
 - Stations moved closer to population centers
-  - where votes are harder to sway due to their high level of support
-  - dense regions gain even more
+  - where votes are harder to sway due to their high level of support (logit assumption)
+  - tracts with top-quartile density have real income gain ↑ 0.05 ppts
+  - population-weighted average real income gain ↑ 0.02 ppts
+    - average gross gain was 0.13%
 - Aggregate vote share declined 0.02 ppts
+  - Still a majority in favor (52.60% → 52.58%)
 - Utilitarian counterfactual looks similar
+- Capital costs were held fixed
 - Why does it have to be 24 stations?
 
 :::
@@ -462,29 +477,28 @@ $$
 
 ---
 
-## Can political preference explain I-5 route rejection?
+## Would apolitical planner choose I-5 route?
 
 - One common explanation: I-5 route was killed due to its political infeasibility
+  - Central Valley residents couldn't access it, hence wouldn't support it
   - Is this a tenable explanation?
 - Unknown capital costs of I-5 route
   - Estimate its lower bound: I-5 route must cost at least X% of Central Valley route not to be chosen
   - Estimated X = 88 (using 2008 forecasts)
-- Given this estimated costs, consider an apolitical planner's optimal plan under I-5 route
-  - The current plan still dominates the apolitical optimal I-5 plan
+- Given this estimated lower bound, consider an apolitical planner's optimal plan under I-5 route
+- The current plan still dominates the apolitical optimal I-5 plan
 - Conclusion: I-5 was unlikely rejected due to vote-swaying considerations
 
 ---
 
 ## Thoughts
 
-- A first step towards the political economy of transport infrastructure
-  - Combined a quantitative spatial model and simplified political incentives
-  - Sensitive to mis-specification
-- Highly reduced-form approximation of the political process
-  - Role of state legislators & legislative bargaining
-  - Local NIMBYism (enters via planning costs)
-  - Partisanship & ideology (maximize party votes in the next general election)
+- A first step towards the political economy in the quantitative transit literature
+- Highly reduced-form representation of political incentives
+- Alternative mechanisms
+  - Role of state legislators & legislative bargaining, party politics
   - Lobbying
+  - Local NIMBYism (enters via planning costs)
 - Restrictive choice set of the planner
 - New goods problem in the demand estimation
   - CHSR assumed to be a perfect substitute for public transit & air travel
